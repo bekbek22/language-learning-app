@@ -1,0 +1,798 @@
+[
+  {
+    "thai": "เมื่อวานนี้ฉันไปตลาดและซื้อแอปเปิ้ลมา 3 ลูก",
+    "answer": "Yesterday I went to the market and bought three apples.",
+    "accept": [
+      "i went to the market yesterday and bought three apples",
+      "yesterday i went to the market and bought 3 apples",
+      "i went to the market and bought three apples yesterday"
+    ],
+    "anchors": ["went", "market", "bought", "apples"],
+    "checks": [
+      { "pattern": "\\bgo(es)?\\b", "message": "ใช้ went (อดีต) แทน go" },
+      { "pattern": "\\bbuy(s)?\\b", "message": "ใช้ bought (อดีต) แทน buy" },
+      { "pattern": "\\b(3|three)\\s+apple\\b", "message": "เติม s พหูพจน์ → apples" }
+    ]
+  },
+  {
+    "thai": "เธอกินข้าวเช้าทุกวัน",
+    "answer": "She eats breakfast every day.",
+    "accept": ["she has breakfast every day"],
+    "anchors": ["eats", "breakfast", "every"],
+    "checks": [
+      { "pattern": "\\bshe\\s+eat\\b", "message": "ประธานเอกพจน์ใช้ eats" },
+      { "pattern": "\\bevery\\s+days\\b", "message": "every day ไม่เติม s" }
+    ]
+  },
+  {
+    "thai": "ฉันชอบดูหนังมาก",
+    "answer": "I really like watching movies.",
+    "accept": [
+      "i like watching movies very much",
+      "i really like watching films",
+      "i like to watch movies very much"
+    ],
+    "anchors": ["like", "watching", "movies"],
+    "checks": [
+      { "pattern": "\\bvery\\s+like\\b", "message": "ใช้ really like หรือ like ... very much" },
+      { "pattern": "\\bmovie\\b(?!\\s*s)", "message": "ดูหนังหลายเรื่อง → movies" }
+    ]
+  },
+  {
+    "thai": "เขาไปโรงเรียนเมื่อวานนี้",
+    "answer": "He went to school yesterday.",
+    "accept": ["yesterday he went to school"],
+    "anchors": ["went", "school", "yesterday"],
+    "checks": [
+      { "pattern": "\\bgo(es)?\\b", "message": "ใช้ went (อดีต) แทน go" },
+      { "pattern": "\\bto\\s+the\\s+school\\b", "message": "go to school ไม่ต้องมี the" }
+    ]
+  },
+  {
+    "thai": "มีหนังสือหลายเล่มอยู่บนโต๊ะ",
+    "answer": "There are many books on the table.",
+    "accept": ["there are a lot of books on the table"],
+    "anchors": ["many", "books", "table"],
+    "checks": [
+      { "pattern": "\\bthere\\s+is\\s+many\\b", "message": "พหูพจน์ใช้ there are" },
+      { "pattern": "\\bmany\\s+book\\b(?!s)", "message": "เติม s → books" }
+    ]
+  },
+  {
+    "thai": "ฉันอาศัยอยู่ที่กรุงเทพมาห้าปีแล้ว",
+    "answer": "I have lived in Bangkok for five years.",
+    "accept": [
+      "i have lived in bangkok for 5 years",
+      "i have been living in bangkok for five years"
+    ],
+    "anchors": ["lived", "bangkok", "years"],
+    "checks": [
+      { "pattern": "\\bi\\s+live\\s+in\\s+bangkok\\s+for\\b", "message": "ใช้ present perfect: have lived" },
+      { "pattern": "\\bsince\\s+five\\s+years\\b", "message": "ระยะเวลาใช้ for ไม่ใช่ since" }
+    ]
+  },
+  {
+    "thai": "เธอสวยมาก",
+    "answer": "She is very beautiful.",
+    "accept": ["she is so beautiful", "she looks very beautiful"],
+    "anchors": ["she", "very", "beautiful"],
+    "checks": [
+      { "pattern": "\\bshe\\s+very\\b", "message": "ต้องมี is: she is very" },
+      { "pattern": "\\bshe\\s+beautiful\\b", "message": "ขาด verb to be: she is beautiful" }
+    ]
+  },
+  {
+    "thai": "พวกเราเล่นฟุตบอลเมื่อวานนี้",
+    "answer": "We played football yesterday.",
+    "accept": ["yesterday we played football", "we played soccer yesterday"],
+    "anchors": ["played", "football", "yesterday"],
+    "checks": [
+      { "pattern": "\\bwe\\s+play\\b", "message": "อดีตใช้ played" },
+      { "pattern": "\\bplay\\s+football\\s+yesterday\\b", "message": "อดีตใช้ played" }
+    ]
+  },
+  {
+    "thai": "เขาทำงานหนักทุกวัน",
+    "answer": "He works hard every day.",
+    "accept": ["he works very hard every day"],
+    "anchors": ["works", "hard", "every"],
+    "checks": [
+      { "pattern": "\\bhe\\s+work\\b", "message": "ประธานเอกพจน์ใช้ works" },
+      { "pattern": "\\bwork\\s+hardly\\b", "message": "hardly แปลว่าแทบไม่; ใช้ hard" }
+    ]
+  },
+  {
+    "thai": "ฉันมีพี่น้องสองคน",
+    "answer": "I have two siblings.",
+    "accept": ["i have two brothers and sisters", "i have got two siblings"],
+    "anchors": ["have", "two", "siblings"],
+    "checks": [
+      { "pattern": "\\btwo\\s+sibling\\b(?!s)", "message": "เติม s → siblings" },
+      { "pattern": "\\bi\\s+am\\s+have\\b", "message": "ใช้ I have ไม่ใช่ I am have" }
+    ]
+  },
+  {
+    "thai": "เธอไม่ชอบกาแฟ",
+    "answer": "She does not like coffee.",
+    "accept": ["she doesn't like coffee"],
+    "anchors": ["not", "like", "coffee"],
+    "checks": [
+      { "pattern": "\\bshe\\s+not\\s+like\\b", "message": "ใช้ does not like" },
+      { "pattern": "\\bdoes\\s+not\\s+likes\\b", "message": "หลัง does ใช้กริยาช่องหนึ่ง: like" },
+      { "pattern": "\\bdon't\\s+like\\b", "message": "ประธานเอกพจน์ใช้ doesn't" }
+    ]
+  },
+  {
+    "thai": "เมื่อคืนฉันนอนหลับสบายมาก",
+    "answer": "I slept very well last night.",
+    "accept": ["last night i slept very well"],
+    "anchors": ["slept", "well", "night"],
+    "checks": [
+      { "pattern": "\\bi\\s+sleep\\b", "message": "อดีตใช้ slept" },
+      { "pattern": "\\bsleep\\s+good\\b", "message": "ใช้ slept well ไม่ใช่ good" }
+    ]
+  },
+  {
+    "thai": "เด็กๆ กำลังเล่นอยู่ในสวน",
+    "answer": "The children are playing in the garden.",
+    "accept": ["the kids are playing in the garden"],
+    "anchors": ["children", "playing", "garden"],
+    "checks": [
+      { "pattern": "\\bchildrens\\b", "message": "children เป็นพหูพจน์อยู่แล้ว" },
+      { "pattern": "\\bchildren\\s+is\\b", "message": "children ใช้ are" },
+      { "pattern": "\\bare\\s+play\\b(?!ing)", "message": "ใช้ are playing" }
+    ]
+  },
+  {
+    "thai": "ฉันจะโทรหาคุณพรุ่งนี้",
+    "answer": "I will call you tomorrow.",
+    "accept": ["i'll call you tomorrow", "i am going to call you tomorrow"],
+    "anchors": ["call", "you", "tomorrow"],
+    "checks": [
+      { "pattern": "\\bi\\s+will\\s+called\\b", "message": "หลัง will ใช้กริยาช่องหนึ่ง: call" },
+      { "pattern": "\\bi\\s+call\\s+you\\s+tomorrow\\b", "message": "อนาคตใช้ will call" }
+    ]
+  },
+  {
+    "thai": "อากาศวันนี้ร้อนมาก",
+    "answer": "The weather is very hot today.",
+    "accept": ["it is very hot today", "today the weather is very hot"],
+    "anchors": ["weather", "hot", "today"],
+    "checks": [
+      { "pattern": "\\bweather\\s+are\\b", "message": "weather เป็นเอกพจน์ ใช้ is" },
+      { "pattern": "\\bweather\\s+very\\s+hot\\b", "message": "ขาด is: weather is very hot" },
+      { "pattern": "\\bweathers\\b", "message": "weather ไม่เติม s" }
+    ]
+  },
+  {
+    "thai": "เขาเป็นคนใจดี",
+    "answer": "He is a kind person.",
+    "accept": ["he is kind", "he is a kind man"],
+    "anchors": ["he", "kind", "person"],
+    "checks": [
+      { "pattern": "\\bhe\\s+kind\\b", "message": "ขาด is: he is kind" },
+      { "pattern": "\\bis\\s+kind\\s+person\\b", "message": "ต้องมี a: a kind person" }
+    ]
+  },
+  {
+    "thai": "ฉันกินข้าวแล้ว",
+    "answer": "I have already eaten.",
+    "accept": ["i have eaten already", "i already ate"],
+    "anchors": ["already", "eaten"],
+    "checks": [
+      { "pattern": "\\bi\\s+have\\s+eat\\b", "message": "ใช้ eaten (ช่องสาม)" },
+      { "pattern": "\\bi\\s+have\\s+ate\\b", "message": "present perfect ใช้ eaten" }
+    ]
+  },
+  {
+    "thai": "พวกเขาแต่งงานกันเมื่อปีที่แล้ว",
+    "answer": "They got married last year.",
+    "accept": ["they married last year", "last year they got married"],
+    "anchors": ["married", "last", "year"],
+    "checks": [
+      { "pattern": "\\bthey\\s+get\\s+married\\b", "message": "อดีตใช้ got married" },
+      { "pattern": "\\blast\\s+years\\b", "message": "last year ไม่เติม s" }
+    ]
+  },
+  {
+    "thai": "ฉันต้องการน้ำหนึ่งแก้ว",
+    "answer": "I want a glass of water.",
+    "accept": ["i would like a glass of water", "i need a glass of water"],
+    "anchors": ["glass", "water"],
+    "checks": [
+      { "pattern": "\\ba\\s+water\\b", "message": "water นับไม่ได้: a glass of water" },
+      { "pattern": "\\bwant\\s+water\\s+one\\b", "message": "เรียงลำดับ: a glass of water" }
+    ]
+  },
+  {
+    "thai": "เธอพูดภาษาอังกฤษได้ดี",
+    "answer": "She speaks English well.",
+    "accept": ["she can speak english well"],
+    "anchors": ["speaks", "english", "well"],
+    "checks": [
+      { "pattern": "\\bshe\\s+speak\\b(?!s)", "message": "ประธานเอกพจน์ใช้ speaks" },
+      { "pattern": "\\bspeak(s)?\\s+english\\s+good\\b", "message": "ใช้ well ไม่ใช่ good" },
+      { "pattern": "\\bcan\\s+speaks\\b", "message": "หลัง can ใช้ speak" }
+    ]
+  },
+  {
+    "thai": "เมื่อวานฝนตกหนัก",
+    "answer": "It rained heavily yesterday.",
+    "accept": ["yesterday it rained heavily", "it rained hard yesterday"],
+    "anchors": ["rained", "heavily", "yesterday"],
+    "checks": [
+      { "pattern": "\\bit\\s+rain\\b(?!ed)", "message": "อดีตใช้ rained" },
+      { "pattern": "\\brain\\s+heavily\\s+yesterday\\b", "message": "อดีตใช้ rained" }
+    ]
+  },
+  {
+    "thai": "ฉันเรียนภาษาอังกฤษมาสองปีแล้ว",
+    "answer": "I have studied English for two years.",
+    "accept": [
+      "i have studied english for 2 years",
+      "i have been studying english for two years"
+    ],
+    "anchors": ["studied", "english", "years"],
+    "checks": [
+      { "pattern": "\\bi\\s+study\\s+english\\s+for\\b", "message": "ใช้ have studied" },
+      { "pattern": "\\bfor\\s+two\\s+year\\b(?!s)", "message": "เติม s → years" }
+    ]
+  },
+  {
+    "thai": "เขาขับรถไปทำงานทุกวัน",
+    "answer": "He drives to work every day.",
+    "accept": ["he drives to work everyday"],
+    "anchors": ["drives", "work", "every"],
+    "checks": [
+      { "pattern": "\\bhe\\s+drive\\b(?!s)", "message": "ประธานเอกพจน์ใช้ drives" }
+    ]
+  },
+  {
+    "thai": "มีคนมากมายในงานปาร์ตี้",
+    "answer": "There were many people at the party.",
+    "accept": ["there were a lot of people at the party"],
+    "anchors": ["many", "people", "party"],
+    "checks": [
+      { "pattern": "\\bmany\\s+peoples\\b", "message": "people เป็นพหูพจน์อยู่แล้ว" },
+      { "pattern": "\\bthere\\s+was\\s+many\\b", "message": "พหูพจน์ใช้ there were" },
+      { "pattern": "\\bin\\s+the\\s+party\\b", "message": "ใช้ at the party" }
+    ]
+  },
+  {
+    "thai": "ฉันกำลังหากุญแจของฉัน",
+    "answer": "I am looking for my keys.",
+    "accept": ["i'm looking for my keys", "i am looking for my key"],
+    "anchors": ["looking", "for", "keys"],
+    "checks": [
+      { "pattern": "\\bi\\s+looking\\b", "message": "ขาด am: I am looking" },
+      { "pattern": "\\blooking\\s+my\\s+key", "message": "ใช้ looking for" }
+    ]
+  },
+  {
+    "thai": "เธออายุยี่สิบปี",
+    "answer": "She is twenty years old.",
+    "accept": ["she is 20 years old"],
+    "anchors": ["twenty", "years", "old"],
+    "checks": [
+      { "pattern": "\\bshe\\s+has\\s+twenty\\b", "message": "บอกอายุใช้ is ไม่ใช่ has" },
+      { "pattern": "\\btwenty\\s+years\\s+old(s)\\b", "message": "ไม่เติม s ที่ old" },
+      { "pattern": "\\btwenty\\s+year\\s+old\\b", "message": "ใช้ years old" }
+    ]
+  },
+  {
+    "thai": "เราควรช่วยเหลือกันและกัน",
+    "answer": "We should help each other.",
+    "accept": ["we should help one another"],
+    "anchors": ["should", "help", "each"],
+    "checks": [
+      { "pattern": "\\bshould\\s+to\\s+help\\b", "message": "หลัง should ไม่ใส่ to" },
+      { "pattern": "\\bshould\\s+helps\\b", "message": "หลัง should ใช้ help" }
+    ]
+  },
+  {
+    "thai": "หนังเรื่องนั้นน่าสนใจมาก",
+    "answer": "That movie was very interesting.",
+    "accept": ["that film was very interesting"],
+    "anchors": ["movie", "very", "interesting"],
+    "checks": [
+      { "pattern": "\\bvery\\s+interested\\b", "message": "สิ่งของใช้ interesting ไม่ใช่ interested" },
+      { "pattern": "\\bmovie\\s+very\\s+interesting\\b", "message": "ขาด verb to be: was" }
+    ]
+  },
+  {
+    "thai": "ฉันรู้สึกเบื่อ",
+    "answer": "I am bored.",
+    "accept": ["i feel bored", "i'm bored"],
+    "anchors": ["am", "bored"],
+    "checks": [
+      { "pattern": "\\bi\\s+am\\s+boring\\b", "message": "คนรู้สึกใช้ bored; boring = น่าเบื่อ" },
+      { "pattern": "\\bi\\s+bored\\b", "message": "ขาด am: I am bored" }
+    ]
+  },
+  {
+    "thai": "เขาให้ของขวัญฉันเมื่อวานนี้",
+    "answer": "He gave me a gift yesterday.",
+    "accept": ["he gave me a present yesterday", "yesterday he gave me a gift"],
+    "anchors": ["gave", "gift", "yesterday"],
+    "checks": [
+      { "pattern": "\\bhe\\s+give\\b", "message": "อดีตใช้ gave" },
+      { "pattern": "\\bgave\\s+gift\\b", "message": "ต้องมี a: a gift" }
+    ]
+  },
+  {
+    "thai": "ฉันไม่เคยไปประเทศญี่ปุ่น",
+    "answer": "I have never been to Japan.",
+    "accept": ["i've never been to japan"],
+    "anchors": ["never", "been", "japan"],
+    "checks": [
+      { "pattern": "\\bi\\s+never\\s+go\\b", "message": "ใช้ have never been" },
+      { "pattern": "\\bhave\\s+never\\s+been\\s+in\\s+japan\\b", "message": "ใช้ been to Japan" },
+      { "pattern": "\\bnever\\s+went\\s+to\\s+japan\\b", "message": "ใช้ have never been" }
+    ]
+  },
+  {
+    "thai": "พรุ่งนี้ฉันจะไปหาหมอ",
+    "answer": "I am going to see the doctor tomorrow.",
+    "accept": [
+      "i will see the doctor tomorrow",
+      "tomorrow i am going to see the doctor"
+    ],
+    "anchors": ["see", "doctor", "tomorrow"],
+    "checks": [
+      { "pattern": "\\bgo\\s+to\\s+doctor\\b", "message": "ใช้ see the doctor หรือ go to the doctor" },
+      { "pattern": "\\bsee\\s+doctor\\b", "message": "ต้องมี the: the doctor" }
+    ]
+  },
+  {
+    "thai": "ห้องนี้ใหญ่กว่าห้องนั้น",
+    "answer": "This room is bigger than that room.",
+    "accept": ["this room is bigger than that one"],
+    "anchors": ["room", "bigger", "than"],
+    "checks": [
+      { "pattern": "\\bmore\\s+big\\b", "message": "ใช้ bigger ไม่ใช่ more big" },
+      { "pattern": "\\bbigger\\s+then\\b", "message": "เปรียบเทียบใช้ than ไม่ใช่ then" }
+    ]
+  },
+  {
+    "thai": "ฉันสนุกกับการเดินทาง",
+    "answer": "I enjoy traveling.",
+    "accept": ["i enjoy travelling", "i like traveling"],
+    "anchors": ["enjoy", "traveling"],
+    "checks": [
+      { "pattern": "\\benjoy\\s+to\\s+travel\\b", "message": "หลัง enjoy ใช้ -ing: enjoy traveling" }
+    ]
+  },
+  {
+    "thai": "เขาเหนื่อยเกินกว่าจะทำงานต่อ",
+    "answer": "He was too tired to keep working.",
+    "accept": ["he was too tired to continue working"],
+    "anchors": ["too", "tired", "working"],
+    "checks": [
+      { "pattern": "\\bso\\s+tired\\s+to\\b", "message": "ใช้ too tired to" },
+      { "pattern": "\\bhe\\s+tired\\b", "message": "ขาด verb to be: was tired" }
+    ]
+  },
+  {
+    "thai": "ฉันต้องตื่นแต่เช้าพรุ่งนี้",
+    "answer": "I have to wake up early tomorrow.",
+    "accept": ["i must wake up early tomorrow", "i need to wake up early tomorrow"],
+    "anchors": ["wake", "early", "tomorrow"],
+    "checks": [
+      { "pattern": "\\bhave\\s+to\\s+wake\\s+up\\s+earlier\\b", "message": "ใช้ early ไม่ใช่ earlier" },
+      { "pattern": "\\bmust\\s+to\\s+wake\\b", "message": "หลัง must ไม่ใส่ to" }
+    ]
+  },
+  {
+    "thai": "อาหารนี้อร่อยมาก",
+    "answer": "This food is very delicious.",
+    "accept": ["this food is delicious", "the food is very delicious"],
+    "anchors": ["food", "very", "delicious"],
+    "checks": [
+      { "pattern": "\\bfood\\s+are\\b", "message": "food นับไม่ได้ ใช้ is" },
+      { "pattern": "\\bthis\\s+food\\s+very\\b", "message": "ขาด is: food is very delicious" },
+      { "pattern": "\\bfoods\\b", "message": "food มักไม่เติม s" }
+    ]
+  },
+  {
+    "thai": "พวกเราไม่ได้ไปเที่ยวเมื่อสุดสัปดาห์ที่แล้ว",
+    "answer": "We did not go out last weekend.",
+    "accept": ["we didn't go out last weekend"],
+    "anchors": ["go", "out", "weekend"],
+    "checks": [
+      { "pattern": "\\bdid\\s+not\\s+went\\b", "message": "หลัง did not ใช้ go" },
+      { "pattern": "\\bwe\\s+not\\s+go\\b", "message": "ใช้ did not go" }
+    ]
+  },
+  {
+    "thai": "เธอกำลังทำอาหารอยู่ในครัว",
+    "answer": "She is cooking in the kitchen.",
+    "accept": ["she's cooking in the kitchen"],
+    "anchors": ["cooking", "kitchen"],
+    "checks": [
+      { "pattern": "\\bshe\\s+cooking\\b", "message": "ขาด is: she is cooking" },
+      { "pattern": "\\bis\\s+cook\\b(?!ing)", "message": "ใช้ is cooking" }
+    ]
+  },
+  {
+    "thai": "ฉันคิดว่าเขาพูดถูก",
+    "answer": "I think he is right.",
+    "accept": ["i think that he is right"],
+    "anchors": ["think", "he", "right"],
+    "checks": [
+      { "pattern": "\\bi\\s+think\\s+he\\s+right\\b", "message": "ขาด is: he is right" },
+      { "pattern": "\\bhe\\s+is\\s+correct\\s+right\\b", "message": "เลือกใช้ right หรือ correct อย่างเดียว" }
+    ]
+  },
+  {
+    "thai": "ขอโทษที่มาสาย",
+    "answer": "I am sorry for being late.",
+    "accept": ["sorry for being late", "i'm sorry i am late"],
+    "anchors": ["sorry", "being", "late"],
+    "checks": [
+      { "pattern": "\\bsorry\\s+for\\s+late\\b", "message": "ใช้ sorry for being late" },
+      { "pattern": "\\bsorry\\s+to\\s+late\\b", "message": "ใช้ for being late" }
+    ]
+  },
+  {
+    "thai": "เขาอาศัยอยู่คนเดียว",
+    "answer": "He lives alone.",
+    "accept": ["he lives by himself"],
+    "anchors": ["lives", "alone"],
+    "checks": [
+      { "pattern": "\\bhe\\s+live\\b(?!s)", "message": "ประธานเอกพจน์ใช้ lives" },
+      { "pattern": "\\blives\\s+lonely\\b", "message": "alone = อยู่คนเดียว; lonely = เหงา" }
+    ]
+  },
+  {
+    "thai": "เราเห็นด้วยกับความคิดของคุณ",
+    "answer": "We agree with your idea.",
+    "accept": ["we agree with your opinion"],
+    "anchors": ["agree", "your", "idea"],
+    "checks": [
+      { "pattern": "\\bwe\\s+are\\s+agree\\b", "message": "agree เป็นกริยา ไม่ต้องมี are" },
+      { "pattern": "\\bagree\\s+to\\s+your\\s+idea\\b", "message": "ใช้ agree with" }
+    ]
+  },
+  {
+    "thai": "ฉันลืมเอาร่มมา",
+    "answer": "I forgot to bring my umbrella.",
+    "accept": ["i forgot my umbrella"],
+    "anchors": ["forgot", "bring", "umbrella"],
+    "checks": [
+      { "pattern": "\\bi\\s+forget\\b", "message": "อดีตใช้ forgot" },
+      { "pattern": "\\bforgot\\s+bring\\b", "message": "ใช้ forgot to bring" },
+      { "pattern": "\\bbring\\s+umbrella\\b", "message": "ต้องมี an/my: my umbrella" }
+    ]
+  },
+  {
+    "thai": "งานนี้ยากเกินไปสำหรับฉัน",
+    "answer": "This job is too difficult for me.",
+    "accept": ["this work is too difficult for me", "this job is too hard for me"],
+    "anchors": ["job", "too", "difficult"],
+    "checks": [
+      { "pattern": "\\btoo\\s+much\\s+difficult\\b", "message": "ใช้ too difficult ไม่ใช่ too much difficult" },
+      { "pattern": "\\bfor\\s+i\\b", "message": "ใช้ for me ไม่ใช่ for I" }
+    ]
+  },
+  {
+    "thai": "นักเรียนทุกคนชอบครูคนใหม่",
+    "answer": "Every student likes the new teacher.",
+    "accept": ["all the students like the new teacher", "all students like the new teacher"],
+    "anchors": ["student", "likes", "new", "teacher"],
+    "checks": [
+      { "pattern": "\\bevery\\s+students\\b", "message": "every ตามด้วยเอกพจน์: every student" },
+      { "pattern": "\\bstudent\\s+like\\b(?!s)", "message": "ประธานเอกพจน์ใช้ likes" }
+    ]
+  },
+  {
+    "thai": "ฉันอยู่ที่นี่ตั้งแต่ปี 2020",
+    "answer": "I have lived here since 2020.",
+    "accept": ["i have been here since 2020"],
+    "anchors": ["lived", "here", "since"],
+    "checks": [
+      { "pattern": "\\bi\\s+live\\s+here\\s+since\\b", "message": "ใช้ present perfect: have lived" },
+      { "pattern": "\\bsince\\s+\\d+\\s+years\\b", "message": "since ตามด้วยจุดเวลา ไม่ใช่ระยะเวลา" }
+    ]
+  },
+  {
+    "thai": "เขาเก่งภาษาอังกฤษมาก",
+    "answer": "He is very good at English.",
+    "accept": ["he is really good at english"],
+    "anchors": ["good", "at", "english"],
+    "checks": [
+      { "pattern": "\\bgood\\s+(in|with)\\s+english\\b", "message": "ใช้ good at English" },
+      { "pattern": "\\bhe\\s+very\\s+good\\b", "message": "ขาด is: he is very good" }
+    ]
+  },
+  {
+    "thai": "ฉันรอคุณอยู่ที่หน้าร้าน",
+    "answer": "I am waiting for you in front of the shop.",
+    "accept": ["i'm waiting for you in front of the store"],
+    "anchors": ["waiting", "for", "you", "front"],
+    "checks": [
+      { "pattern": "\\bwaiting\\s+you\\b", "message": "ใช้ waiting for you" },
+      { "pattern": "\\bi\\s+waiting\\b", "message": "ขาด am: I am waiting" }
+    ]
+  },
+  {
+    "thai": "เธอแต่งตัวสวยทุกวัน",
+    "answer": "She dresses nicely every day.",
+    "accept": ["she dresses well every day"],
+    "anchors": ["dresses", "nicely", "every"],
+    "checks": [
+      { "pattern": "\\bshe\\s+dress\\b(?!es)", "message": "ประธานเอกพจน์ใช้ dresses" },
+      { "pattern": "\\bevery\\s+days\\b", "message": "every day ไม่เติม s" }
+    ]
+  },
+  {
+    "thai": "พวกเขาอาศัยอยู่ในกรุงเทพ",
+    "answer": "They live in Bangkok.",
+    "accept": ["they are living in bangkok"],
+    "anchors": ["live", "in", "bangkok"],
+    "checks": [
+      { "pattern": "\\bthey\\s+lives\\b", "message": "ประธาน they ใช้ live" },
+      { "pattern": "\\blive(s)?\\s+at\\s+bangkok\\b", "message": "เมืองใช้ in: live in Bangkok" }
+    ]
+  },
+  {
+    "thai": "ฉันสนใจในประวัติศาสตร์",
+    "answer": "I am interested in history.",
+    "accept": ["i'm interested in history"],
+    "anchors": ["interested", "in", "history"],
+    "checks": [
+      { "pattern": "\\binterested\\s+(about|on)\\b", "message": "ใช้ interested in" },
+      { "pattern": "\\bi\\s+am\\s+interesting\\b", "message": "คนรู้สึกใช้ interested" },
+      { "pattern": "\\bi\\s+interested\\b", "message": "ขาด am: I am interested" }
+    ]
+  },
+  {
+    "thai": "เขาโทรหาฉันเมื่อวานนี้",
+    "answer": "He called me yesterday.",
+    "accept": ["yesterday he called me"],
+    "anchors": ["called", "me", "yesterday"],
+    "checks": [
+      { "pattern": "\\bhe\\s+call\\s+me\\b", "message": "อดีตใช้ called" },
+      { "pattern": "\\bcall(ed)?\\s+to\\s+me\\b", "message": "call me ไม่ต้องมี to" }
+    ]
+  },
+  {
+    "thai": "มันขึ้นอยู่กับคุณ",
+    "answer": "It depends on you.",
+    "accept": ["it is up to you", "it's up to you"],
+    "anchors": ["depends", "on", "you"],
+    "checks": [
+      { "pattern": "\\bdepend(s)?\\s+to\\b", "message": "ใช้ depend on" },
+      { "pattern": "\\bit\\s+depend\\b(?!s)", "message": "ประธาน it ใช้ depends" }
+    ]
+  },
+  {
+    "thai": "ฉันเห็นด้วยกับคุณ",
+    "answer": "I agree with you.",
+    "accept": ["i totally agree with you"],
+    "anchors": ["agree", "with", "you"],
+    "checks": [
+      { "pattern": "\\bi\\s+am\\s+agree\\b", "message": "agree เป็นกริยา ไม่ต้องมี am" },
+      { "pattern": "\\bagree\\s+to\\s+you\\b", "message": "ใช้ agree with you" }
+    ]
+  },
+  {
+    "thai": "เธอกลัวสุนัข",
+    "answer": "She is afraid of dogs.",
+    "accept": ["she is scared of dogs"],
+    "anchors": ["afraid", "of", "dogs"],
+    "checks": [
+      { "pattern": "\\bafraid\\s+(to|from|with)\\b", "message": "ใช้ afraid of" },
+      { "pattern": "\\bafraid\\s+of\\s+dog\\b(?!s)", "message": "พหูพจน์ → dogs" }
+    ]
+  },
+  {
+    "thai": "พรุ่งนี้ฝนจะตก",
+    "answer": "It will rain tomorrow.",
+    "accept": ["it is going to rain tomorrow", "it's going to rain tomorrow"],
+    "anchors": ["rain", "tomorrow"],
+    "checks": [
+      { "pattern": "\\bwill\\s+rains\\b", "message": "หลัง will ใช้ rain" },
+      { "pattern": "\\bit\\s+rain(s)?\\s+tomorrow\\b", "message": "อนาคตใช้ will rain" }
+    ]
+  },
+  {
+    "thai": "ฉันทำการบ้านเสร็จแล้ว",
+    "answer": "I have finished my homework.",
+    "accept": ["i have done my homework", "i finished my homework"],
+    "anchors": ["finished", "homework"],
+    "checks": [
+      { "pattern": "\\bi\\s+have\\s+finish\\b(?!ed)", "message": "ใช้ finished" },
+      { "pattern": "\\bhomeworks\\b", "message": "homework นับไม่ได้ ไม่เติม s" }
+    ]
+  },
+  {
+    "thai": "เขาทำงานที่ธนาคาร",
+    "answer": "He works at a bank.",
+    "accept": ["he works in a bank", "he works at the bank"],
+    "anchors": ["works", "bank"],
+    "checks": [
+      { "pattern": "\\bhe\\s+work\\s+at\\b", "message": "ประธานเอกพจน์ใช้ works" },
+      { "pattern": "\\bwork(s)?\\s+at\\s+bank\\b", "message": "ต้องมี a/the: a bank" }
+    ]
+  },
+  {
+    "thai": "ฉันอยากไปเที่ยวต่างประเทศ",
+    "answer": "I want to travel abroad.",
+    "accept": ["i would like to travel abroad", "i want to go abroad"],
+    "anchors": ["want", "travel", "abroad"],
+    "checks": [
+      { "pattern": "\\bwant\\s+travel\\b", "message": "ใช้ want to travel" },
+      { "pattern": "\\b(travel|go)\\s+to\\s+abroad\\b", "message": "abroad ไม่ต้องมี to" }
+    ]
+  },
+  {
+    "thai": "หนังสือเล่มนี้น่าเบื่อ",
+    "answer": "This book is boring.",
+    "accept": ["this book is so boring"],
+    "anchors": ["book", "boring"],
+    "checks": [
+      { "pattern": "\\bbook\\s+is\\s+bored\\b", "message": "สิ่งของใช้ boring; bored = คนรู้สึก" },
+      { "pattern": "\\bthis\\s+book\\s+boring\\b", "message": "ขาด is: book is boring" }
+    ]
+  },
+  {
+    "thai": "เราควรประหยัดเงิน",
+    "answer": "We should save money.",
+    "accept": ["we should save our money"],
+    "anchors": ["should", "save", "money"],
+    "checks": [
+      { "pattern": "\\bshould\\s+to\\s+save\\b", "message": "หลัง should ไม่ใส่ to" },
+      { "pattern": "\\bmoneys\\b", "message": "money นับไม่ได้ ไม่เติม s" }
+    ]
+  },
+  {
+    "thai": "เขาขับรถเก่งกว่าฉัน",
+    "answer": "He drives better than me.",
+    "accept": ["he drives better than i do"],
+    "anchors": ["drives", "better", "than"],
+    "checks": [
+      { "pattern": "\\bmore\\s+good\\b", "message": "ใช้ better ไม่ใช่ more good" },
+      { "pattern": "\\bbetter\\s+then\\b", "message": "เปรียบเทียบใช้ than ไม่ใช่ then" }
+    ]
+  },
+  {
+    "thai": "ฉันไม่มีเวลา",
+    "answer": "I do not have time.",
+    "accept": ["i don't have time", "i have no time"],
+    "anchors": ["have", "time"],
+    "checks": [
+      { "pattern": "\\bi\\s+not\\s+have\\b", "message": "ใช้ do not have" },
+      { "pattern": "\\bi\\s+haven't\\s+time\\b", "message": "ใช้ don't have time หรือ have no time" }
+    ]
+  },
+  {
+    "thai": "เธอพูดเก่งมาก",
+    "answer": "She speaks very well.",
+    "accept": ["she is a very good speaker"],
+    "anchors": ["speaks", "very", "well"],
+    "checks": [
+      { "pattern": "\\bshe\\s+speak\\b(?!s)", "message": "ประธานเอกพจน์ใช้ speaks" },
+      { "pattern": "\\bspeak(s)?\\s+very\\s+good\\b", "message": "ใช้ well ไม่ใช่ good" }
+    ]
+  },
+  {
+    "thai": "ฉันชินกับการตื่นเช้า",
+    "answer": "I am used to waking up early.",
+    "accept": ["i'm used to getting up early"],
+    "anchors": ["used", "waking", "early"],
+    "checks": [
+      { "pattern": "\\bused\\s+to\\s+wake\\b(?!s)", "message": "used to + V-ing: waking" },
+      { "pattern": "\\bi\\s+use\\s+to\\b", "message": "ใช้ am used to" }
+    ]
+  },
+  {
+    "thai": "มีนักท่องเที่ยวจำนวนมาก",
+    "answer": "There are a lot of tourists.",
+    "accept": ["there are many tourists"],
+    "anchors": ["there", "are", "tourists"],
+    "checks": [
+      { "pattern": "\\bthere\\s+is\\s+(a\\s+lot|many)\\b", "message": "พหูพจน์ใช้ there are" },
+      { "pattern": "\\b(many|of)\\s+tourist\\b(?!s)", "message": "เติม s → tourists" }
+    ]
+  },
+  {
+    "thai": "เด็กคนนั้นกำลังร้องไห้",
+    "answer": "That child is crying.",
+    "accept": ["that kid is crying"],
+    "anchors": ["child", "crying"],
+    "checks": [
+      { "pattern": "\\bchild\\s+are\\b", "message": "child เอกพจน์ ใช้ is" },
+      { "pattern": "\\bis\\s+cry\\b(?!ing)", "message": "ใช้ is crying" }
+    ]
+  },
+  {
+    "thai": "ฉันต้องการความช่วยเหลือของคุณ",
+    "answer": "I need your help.",
+    "accept": ["i need your help please"],
+    "anchors": ["need", "your", "help"],
+    "checks": [
+      { "pattern": "\\byour\\s+helps\\b", "message": "help นับไม่ได้ ไม่เติม s" },
+      { "pattern": "\\bneed\\s+for\\s+your\\s+help\\b", "message": "need your help ไม่ต้องมี for" }
+    ]
+  },
+  {
+    "thai": "เขามาสายเสมอ",
+    "answer": "He is always late.",
+    "accept": ["he always comes late"],
+    "anchors": ["always", "late"],
+    "checks": [
+      { "pattern": "\\bhe\\s+always\\s+late\\b", "message": "ขาด is: he is always late" },
+      { "pattern": "\\bis\\s+always\\s+come\\b(?!s)", "message": "ประธานเอกพจน์ใช้ comes" }
+    ]
+  },
+  {
+    "thai": "ฉันไม่เข้าใจคำถามนี้",
+    "answer": "I do not understand this question.",
+    "accept": ["i don't understand this question"],
+    "anchors": ["understand", "this", "question"],
+    "checks": [
+      { "pattern": "\\bi\\s+not\\s+understand\\b", "message": "ใช้ do not understand" },
+      { "pattern": "\\bthis\\s+questions\\b", "message": "this ตามด้วยเอกพจน์: this question" }
+    ]
+  },
+  {
+    "thai": "พวกเราสนุกกันมากเมื่อคืน",
+    "answer": "We had a lot of fun last night.",
+    "accept": ["we had so much fun last night", "we had a great time last night"],
+    "anchors": ["fun", "last", "night"],
+    "checks": [
+      { "pattern": "\\bwe\\s+have\\s+(a\\s+lot|fun|so)\\b", "message": "อดีตใช้ had" },
+      { "pattern": "\\bvery\\s+fun\\b", "message": "ใช้ a lot of fun / so much fun" }
+    ]
+  },
+  {
+    "thai": "เขาสูงกว่าพี่ชายของเขา",
+    "answer": "He is taller than his brother.",
+    "accept": ["he is taller than his older brother"],
+    "anchors": ["taller", "than", "brother"],
+    "checks": [
+      { "pattern": "\\bmore\\s+tall\\b", "message": "ใช้ taller ไม่ใช่ more tall" },
+      { "pattern": "\\btaller\\s+then\\b", "message": "เปรียบเทียบใช้ than ไม่ใช่ then" }
+    ]
+  },
+  {
+    "thai": "ฉันกำลังเรียนทำอาหาร",
+    "answer": "I am learning to cook.",
+    "accept": ["i'm learning how to cook"],
+    "anchors": ["learning", "cook"],
+    "checks": [
+      { "pattern": "\\bi\\s+learning\\b", "message": "ขาด am: I am learning" },
+      { "pattern": "\\blearning\\s+cook\\b", "message": "ใช้ learning to cook" }
+    ]
+  },
+  {
+    "thai": "อย่าลืมปิดไฟ",
+    "answer": "Do not forget to turn off the lights.",
+    "accept": ["don't forget to turn off the lights", "don't forget to switch off the lights"],
+    "anchors": ["forget", "turn", "off", "lights"],
+    "checks": [
+      { "pattern": "\\bforget\\s+turn\\b", "message": "ใช้ forget to turn" },
+      { "pattern": "\\bclose\\s+the\\s+light", "message": "ปิดไฟใช้ turn off the lights" }
+    ]
+  },
+  {
+    "thai": "เธอชอบฟังเพลง",
+    "answer": "She likes listening to music.",
+    "accept": ["she likes to listen to music", "she enjoys listening to music"],
+    "anchors": ["likes", "listening", "music"],
+    "checks": [
+      { "pattern": "\\bshe\\s+like\\b(?!s)", "message": "ประธานเอกพจน์ใช้ likes" },
+      { "pattern": "\\blisten(ing)?\\s+music\\b", "message": "ใช้ listen to music" }
+    ]
+  },
+  {
+    "thai": "ฉันอาศัยอยู่กับครอบครัว",
+    "answer": "I live with my family.",
+    "accept": ["i live with my family members"],
+    "anchors": ["live", "with", "family"],
+    "checks": [
+      { "pattern": "\\blive\\s+with\\s+family\\b", "message": "ต้องมี my: my family" },
+      { "pattern": "\\blive\\s+together\\s+with\\b", "message": "ใช้ live with" }
+    ]
+  }
+]

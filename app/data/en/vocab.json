@@ -1,0 +1,1045 @@
+[
+  {
+    "word": "resilient",
+    "phonetic": "/rɪˈzɪliənt/",
+    "thai_meaning": "ยืดหยุ่น, ฟื้นตัวได้",
+    "example": "She is very resilient and bounced back quickly after the setback.",
+    "choices": ["ยืดหยุ่น, ฟื้นตัวได้", "เปราะบาง", "ท้าทาย", "สับสน"]
+  },
+  {
+    "word": "emphasize",
+    "phonetic": "/ˈemfəsaɪz/",
+    "thai_meaning": "เน้นย้ำ",
+    "example": "The teacher always emphasizes the importance of daily practice.",
+    "choices": ["เน้นย้ำ", "สรุปความ", "วิเคราะห์", "อธิบาย"]
+  },
+  {
+    "word": "opportunity",
+    "phonetic": "/ˌɒpəˈtjuːnɪti/",
+    "thai_meaning": "โอกาส",
+    "example": "This new job is a great opportunity for your career growth.",
+    "choices": ["โอกาส", "อุปสรรค", "ความเสี่ยง", "ประสบการณ์"]
+  },
+  {
+    "word": "enormous",
+    "phonetic": "/ɪˈnɔːməs/",
+    "thai_meaning": "ใหญ่โตมาก",
+    "example": "The elephant was enormous compared to the small dog beside it.",
+    "choices": ["ใหญ่โตมาก", "เล็กมาก", "หนักมาก", "สูงมาก"]
+  },
+  {
+    "word": "anxious",
+    "phonetic": "/ˈæŋkʃəs/",
+    "thai_meaning": "กังวล, วิตกกังวล",
+    "example": "He felt anxious before his big presentation at work.",
+    "choices": ["กังวล, วิตกกังวล", "ตื่นเต้นดีใจ", "โกรธมาก", "เบื่อหน่าย"]
+  },
+  {
+    "word": "persist",
+    "phonetic": "/pəˈsɪst/",
+    "thai_meaning": "ยืนหยัด, ทำต่อไป",
+    "example": "You must persist even when the work becomes extremely difficult.",
+    "choices": ["ยืนหยัด, ทำต่อไป", "ล้มเลิก", "รอคอย", "หลีกเลี่ยง"]
+  },
+  {
+    "word": "grateful",
+    "phonetic": "/ˈɡreɪtfʊl/",
+    "thai_meaning": "รู้สึกขอบคุณ",
+    "example": "I am grateful for all the help you gave me last year.",
+    "choices": ["รู้สึกขอบคุณ", "โกรธเคือง", "ประหลาดใจ", "อ่อนเพลีย"]
+  },
+  {
+    "word": "negotiate",
+    "phonetic": "/nɪˈɡəʊʃieɪt/",
+    "thai_meaning": "เจรจาต่อรอง",
+    "example": "They had to negotiate the price before signing the contract.",
+    "choices": ["เจรจาต่อรอง", "ยอมรับทันที", "ปฏิเสธข้อเสนอ", "ลงนามเอกสาร"]
+  },
+  {
+    "word": "accumulate",
+    "phonetic": "/əˈkjuːmjʊleɪt/",
+    "thai_meaning": "สะสม",
+    "example": "Small savings can accumulate into a large amount over time.",
+    "choices": ["สะสม", "ใช้จ่าย", "แจกจ่าย", "ลดลง"]
+  },
+  {
+    "word": "acknowledge",
+    "phonetic": "/əkˈnɒlɪdʒ/",
+    "thai_meaning": "ยอมรับ, รับรู้",
+    "example": "She acknowledged that she had made a mistake in the report.",
+    "choices": ["ยอมรับ, รับรู้", "ปฏิเสธ", "ลืม", "เพิกเฉย"]
+  },
+  {
+    "word": "adequate",
+    "phonetic": "/ˈædɪkwət/",
+    "thai_meaning": "เพียงพอ",
+    "example": "Make sure you get adequate sleep before the exam tomorrow.",
+    "choices": ["เพียงพอ", "มากเกินไป", "ไม่เพียงพอ", "พอดี"]
+  },
+  {
+    "word": "ambiguous",
+    "phonetic": "/æmˈbɪɡjuəs/",
+    "thai_meaning": "คลุมเครือ, ไม่ชัดเจน",
+    "example": "His answer was ambiguous and left everyone confused.",
+    "choices": ["คลุมเครือ, ไม่ชัดเจน", "ชัดเจน", "ถูกต้อง", "ละเอียด"]
+  },
+  {
+    "word": "anticipate",
+    "phonetic": "/ænˈtɪsɪpeɪt/",
+    "thai_meaning": "คาดการณ์ล่วงหน้า",
+    "example": "We anticipate that the project will finish by next month.",
+    "choices": ["คาดการณ์ล่วงหน้า", "จำได้", "ลืม", "ประหลาดใจ"]
+  },
+  {
+    "word": "apparent",
+    "phonetic": "/əˈpærənt/",
+    "thai_meaning": "ชัดเจน, เห็นได้ชัด",
+    "example": "It was apparent that she had not slept well the night before.",
+    "choices": ["ชัดเจน, เห็นได้ชัด", "ซ่อนเร้น", "น่าสงสัย", "คลุมเครือ"]
+  },
+  {
+    "word": "assess",
+    "phonetic": "/əˈses/",
+    "thai_meaning": "ประเมิน",
+    "example": "The doctor will assess your condition and suggest a treatment.",
+    "choices": ["ประเมิน", "รักษา", "วินิจฉัย", "ทดสอบ"]
+  },
+  {
+    "word": "assumption",
+    "phonetic": "/əˈsʌmpʃən/",
+    "thai_meaning": "สมมติฐาน, การสันนิษฐาน",
+    "example": "His assumption was wrong; she was actually very happy about it.",
+    "choices": ["สมมติฐาน, การสันนิษฐาน", "ข้อเท็จจริง", "ข้อสรุป", "การพิสูจน์"]
+  },
+  {
+    "word": "benefit",
+    "phonetic": "/ˈbenɪfɪt/",
+    "thai_meaning": "ประโยชน์, ผลประโยชน์",
+    "example": "Exercise has many health benefits for both body and mind.",
+    "choices": ["ประโยชน์, ผลประโยชน์", "ข้อเสีย", "ความเสี่ยง", "ค่าใช้จ่าย"]
+  },
+  {
+    "word": "committed",
+    "phonetic": "/kəˈmɪtɪd/",
+    "thai_meaning": "มุ่งมั่น, ทุ่มเท",
+    "example": "She is fully committed to improving her English every single day.",
+    "choices": ["มุ่งมั่น, ทุ่มเท", "ลังเล", "เฉื่อยชา", "เบื่อหน่าย"]
+  },
+  {
+    "word": "competent",
+    "phonetic": "/ˈkɒmpɪtənt/",
+    "thai_meaning": "มีความสามารถ",
+    "example": "She is a very competent engineer who solves problems quickly.",
+    "choices": ["มีความสามารถ", "ไม่มีทักษะ", "ขี้เกียจ", "ผิดพลาดบ่อย"]
+  },
+  {
+    "word": "complex",
+    "phonetic": "/ˈkɒmpleks/",
+    "thai_meaning": "ซับซ้อน",
+    "example": "The instructions were so complex that nobody could follow them.",
+    "choices": ["ซับซ้อน", "เรียบง่าย", "ชัดเจน", "น่าสนใจ"]
+  },
+  {
+    "word": "confident",
+    "phonetic": "/ˈkɒnfɪdənt/",
+    "thai_meaning": "มั่นใจ",
+    "example": "He was very confident when he gave his speech in front of everyone.",
+    "choices": ["มั่นใจ", "กังวล", "เขินอาย", "ลังเล"]
+  },
+  {
+    "word": "consequence",
+    "phonetic": "/ˈkɒnsɪkwəns/",
+    "thai_meaning": "ผลที่ตามมา",
+    "example": "You must think about the consequences before making any big decision.",
+    "choices": ["ผลที่ตามมา", "สาเหตุ", "วิธีการ", "เป้าหมาย"]
+  },
+  {
+    "word": "consistent",
+    "phonetic": "/kənˈsɪstənt/",
+    "thai_meaning": "สม่ำเสมอ",
+    "example": "Being consistent in your study habits leads to long-term success.",
+    "choices": ["สม่ำเสมอ", "ไม่แน่นอน", "ช้า", "เร่งรีบ"]
+  },
+  {
+    "word": "contribute",
+    "phonetic": "/kənˈtrɪbjuːt/",
+    "thai_meaning": "มีส่วนร่วม, บริจาค",
+    "example": "Everyone in the team can contribute ideas to improve the project.",
+    "choices": ["มีส่วนร่วม, บริจาค", "รับเท่านั้น", "ขัดขวาง", "วิจารณ์"]
+  },
+  {
+    "word": "convince",
+    "phonetic": "/kənˈvɪns/",
+    "thai_meaning": "โน้มน้าว, ทำให้เชื่อ",
+    "example": "She tried to convince her parents to let her study abroad.",
+    "choices": ["โน้มน้าว, ทำให้เชื่อ", "บังคับ", "หลอกลวง", "ปฏิเสธ"]
+  },
+  {
+    "word": "crucial",
+    "phonetic": "/ˈkruːʃəl/",
+    "thai_meaning": "สำคัญมาก, สำคัญยิ่ง",
+    "example": "It is crucial to warm up before you start any intense exercise.",
+    "choices": ["สำคัญมาก, สำคัญยิ่ง", "ไม่จำเป็น", "น่าสนใจ", "ยากลำบาก"]
+  },
+  {
+    "word": "deadline",
+    "phonetic": "/ˈdedlaɪn/",
+    "thai_meaning": "กำหนดเส้นตาย",
+    "example": "We need to finish all the work before the deadline this Friday.",
+    "choices": ["กำหนดเส้นตาย", "เวลาพัก", "การนัดหมาย", "กำหนดการ"]
+  },
+  {
+    "word": "dedicated",
+    "phonetic": "/ˈdedɪkeɪtɪd/",
+    "thai_meaning": "ทุ่มเท, อุทิศตน",
+    "example": "She is a dedicated nurse who works long hours without complaining.",
+    "choices": ["ทุ่มเท, อุทิศตน", "ขี้เกียจ", "ไม่สนใจ", "เบื่อหน่าย"]
+  },
+  {
+    "word": "demonstrate",
+    "phonetic": "/ˈdemənstreɪt/",
+    "thai_meaning": "แสดงให้เห็น",
+    "example": "The trainer demonstrated how to use the machine safely and correctly.",
+    "choices": ["แสดงให้เห็น", "ซ่อนไว้", "อธิบายด้วยคำพูด", "ทดสอบ"]
+  },
+  {
+    "word": "determined",
+    "phonetic": "/dɪˈtɜːmɪnd/",
+    "thai_meaning": "มุ่งมั่น, ตั้งใจแน่วแน่",
+    "example": "Despite many failures, she remained determined to reach her goal.",
+    "choices": ["มุ่งมั่น, ตั้งใจแน่วแน่", "ลังเล", "ล้มเลิก", "เฉื่อยชา"]
+  },
+  {
+    "word": "distinguish",
+    "phonetic": "/dɪˈstɪŋɡwɪʃ/",
+    "thai_meaning": "แยกแยะ, บ่งบอกความแตกต่าง",
+    "example": "Can you distinguish between the two similar-sounding words?",
+    "choices": ["แยกแยะ, บ่งบอกความแตกต่าง", "รวมเข้าด้วยกัน", "เปรียบเทียบ", "อธิบาย"]
+  },
+  {
+    "word": "efficient",
+    "phonetic": "/ɪˈfɪʃənt/",
+    "thai_meaning": "มีประสิทธิภาพ",
+    "example": "Using a to-do list makes you far more efficient at managing your time.",
+    "choices": ["มีประสิทธิภาพ", "ช้า", "สิ้นเปลือง", "ยุ่งยาก"]
+  },
+  {
+    "word": "eliminate",
+    "phonetic": "/ɪˈlɪmɪneɪt/",
+    "thai_meaning": "กำจัด, ตัดทิ้ง",
+    "example": "We need to eliminate all errors before submitting the final report.",
+    "choices": ["กำจัด, ตัดทิ้ง", "เพิ่ม", "รักษา", "ค้นหา"]
+  },
+  {
+    "word": "encounter",
+    "phonetic": "/ɪnˈkaʊntə/",
+    "thai_meaning": "พบเจอ, ประสบกับ",
+    "example": "You may encounter many challenges when learning a new language.",
+    "choices": ["พบเจอ, ประสบกับ", "หลีกเลี่ยง", "ค้นหา", "สร้าง"]
+  },
+  {
+    "word": "establish",
+    "phonetic": "/ɪˈstæblɪʃ/",
+    "thai_meaning": "ก่อตั้ง, สร้างขึ้น",
+    "example": "They worked hard to establish a successful business from scratch.",
+    "choices": ["ก่อตั้ง, สร้างขึ้น", "ทำลาย", "ยุบเลิก", "โอนย้าย"]
+  },
+  {
+    "word": "evaluate",
+    "phonetic": "/ɪˈvæljueɪt/",
+    "thai_meaning": "ประเมินผล",
+    "example": "The manager will evaluate each employee's performance every quarter.",
+    "choices": ["ประเมินผล", "ลงโทษ", "ให้รางวัล", "ฝึกอบรม"]
+  },
+  {
+    "word": "evident",
+    "phonetic": "/ˈevɪdənt/",
+    "thai_meaning": "ชัดเจน, เห็นได้ชัด",
+    "example": "It was evident from her smile that she had passed the exam.",
+    "choices": ["ชัดเจน, เห็นได้ชัด", "ลึกลับ", "น่าสงสัย", "ซ่อนเร้น"]
+  },
+  {
+    "word": "flexible",
+    "phonetic": "/ˈfleksɪbəl/",
+    "thai_meaning": "ยืดหยุ่น, ปรับได้",
+    "example": "A flexible schedule allows you to manage both work and family life.",
+    "choices": ["ยืดหยุ่น, ปรับได้", "แข็งทื่อ", "เข้มงวด", "ซับซ้อน"]
+  },
+  {
+    "word": "frustrating",
+    "phonetic": "/ˈfrʌstreɪtɪŋ/",
+    "thai_meaning": "น่าหงุดหงิด",
+    "example": "It is frustrating when the internet connection keeps dropping.",
+    "choices": ["น่าหงุดหงิด", "น่ายินดี", "น่าตื่นเต้น", "น่าเบื่อ"]
+  },
+  {
+    "word": "generate",
+    "phonetic": "/ˈdʒenəreɪt/",
+    "thai_meaning": "สร้าง, ผลิต",
+    "example": "This campaign will generate a lot of interest from new customers.",
+    "choices": ["สร้าง, ผลิต", "ทำลาย", "ลด", "หยุด"]
+  },
+  {
+    "word": "hesitate",
+    "phonetic": "/ˈhezɪteɪt/",
+    "thai_meaning": "ลังเล",
+    "example": "Don't hesitate to ask questions if you don't understand something.",
+    "choices": ["ลังเล", "รีบเร่ง", "ตัดสินใจ", "เสนอ"]
+  },
+  {
+    "word": "implement",
+    "phonetic": "/ˈɪmplɪment/",
+    "thai_meaning": "นำไปใช้, ปฏิบัติ",
+    "example": "The school plans to implement a new teaching method next semester.",
+    "choices": ["นำไปใช้, ปฏิบัติ", "ยกเลิก", "วางแผน", "ประเมิน"]
+  },
+  {
+    "word": "imply",
+    "phonetic": "/ɪmˈplaɪ/",
+    "thai_meaning": "บอกเป็นนัย",
+    "example": "His silence seemed to imply that he was not happy with the result.",
+    "choices": ["บอกเป็นนัย", "บอกตรงๆ", "ปฏิเสธ", "ยืนยัน"]
+  },
+  {
+    "word": "improve",
+    "phonetic": "/ɪmˈpruːv/",
+    "thai_meaning": "ปรับปรุง, พัฒนา",
+    "example": "You can improve your English by practising a little bit every day.",
+    "choices": ["ปรับปรุง, พัฒนา", "ทำให้แย่ลง", "หยุด", "ทดสอบ"]
+  },
+  {
+    "word": "influence",
+    "phonetic": "/ˈɪnfluəns/",
+    "thai_meaning": "อิทธิพล, ส่งผล",
+    "example": "Good teachers have a strong influence on students' future choices.",
+    "choices": ["อิทธิพล, ส่งผล", "ไม่มีผลต่อ", "ขัดขวาง", "สอน"]
+  },
+  {
+    "word": "inspiring",
+    "phonetic": "/ɪnˈspaɪərɪŋ/",
+    "thai_meaning": "สร้างแรงบันดาลใจ",
+    "example": "Her story of overcoming difficulties is truly inspiring for everyone.",
+    "choices": ["สร้างแรงบันดาลใจ", "น่าเบื่อ", "ทำให้ท้อแท้", "น่ากลัว"]
+  },
+  {
+    "word": "intention",
+    "phonetic": "/ɪnˈtenʃən/",
+    "thai_meaning": "ความตั้งใจ",
+    "example": "His intention was to help, but the outcome was not what he expected.",
+    "choices": ["ความตั้งใจ", "ผลลัพธ์", "วิธีการ", "เหตุผล"]
+  },
+  {
+    "word": "involve",
+    "phonetic": "/ɪnˈvɒlv/",
+    "thai_meaning": "เกี่ยวข้อง, รวมถึง",
+    "example": "The project involves many people from different departments.",
+    "choices": ["เกี่ยวข้อง, รวมถึง", "แยกออกจาก", "ไม่รวม", "ตัดออก"]
+  },
+  {
+    "word": "justify",
+    "phonetic": "/ˈdʒʌstɪfaɪ/",
+    "thai_meaning": "พิสูจน์ความชอบธรรม, อธิบายเหตุผล",
+    "example": "Can you justify why you chose this approach over the other one?",
+    "choices": ["พิสูจน์ความชอบธรรม, อธิบายเหตุผล", "โกหก", "ปฏิเสธ", "วิจารณ์"]
+  },
+  {
+    "word": "maintain",
+    "phonetic": "/meɪnˈteɪn/",
+    "thai_meaning": "รักษา, ดูแล",
+    "example": "It is important to maintain a healthy diet and exercise routine.",
+    "choices": ["รักษา, ดูแล", "ทิ้ง", "เปลี่ยน", "ลด"]
+  },
+  {
+    "word": "meanwhile",
+    "phonetic": "/ˈmiːnwaɪl/",
+    "thai_meaning": "ในขณะเดียวกัน",
+    "example": "She cooked dinner; meanwhile, her husband set the table.",
+    "choices": ["ในขณะเดียวกัน", "ต่อมา", "ก่อนหน้านั้น", "ในที่สุด"]
+  },
+  {
+    "word": "mention",
+    "phonetic": "/ˈmenʃən/",
+    "thai_meaning": "กล่าวถึง",
+    "example": "He didn't mention any problems when we spoke yesterday.",
+    "choices": ["กล่าวถึง", "ลืม", "ปฏิเสธ", "อธิบาย"]
+  },
+  {
+    "word": "motivate",
+    "phonetic": "/ˈməʊtɪveɪt/",
+    "thai_meaning": "จูงใจ, กระตุ้น",
+    "example": "A good leader knows how to motivate their team to work harder.",
+    "choices": ["จูงใจ, กระตุ้น", "ข่มขู่", "บังคับ", "ลงโทษ"]
+  },
+  {
+    "word": "neglect",
+    "phonetic": "/nɪˈɡlekt/",
+    "thai_meaning": "ละเลย, ไม่ใส่ใจ",
+    "example": "Don't neglect your health just because you are too busy with work.",
+    "choices": ["ละเลย, ไม่ใส่ใจ", "ให้ความสำคัญ", "ดูแล", "ติดตาม"]
+  },
+  {
+    "word": "obstacle",
+    "phonetic": "/ˈɒbstəkəl/",
+    "thai_meaning": "อุปสรรค",
+    "example": "Every great success story involves overcoming at least one major obstacle.",
+    "choices": ["อุปสรรค", "โอกาส", "เป้าหมาย", "ความสำเร็จ"]
+  },
+  {
+    "word": "obvious",
+    "phonetic": "/ˈɒbviəs/",
+    "thai_meaning": "ชัดเจน, เห็นได้ชัด",
+    "example": "It was obvious that she was tired from working overtime every night.",
+    "choices": ["ชัดเจน, เห็นได้ชัด", "ลึกลับ", "ซับซ้อน", "น่าสงสัย"]
+  },
+  {
+    "word": "outcome",
+    "phonetic": "/ˈaʊtkʌm/",
+    "thai_meaning": "ผลลัพธ์",
+    "example": "The outcome of the meeting was better than anyone expected.",
+    "choices": ["ผลลัพธ์", "สาเหตุ", "กระบวนการ", "จุดเริ่มต้น"]
+  },
+  {
+    "word": "overcome",
+    "phonetic": "/ˌəʊvəˈkʌm/",
+    "thai_meaning": "เอาชนะ, ฟันฝ่า",
+    "example": "With hard work, anyone can overcome the fear of speaking in public.",
+    "choices": ["เอาชนะ, ฟันฝ่า", "ยอมแพ้", "หลีกเลี่ยง", "ยอมรับ"]
+  },
+  {
+    "word": "perceive",
+    "phonetic": "/pəˈsiːv/",
+    "thai_meaning": "รับรู้, มองว่า",
+    "example": "How others perceive you can affect your confidence at work.",
+    "choices": ["รับรู้, มองว่า", "ละเลย", "ปฏิเสธ", "เพิกเฉย"]
+  },
+  {
+    "word": "permanent",
+    "phonetic": "/ˈpɜːmənənt/",
+    "thai_meaning": "ถาวร",
+    "example": "The doctor said the damage to his knee was unfortunately permanent.",
+    "choices": ["ถาวร", "ชั่วคราว", "เป็นระยะ", "บางส่วน"]
+  },
+  {
+    "word": "possess",
+    "phonetic": "/pəˈzes/",
+    "thai_meaning": "มี, ครอบครอง",
+    "example": "She possesses rare skills that are very valuable in the tech industry.",
+    "choices": ["มี, ครอบครอง", "ขาด", "สูญเสีย", "ยืม"]
+  },
+  {
+    "word": "potential",
+    "phonetic": "/pəˈtenʃəl/",
+    "thai_meaning": "ศักยภาพ",
+    "example": "Every student has the potential to succeed if they put in effort.",
+    "choices": ["ศักยภาพ", "ข้อจำกัด", "ความล้มเหลว", "ประสบการณ์"]
+  },
+  {
+    "word": "precise",
+    "phonetic": "/prɪˈsaɪs/",
+    "thai_meaning": "แม่นยำ, ละเอียด",
+    "example": "Please give me a precise answer, not a rough estimate.",
+    "choices": ["แม่นยำ, ละเอียด", "คร่าวๆ", "ผิดพลาด", "ซับซ้อน"]
+  },
+  {
+    "word": "priority",
+    "phonetic": "/praɪˈɒrɪti/",
+    "thai_meaning": "สิ่งสำคัญอันดับแรก",
+    "example": "Your health should always be your number one priority in life.",
+    "choices": ["สิ่งสำคัญอันดับแรก", "ตัวเลือก", "ปัญหา", "โอกาส"]
+  },
+  {
+    "word": "productive",
+    "phonetic": "/prəˈdʌktɪv/",
+    "thai_meaning": "มีประสิทธิผล",
+    "example": "I feel most productive when I work in a quiet environment.",
+    "choices": ["มีประสิทธิผล", "เสียเวลา", "เกียจคร้าน", "วุ่นวาย"]
+  },
+  {
+    "word": "promote",
+    "phonetic": "/prəˈməʊt/",
+    "thai_meaning": "ส่งเสริม, เลื่อนตำแหน่ง",
+    "example": "The company promotes employees who show leadership and creativity.",
+    "choices": ["ส่งเสริม, เลื่อนตำแหน่ง", "ลดตำแหน่ง", "ไล่ออก", "ย้าย"]
+  },
+  {
+    "word": "pursue",
+    "phonetic": "/pəˈsjuː/",
+    "thai_meaning": "ไล่ตาม, มุ่งสู่",
+    "example": "You should pursue your dreams no matter what others say to you.",
+    "choices": ["ไล่ตาม, มุ่งสู่", "ละทิ้ง", "หลีกหนี", "รอ"]
+  },
+  {
+    "word": "realize",
+    "phonetic": "/ˈrɪəlaɪz/",
+    "thai_meaning": "ตระหนัก, รู้ตัว",
+    "example": "She didn't realize how much time had passed while she was reading.",
+    "choices": ["ตระหนัก, รู้ตัว", "ลืม", "เพิกเฉย", "สงสัย"]
+  },
+  {
+    "word": "recognize",
+    "phonetic": "/ˈrekəɡnaɪz/",
+    "thai_meaning": "จำได้, ยอมรับ",
+    "example": "I recognized his voice on the phone even though we hadn't spoken in years.",
+    "choices": ["จำได้, ยอมรับ", "ลืม", "ปฏิเสธ", "สับสน"]
+  },
+  {
+    "word": "recommend",
+    "phonetic": "/ˌrekəˈmend/",
+    "thai_meaning": "แนะนำ",
+    "example": "My doctor recommended that I get more sleep and less screen time.",
+    "choices": ["แนะนำ", "วิจารณ์", "บังคับ", "ห้าม"]
+  },
+  {
+    "word": "reflect",
+    "phonetic": "/rɪˈflekt/",
+    "thai_meaning": "สะท้อน, ไตร่ตรอง",
+    "example": "Take time to reflect on your mistakes and learn from them.",
+    "choices": ["สะท้อน, ไตร่ตรอง", "ลืม", "เพิกเฉย", "รีบทำ"]
+  },
+  {
+    "word": "relevant",
+    "phonetic": "/ˈreləvənt/",
+    "thai_meaning": "เกี่ยวข้อง",
+    "example": "Please only share information that is relevant to the main topic.",
+    "choices": ["เกี่ยวข้อง", "ไม่เกี่ยวข้อง", "น่าสนใจ", "สำคัญ"]
+  },
+  {
+    "word": "reluctant",
+    "phonetic": "/rɪˈlʌktənt/",
+    "thai_meaning": "ไม่เต็มใจ",
+    "example": "He was reluctant to admit that he had made such a big mistake.",
+    "choices": ["ไม่เต็มใจ", "กระตือรือร้น", "ยินดี", "พร้อม"]
+  },
+  {
+    "word": "require",
+    "phonetic": "/rɪˈkwaɪə/",
+    "thai_meaning": "ต้องการ, กำหนดให้",
+    "example": "This job requires both strong technical skills and good communication.",
+    "choices": ["ต้องการ, กำหนดให้", "เสนอ", "แนะนำ", "ยอมรับ"]
+  },
+  {
+    "word": "resolve",
+    "phonetic": "/rɪˈzɒlv/",
+    "thai_meaning": "แก้ไข, ตัดสินใจ",
+    "example": "The two companies managed to resolve their dispute outside of court.",
+    "choices": ["แก้ไข, ตัดสินใจ", "สร้าง", "หลีกเลี่ยง", "ทำให้รุนแรงขึ้น"]
+  },
+  {
+    "word": "responsibility",
+    "phonetic": "/rɪˌspɒnsɪˈbɪlɪti/",
+    "thai_meaning": "ความรับผิดชอบ",
+    "example": "Taking responsibility for your mistakes shows great maturity.",
+    "choices": ["ความรับผิดชอบ", "สิทธิ์", "ข้อยกเว้น", "อำนาจ"]
+  },
+  {
+    "word": "sensitive",
+    "phonetic": "/ˈsensɪtɪv/",
+    "thai_meaning": "ไวต่อความรู้สึก, อ่อนไหว",
+    "example": "Be sensitive to how others feel when you give feedback.",
+    "choices": ["ไวต่อความรู้สึก, อ่อนไหว", "ไม่แยแส", "แข็งกร้าว", "กล้าหาญ"]
+  },
+  {
+    "word": "significant",
+    "phonetic": "/sɪɡˈnɪfɪkənt/",
+    "thai_meaning": "สำคัญ, มีนัยสำคัญ",
+    "example": "There has been a significant improvement in her reading skills.",
+    "choices": ["สำคัญ, มีนัยสำคัญ", "เล็กน้อย", "ไม่สำคัญ", "เป็นประโยชน์"]
+  },
+  {
+    "word": "stimulate",
+    "phonetic": "/ˈstɪmjʊleɪt/",
+    "thai_meaning": "กระตุ้น",
+    "example": "Reading books can stimulate your imagination and creativity greatly.",
+    "choices": ["กระตุ้น", "ลดลง", "หยุด", "ยับยั้ง"]
+  },
+  {
+    "word": "strategy",
+    "phonetic": "/ˈstrætɪdʒi/",
+    "thai_meaning": "กลยุทธ์",
+    "example": "We need a clear strategy before we start the new marketing campaign.",
+    "choices": ["กลยุทธ์", "ปัญหา", "ผลลัพธ์", "ขั้นตอน"]
+  },
+  {
+    "word": "sufficient",
+    "phonetic": "/səˈfɪʃənt/",
+    "thai_meaning": "เพียงพอ",
+    "example": "Make sure you have sufficient funds before booking your trip abroad.",
+    "choices": ["เพียงพอ", "ไม่พอ", "มากเกินไป", "จำกัด"]
+  },
+  {
+    "word": "suitable",
+    "phonetic": "/ˈsuːtəbəl/",
+    "thai_meaning": "เหมาะสม",
+    "example": "That dress is very suitable for the formal dinner tonight.",
+    "choices": ["เหมาะสม", "ไม่เหมาะ", "ดีเกินไป", "น่าเบื่อ"]
+  },
+  {
+    "word": "summarize",
+    "phonetic": "/ˈsʌməraɪz/",
+    "thai_meaning": "สรุป",
+    "example": "Can you summarize the main points from the article in three sentences?",
+    "choices": ["สรุป", "อธิบายละเอียด", "อ่าน", "ท่อง"]
+  },
+  {
+    "word": "sustainable",
+    "phonetic": "/səˈsteɪnəbəl/",
+    "thai_meaning": "ยั่งยืน",
+    "example": "We need to find sustainable ways to power our cities and homes.",
+    "choices": ["ยั่งยืน", "ชั่วคราว", "สิ้นเปลือง", "ล้าสมัย"]
+  },
+  {
+    "word": "temporary",
+    "phonetic": "/ˈtempərəri/",
+    "thai_meaning": "ชั่วคราว",
+    "example": "This is just a temporary solution; we need a permanent fix soon.",
+    "choices": ["ชั่วคราว", "ถาวร", "ยาวนาน", "เป็นปกติ"]
+  },
+  {
+    "word": "tendency",
+    "phonetic": "/ˈtendənsi/",
+    "thai_meaning": "แนวโน้ม",
+    "example": "She has a tendency to overthink simple problems before acting.",
+    "choices": ["แนวโน้ม", "นิสัย", "ความตั้งใจ", "พฤติกรรม"]
+  },
+  {
+    "word": "thorough",
+    "phonetic": "/ˈθʌrə/",
+    "thai_meaning": "ละเอียดถี่ถ้วน",
+    "example": "Please do a thorough check of the document before you send it.",
+    "choices": ["ละเอียดถี่ถ้วน", "รวดเร็ว", "คร่าวๆ", "ไม่สมบูรณ์"]
+  },
+  {
+    "word": "transparent",
+    "phonetic": "/trænsˈpærənt/",
+    "thai_meaning": "โปร่งใส",
+    "example": "Good leaders are transparent about their decisions and reasoning.",
+    "choices": ["โปร่งใส", "ลึกลับ", "ซ่อนเร้น", "ซับซ้อน"]
+  },
+  {
+    "word": "ultimately",
+    "phonetic": "/ˈʌltɪmətli/",
+    "thai_meaning": "ในที่สุด",
+    "example": "Ultimately, the decision to study abroad is yours alone to make.",
+    "choices": ["ในที่สุด", "ในตอนแรก", "บางครั้ง", "ทันที"]
+  },
+  {
+    "word": "underestimate",
+    "phonetic": "/ˌʌndərˈestɪmeɪt/",
+    "thai_meaning": "ประเมินต่ำเกินไป",
+    "example": "Never underestimate the power of small, daily improvements.",
+    "choices": ["ประเมินต่ำเกินไป", "ประเมินสูงเกินไป", "วัดผล", "เพิกเฉย"]
+  },
+  {
+    "word": "unique",
+    "phonetic": "/juːˈniːk/",
+    "thai_meaning": "เป็นเอกลักษณ์, ไม่เหมือนใคร",
+    "example": "Each student has a unique way of learning that works best for them.",
+    "choices": ["เป็นเอกลักษณ์, ไม่เหมือนใคร", "เหมือนกัน", "ธรรมดา", "ซ้ำซาก"]
+  },
+  {
+    "word": "update",
+    "phonetic": "/ʌpˈdeɪt/",
+    "thai_meaning": "อัปเดต, ปรับปรุง",
+    "example": "Please update me on any changes to the plan as soon as possible.",
+    "choices": ["อัปเดต, ปรับปรุง", "ลบ", "ย้อนกลับ", "รักษาเดิม"]
+  },
+  {
+    "word": "valid",
+    "phonetic": "/ˈvælɪd/",
+    "thai_meaning": "ถูกต้อง, ใช้ได้",
+    "example": "That is a very valid point; we should definitely think about it more.",
+    "choices": ["ถูกต้อง, ใช้ได้", "ผิดพลาด", "ล้าสมัย", "ไม่สมบูรณ์"]
+  },
+  {
+    "word": "variety",
+    "phonetic": "/vəˈraɪəti/",
+    "thai_meaning": "ความหลากหลาย",
+    "example": "Having a variety of study materials keeps learning from getting boring.",
+    "choices": ["ความหลากหลาย", "ความซ้ำซาก", "ความเหมือนกัน", "ความสม่ำเสมอ"]
+  },
+  {
+    "word": "voluntary",
+    "phonetic": "/ˈvɒlənteri/",
+    "thai_meaning": "สมัครใจ",
+    "example": "Helping at the food bank was a completely voluntary activity.",
+    "choices": ["สมัครใจ", "บังคับ", "มีเงินตอบแทน", "เป็นทางการ"]
+  },
+  {
+    "word": "vulnerable",
+    "phonetic": "/ˈvʌlnərəbəl/",
+    "thai_meaning": "เปราะบาง, อ่อนแอ",
+    "example": "Young children are more vulnerable to cold and flu infections.",
+    "choices": ["เปราะบาง, อ่อนแอ", "แข็งแกร่ง", "ปลอดภัย", "ได้รับการปกป้อง"]
+  },
+  {
+    "word": "withdraw",
+    "phonetic": "/wɪðˈdrɔː/",
+    "thai_meaning": "ถอนตัว, ดึงกลับ",
+    "example": "She decided to withdraw from the competition due to an injury.",
+    "choices": ["ถอนตัว, ดึงกลับ", "เข้าร่วม", "ยืนยัน", "สมัคร"]
+  },
+  {
+    "word": "worthwhile",
+    "phonetic": "/ˌwɜːθˈwaɪl/",
+    "thai_meaning": "คุ้มค่า",
+    "example": "Learning a new language is challenging, but it is very worthwhile.",
+    "choices": ["คุ้มค่า", "เสียเวลา", "ยากเกินไป", "ไม่จำเป็น"]
+  },
+  {
+    "word": "curious",
+    "phonetic": "/ˈkjʊəriəs/",
+    "thai_meaning": "อยากรู้อยากเห็น",
+    "example": "Children are naturally curious and love exploring new things.",
+    "choices": ["อยากรู้อยากเห็น", "เบื่อหน่าย", "กลัว", "ขี้อาย"]
+  },
+  {
+    "word": "diligent",
+    "phonetic": "/ˈdɪlɪdʒənt/",
+    "thai_meaning": "ขยันหมั่นเพียร",
+    "example": "Diligent students usually perform better in both work and exams.",
+    "choices": ["ขยันหมั่นเพียร", "ขี้เกียจ", "ไม่สนใจ", "ไม่ตั้งใจ"]
+  },
+  {
+    "word": "empathy",
+    "phonetic": "/ˈempəθi/",
+    "thai_meaning": "ความเข้าอกเข้าใจ",
+    "example": "A great manager shows empathy toward the struggles of their team.",
+    "choices": ["ความเข้าอกเข้าใจ", "ความเย็นชา", "ความโกรธ", "ความไม่แยแส"]
+  },
+  {
+    "word": "fundamental",
+    "phonetic": "/ˌfʌndəˈmentəl/",
+    "thai_meaning": "พื้นฐาน, สำคัญมาก",
+    "example": "Understanding grammar is fundamental to learning any new language.",
+    "choices": ["พื้นฐาน, สำคัญมาก", "ไม่สำคัญ", "ขั้นสูง", "ทางเลือก"]
+  },
+  {
+    "word": "inevitable",
+    "phonetic": "/ɪnˈevɪtəbəl/",
+    "thai_meaning": "หลีกเลี่ยงไม่ได้",
+    "example": "Change is inevitable; we must learn to adapt to it quickly.",
+    "choices": ["หลีกเลี่ยงไม่ได้", "สามารถป้องกันได้", "ไม่แน่นอน", "เป็นทางเลือก"]
+  },
+  {
+    "word": "innovative",
+    "phonetic": "/ˈɪnəveɪtɪv/",
+    "thai_meaning": "สร้างสรรค์, มีนวัตกรรม",
+    "example": "The company is known for its innovative approach to product design.",
+    "choices": ["สร้างสรรค์, มีนวัตกรรม", "ล้าสมัย", "ซ้ำซาก", "ธรรมดา"]
+  },
+  {
+    "word": "loyal",
+    "phonetic": "/ˈlɔɪəl/",
+    "thai_meaning": "ซื่อสัตย์, จงรักภักดี",
+    "example": "A loyal friend will stand by you no matter what happens.",
+    "choices": ["ซื่อสัตย์, จงรักภักดี", "ทรยศ", "เห็นแก่ตัว", "ไม่น่าเชื่อถือ"]
+  },
+  {
+    "word": "abundant",
+    "phonetic": "/əˈbʌndənt/",
+    "thai_meaning": "อุดมสมบูรณ์, มีมากมาย",
+    "example": "The region has abundant natural resources like water and forests.",
+    "choices": ["อุดมสมบูรณ์, มีมากมาย", "ขาดแคลน", "หายาก", "พอประมาณ"]
+  },
+  {
+    "word": "accurate",
+    "phonetic": "/ˈækjərət/",
+    "thai_meaning": "แม่นยำ, ถูกต้อง",
+    "example": "Please make sure your measurements are accurate before cutting.",
+    "choices": ["แม่นยำ, ถูกต้อง", "คลาดเคลื่อน", "คร่าวๆ", "ล่าช้า"]
+  },
+  {
+    "word": "adapt",
+    "phonetic": "/əˈdæpt/",
+    "thai_meaning": "ปรับตัว",
+    "example": "It can be hard to adapt to a new culture at first.",
+    "choices": ["ปรับตัว", "ปฏิเสธ", "ทำซ้ำ", "ยอมแพ้"]
+  },
+  {
+    "word": "adventurous",
+    "phonetic": "/ədˈventʃərəs/",
+    "thai_meaning": "ชอบผจญภัย, กล้าเสี่ยง",
+    "example": "She is adventurous and loves trying extreme sports.",
+    "choices": ["ชอบผจญภัย, กล้าเสี่ยง", "ขี้กลัว", "ระมัดระวัง", "เฉื่อยชา"]
+  },
+  {
+    "word": "allocate",
+    "phonetic": "/ˈæləkeɪt/",
+    "thai_meaning": "จัดสรร, แบ่งสรร",
+    "example": "The manager will allocate the budget across all departments.",
+    "choices": ["จัดสรร, แบ่งสรร", "สะสม", "ใช้จ่ายฟุ่มเฟือย", "ยกเลิก"]
+  },
+  {
+    "word": "analyze",
+    "phonetic": "/ˈænəlaɪz/",
+    "thai_meaning": "วิเคราะห์",
+    "example": "Scientists analyze the data before drawing any conclusion.",
+    "choices": ["วิเคราะห์", "คาดเดา", "รวบรวม", "ละเลย"]
+  },
+  {
+    "word": "appreciate",
+    "phonetic": "/əˈpriːʃieɪt/",
+    "thai_meaning": "เห็นคุณค่า, ซาบซึ้ง",
+    "example": "I really appreciate everything you have done for me.",
+    "choices": ["เห็นคุณค่า, ซาบซึ้ง", "มองข้าม", "ดูถูก", "สงสัย"]
+  },
+  {
+    "word": "authentic",
+    "phonetic": "/ɔːˈθentɪk/",
+    "thai_meaning": "แท้จริง, ของแท้",
+    "example": "This restaurant serves authentic Italian food.",
+    "choices": ["แท้จริง, ของแท้", "ปลอม", "ราคาถูก", "ทันสมัย"]
+  },
+  {
+    "word": "cautious",
+    "phonetic": "/ˈkɔːʃəs/",
+    "thai_meaning": "ระมัดระวัง",
+    "example": "Be cautious when you cross the busy street.",
+    "choices": ["ระมัดระวัง", "ประมาท", "กล้าหาญ", "รีบเร่ง"]
+  },
+  {
+    "word": "collaborate",
+    "phonetic": "/kəˈlæbəreɪt/",
+    "thai_meaning": "ร่วมมือกัน",
+    "example": "The two teams will collaborate on the new project.",
+    "choices": ["ร่วมมือกัน", "แข่งขัน", "ขัดแย้ง", "แยกตัว"]
+  },
+  {
+    "word": "compromise",
+    "phonetic": "/ˈkɒmprəmaɪz/",
+    "thai_meaning": "ประนีประนอม",
+    "example": "Both sides had to compromise to reach an agreement.",
+    "choices": ["ประนีประนอม", "ยืนกราน", "ปฏิเสธ", "หลีกเลี่ยง"]
+  },
+  {
+    "word": "comprehensive",
+    "phonetic": "/ˌkɒmprɪˈhensɪv/",
+    "thai_meaning": "ครอบคลุม, ละเอียดครบถ้วน",
+    "example": "The report gives a comprehensive overview of the market.",
+    "choices": ["ครอบคลุม, ละเอียดครบถ้วน", "คร่าวๆ", "ไม่สมบูรณ์", "สั้นกระชับ"]
+  },
+  {
+    "word": "conventional",
+    "phonetic": "/kənˈvenʃənəl/",
+    "thai_meaning": "ตามแบบแผน, ดั้งเดิม",
+    "example": "He prefers conventional methods over modern technology.",
+    "choices": ["ตามแบบแผน, ดั้งเดิม", "แปลกใหม่", "ทันสมัย", "สร้างสรรค์"]
+  },
+  {
+    "word": "deliberate",
+    "phonetic": "/dɪˈlɪbərət/",
+    "thai_meaning": "จงใจ, ตั้งใจ",
+    "example": "Her silence was deliberate, not accidental.",
+    "choices": ["จงใจ, ตั้งใจ", "บังเอิญ", "รีบร้อน", "ลังเล"]
+  },
+  {
+    "word": "deteriorate",
+    "phonetic": "/dɪˈtɪəriəreɪt/",
+    "thai_meaning": "เสื่อมลง, ทรุดโทรม",
+    "example": "His health began to deteriorate after the accident.",
+    "choices": ["เสื่อมลง, ทรุดโทรม", "ดีขึ้น", "คงที่", "ฟื้นตัว"]
+  },
+  {
+    "word": "diminish",
+    "phonetic": "/dɪˈmɪnɪʃ/",
+    "thai_meaning": "ลดลง, ทำให้น้อยลง",
+    "example": "The pain will gradually diminish over time.",
+    "choices": ["ลดลง, ทำให้น้อยลง", "เพิ่มขึ้น", "คงเดิม", "หายไปทันที"]
+  },
+  {
+    "word": "disrupt",
+    "phonetic": "/dɪsˈrʌpt/",
+    "thai_meaning": "ขัดขวาง, ทำให้ชะงัก",
+    "example": "The storm could disrupt flights across the country.",
+    "choices": ["ขัดขวาง, ทำให้ชะงัก", "สนับสนุน", "เร่งให้เร็ว", "จัดระเบียบ"]
+  },
+  {
+    "word": "elaborate",
+    "phonetic": "/ɪˈlæbərət/",
+    "thai_meaning": "ละเอียด, ซับซ้อนประณีต",
+    "example": "She gave an elaborate explanation of the whole process.",
+    "choices": ["ละเอียด, ซับซ้อนประณีต", "ง่ายๆ", "สั้นๆ", "คลุมเครือ"]
+  },
+  {
+    "word": "endure",
+    "phonetic": "/ɪnˈdjʊə/",
+    "thai_meaning": "อดทน, ทนทาน",
+    "example": "They had to endure many hardships during the war.",
+    "choices": ["อดทน, ทนทาน", "ยอมแพ้", "หลีกเลี่ยง", "เพลิดเพลิน"]
+  },
+  {
+    "word": "enhance",
+    "phonetic": "/ɪnˈhɑːns/",
+    "thai_meaning": "เพิ่มพูน, ส่งเสริมให้ดีขึ้น",
+    "example": "Good lighting can enhance the mood of a room.",
+    "choices": ["เพิ่มพูน, ส่งเสริมให้ดีขึ้น", "ลดทอน", "ทำลาย", "ปิดบัง"]
+  },
+  {
+    "word": "essential",
+    "phonetic": "/ɪˈsenʃəl/",
+    "thai_meaning": "จำเป็น, สำคัญยิ่ง",
+    "example": "Water is essential for all living things.",
+    "choices": ["จำเป็น, สำคัญยิ่ง", "ไม่จำเป็น", "เป็นส่วนเสริม", "ฟุ่มเฟือย"]
+  },
+  {
+    "word": "exaggerate",
+    "phonetic": "/ɪɡˈzædʒəreɪt/",
+    "thai_meaning": "พูดเกินจริง",
+    "example": "Do not exaggerate; it was not that expensive.",
+    "choices": ["พูดเกินจริง", "พูดความจริง", "พูดน้อย", "ปกปิด"]
+  },
+  {
+    "word": "feasible",
+    "phonetic": "/ˈfiːzəbəl/",
+    "thai_meaning": "ทำได้, เป็นไปได้",
+    "example": "Is it feasible to finish the project in one week?",
+    "choices": ["ทำได้, เป็นไปได้", "เป็นไปไม่ได้", "ยากเกินไป", "มีค่าใช้จ่ายสูง"]
+  },
+  {
+    "word": "genuine",
+    "phonetic": "/ˈdʒenjuɪn/",
+    "thai_meaning": "แท้จริง, จริงใจ",
+    "example": "She showed genuine concern for the patients.",
+    "choices": ["แท้จริง, จริงใจ", "เสแสร้ง", "ผิวเผิน", "เย็นชา"]
+  },
+  {
+    "word": "hospitable",
+    "phonetic": "/hɒˈspɪtəbəl/",
+    "thai_meaning": "มีน้ำใจต้อนรับ, อัธยาศัยดี",
+    "example": "The local people were warm and hospitable to visitors.",
+    "choices": ["มีน้ำใจต้อนรับ, อัธยาศัยดี", "เย็นชา", "หยาบคาย", "ขี้ระแวง"]
+  },
+  {
+    "word": "illustrate",
+    "phonetic": "/ˈɪləstreɪt/",
+    "thai_meaning": "แสดงให้เห็น, ยกตัวอย่างประกอบ",
+    "example": "Let me illustrate my point with a simple example.",
+    "choices": ["แสดงให้เห็น, ยกตัวอย่างประกอบ", "ปกปิด", "สรุปย่อ", "ตั้งคำถาม"]
+  },
+  {
+    "word": "indicate",
+    "phonetic": "/ˈɪndɪkeɪt/",
+    "thai_meaning": "บ่งชี้, แสดงถึง",
+    "example": "These results indicate a clear improvement in sales.",
+    "choices": ["บ่งชี้, แสดงถึง", "ปฏิเสธ", "ซ่อนเร้น", "คาดเดา"]
+  },
+  {
+    "word": "intricate",
+    "phonetic": "/ˈɪntrɪkət/",
+    "thai_meaning": "ซับซ้อน, ประณีต",
+    "example": "The watch has an intricate design with tiny moving parts.",
+    "choices": ["ซับซ้อน, ประณีต", "เรียบง่าย", "หยาบ", "ใหญ่โต"]
+  },
+  {
+    "word": "legitimate",
+    "phonetic": "/lɪˈdʒɪtɪmət/",
+    "thai_meaning": "ถูกต้องตามกฎหมาย, ชอบธรรม",
+    "example": "He has a legitimate reason for being absent today.",
+    "choices": ["ถูกต้องตามกฎหมาย, ชอบธรรม", "ผิดกฎหมาย", "น่าสงสัย", "ไม่สมเหตุสมผล"]
+  },
+  {
+    "word": "meticulous",
+    "phonetic": "/məˈtɪkjələs/",
+    "thai_meaning": "พิถีพิถัน, ละเอียดรอบคอบ",
+    "example": "She is meticulous about keeping her records accurate.",
+    "choices": ["พิถีพิถัน, ละเอียดรอบคอบ", "สะเพร่า", "รีบร้อน", "ขี้เกียจ"]
+  },
+  {
+    "word": "notable",
+    "phonetic": "/ˈnəʊtəbəl/",
+    "thai_meaning": "น่าสังเกต, โดดเด่น",
+    "example": "There was a notable increase in tourists this year.",
+    "choices": ["น่าสังเกต, โดดเด่น", "เล็กน้อย", "ธรรมดา", "ไม่ชัดเจน"]
+  },
+  {
+    "word": "nurture",
+    "phonetic": "/ˈnɜːtʃə/",
+    "thai_meaning": "บ่มเพาะ, เลี้ยงดู",
+    "example": "Good teachers nurture the talents of their students.",
+    "choices": ["บ่มเพาะ, เลี้ยงดู", "ละเลย", "ขัดขวาง", "ทำลาย"]
+  },
+  {
+    "word": "optimistic",
+    "phonetic": "/ˌɒptɪˈmɪstɪk/",
+    "thai_meaning": "มองโลกในแง่ดี",
+    "example": "She stayed optimistic even during difficult times.",
+    "choices": ["มองโลกในแง่ดี", "มองโลกในแง่ร้าย", "ไม่แยแส", "วิตกกังวล"]
+  },
+  {
+    "word": "persuade",
+    "phonetic": "/pəˈsweɪd/",
+    "thai_meaning": "โน้มน้าว, ชักชวน",
+    "example": "I tried to persuade him to join our study group.",
+    "choices": ["โน้มน้าว, ชักชวน", "บังคับ", "ขัดขวาง", "หลอกลวง"]
+  },
+  {
+    "word": "prominent",
+    "phonetic": "/ˈprɒmɪnənt/",
+    "thai_meaning": "โดดเด่น, มีชื่อเสียง",
+    "example": "She is a prominent scientist in her field.",
+    "choices": ["โดดเด่น, มีชื่อเสียง", "ไม่มีชื่อเสียง", "ธรรมดา", "ซ่อนเร้น"]
+  },
+  {
+    "word": "reinforce",
+    "phonetic": "/ˌriːɪnˈfɔːs/",
+    "thai_meaning": "เสริมกำลัง, ตอกย้ำ",
+    "example": "Daily practice will reinforce what you learn in class.",
+    "choices": ["เสริมกำลัง, ตอกย้ำ", "ทำให้อ่อนแอ", "ลบล้าง", "ละเลย"]
+  },
+  {
+    "word": "reliable",
+    "phonetic": "/rɪˈlaɪəbəl/",
+    "thai_meaning": "น่าเชื่อถือ, ไว้ใจได้",
+    "example": "He is a reliable worker who never misses a deadline.",
+    "choices": ["น่าเชื่อถือ, ไว้ใจได้", "ไม่แน่นอน", "ขี้เกียจ", "หลอกลวง"]
+  },
+  {
+    "word": "scrutinize",
+    "phonetic": "/ˈskruːtɪnaɪz/",
+    "thai_meaning": "ตรวจสอบอย่างละเอียด",
+    "example": "The auditor will scrutinize every financial record.",
+    "choices": ["ตรวจสอบอย่างละเอียด", "มองผ่านๆ", "เพิกเฉย", "อนุมัติทันที"]
+  },
+  {
+    "word": "spontaneous",
+    "phonetic": "/spɒnˈteɪniəs/",
+    "thai_meaning": "ที่เกิดขึ้นเอง, ฉับพลัน",
+    "example": "We made a spontaneous decision to travel that weekend.",
+    "choices": ["ที่เกิดขึ้นเอง, ฉับพลัน", "ที่วางแผนไว้", "ลังเล", "ตามคำสั่ง"]
+  },
+  {
+    "word": "subtle",
+    "phonetic": "/ˈsʌtəl/",
+    "thai_meaning": "ละเอียดอ่อน, แนบเนียน",
+    "example": "There is a subtle difference between the two colors.",
+    "choices": ["ละเอียดอ่อน, แนบเนียน", "ชัดเจนมาก", "หยาบ", "รุนแรง"]
+  },
+  {
+    "word": "tedious",
+    "phonetic": "/ˈtiːdiəs/",
+    "thai_meaning": "น่าเบื่อ, ซ้ำซากจำเจ",
+    "example": "Filling out all these forms is a tedious task.",
+    "choices": ["น่าเบื่อ, ซ้ำซากจำเจ", "น่าตื่นเต้น", "ง่ายดาย", "สำคัญ"]
+  },
+  {
+    "word": "versatile",
+    "phonetic": "/ˈvɜːsətaɪl/",
+    "thai_meaning": "อเนกประสงค์, ทำได้หลายอย่าง",
+    "example": "A smartphone is a versatile device with many uses.",
+    "choices": ["อเนกประสงค์, ทำได้หลายอย่าง", "ใช้ได้อย่างเดียว", "ล้าสมัย", "เปราะบาง"]
+  },
+  {
+    "word": "vivid",
+    "phonetic": "/ˈvɪvɪd/",
+    "thai_meaning": "ชัดเจน, สดใสมีชีวิตชีวา",
+    "example": "She has vivid memories of her childhood home.",
+    "choices": ["ชัดเจน, สดใสมีชีวิตชีวา", "เลือนราง", "มืดมัว", "น่าเบื่อ"]
+  },
+  {
+    "word": "widespread",
+    "phonetic": "/ˈwaɪdspred/",
+    "thai_meaning": "แพร่หลาย, กว้างขวาง",
+    "example": "The new app gained widespread popularity very quickly.",
+    "choices": ["แพร่หลาย, กว้างขวาง", "จำกัดวงแคบ", "หายาก", "เฉพาะกลุ่ม"]
+  }
+]

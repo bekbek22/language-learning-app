@@ -1,0 +1,1090 @@
+[
+  {
+    "sentence": "She loves cats and keeps many books on her shelf.",
+    "targets": [
+      {"word": "loves",  "reduced": ["love"],  "sound": "-z"},
+      {"word": "cats",   "reduced": ["cat"],   "sound": "-s"},
+      {"word": "keeps",  "reduced": ["keep"],  "sound": "-s"},
+      {"word": "books",  "reduced": ["book"],  "sound": "-s"}
+    ]
+  },
+  {
+    "sentence": "He always eats rice and drinks green tea for breakfast.",
+    "targets": [
+      {"word": "eats",   "reduced": ["eat"],   "sound": "-s"},
+      {"word": "drinks", "reduced": ["drink"], "sound": "-s"}
+    ]
+  },
+  {
+    "sentence": "The boys run fast and jump over the wooden fences.",
+    "targets": [
+      {"word": "boys",   "reduced": ["boy"],   "sound": "-z"},
+      {"word": "fences", "reduced": ["fence"], "sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "My sister works late and always meets her deadlines.",
+    "targets": [
+      {"word": "works",     "reduced": ["work"],     "sound": "-s"},
+      {"word": "meets",     "reduced": ["meet"],     "sound": "-s"},
+      {"word": "deadlines", "reduced": ["deadline"], "sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "The teacher reads poems aloud to the whole class.",
+    "targets": [
+      {"word": "reads", "reduced": ["read"], "sound": "-z"},
+      {"word": "poems", "reduced": ["poem"], "sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "He cleans his shoes and checks his bag every morning.",
+    "targets": [
+      {"word": "cleans", "reduced": ["clean"], "sound": "-z"},
+      {"word": "shoes",  "reduced": ["shoe"],  "sound": "-z"},
+      {"word": "checks", "reduced": ["check"], "sound": "-s"}
+    ]
+  },
+  {
+    "sentence": "She types fast and sends many emails from her office.",
+    "targets": [
+      {"word": "types",  "reduced": ["type"],  "sound": "-s"},
+      {"word": "sends",  "reduced": ["send"],  "sound": "-z"},
+      {"word": "emails", "reduced": ["email"], "sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "The birds sing when the sun rises over the quiet river.",
+    "targets": [
+      {"word": "birds", "reduced": ["bird"], "sound": "-z"},
+      {"word": "rises", "reduced": ["rise"], "sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "He drives carefully and stops at every red traffic light.",
+    "targets": [
+      {"word": "drives", "reduced": ["drive"], "sound": "-z"},
+      {"word": "stops",  "reduced": ["stop"],  "sound": "-s"}
+    ]
+  },
+  {
+    "sentence": "My parents cook and wash the dishes together every evening.",
+    "targets": [
+      {"word": "parents", "reduced": ["parent"], "sound": "-s"},
+      {"word": "dishes",  "reduced": ["dish"],   "sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "She paints flowers and sells her work at the weekend market.",
+    "targets": [
+      {"word": "paints", "reduced": ["paint"], "sound": "-s"},
+      {"word": "sells",  "reduced": ["sell"],  "sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "The cat sits by the window and watches the birds outside.",
+    "targets": [
+      {"word": "sits",    "reduced": ["sit"],   "sound": "-s"},
+      {"word": "watches", "reduced": ["watch"], "sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "He jogs every day and lifts weights at the local gym.",
+    "targets": [
+      {"word": "lifts",   "reduced": ["lift"],   "sound": "-s"},
+      {"word": "weights", "reduced": ["weight"], "sound": "-s"}
+    ]
+  },
+  {
+    "sentence": "She always smiles and greets the students when they arrive.",
+    "targets": [
+      {"word": "smiles",   "reduced": ["smile"],   "sound": "-z"},
+      {"word": "greets",   "reduced": ["greet"],   "sound": "-s"},
+      {"word": "students", "reduced": ["student"], "sound": "-s"}
+    ]
+  },
+  {
+    "sentence": "My friend collects coins and keeps them in a glass jar.",
+    "targets": [
+      {"word": "collects", "reduced": ["collect"], "sound": "-s"},
+      {"word": "coins",    "reduced": ["coin"],    "sound": "-z"},
+      {"word": "keeps",    "reduced": ["keep"],    "sound": "-s"}
+    ]
+  },
+  {
+    "sentence": "The dog runs around the yard and barks at every stranger.",
+    "targets": [
+      {"word": "runs",      "reduced": ["run"],     "sound": "-z"},
+      {"word": "barks",     "reduced": ["bark"],    "sound": "-s"},
+      {"word": "strangers", "reduced": ["stranger"],"sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "She grows vegetables and tends her garden on weekends.",
+    "targets": [
+      {"word": "grows",      "reduced": ["grow"],      "sound": "-z"},
+      {"word": "vegetables", "reduced": ["vegetable"], "sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "He fixes bikes and repairs old machines for a living.",
+    "targets": [
+      {"word": "fixes",    "reduced": ["fix"],     "sound": "-z"},
+      {"word": "bikes",    "reduced": ["bike"],    "sound": "-s"},
+      {"word": "machines", "reduced": ["machine"], "sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "The students take notes and ask good questions in class.",
+    "targets": [
+      {"word": "students",  "reduced": ["student"],  "sound": "-s"},
+      {"word": "notes",     "reduced": ["note"],     "sound": "-s"},
+      {"word": "questions", "reduced": ["question"], "sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "She checks her messages and responds to them every morning.",
+    "targets": [
+      {"word": "checks",   "reduced": ["check"],   "sound": "-s"},
+      {"word": "messages", "reduced": ["message"], "sound": "-z"},
+      {"word": "responds", "reduced": ["respond"], "sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "My brother rides his bike and visits friends on weekends.",
+    "targets": [
+      {"word": "rides",   "reduced": ["ride"],   "sound": "-z"},
+      {"word": "friends", "reduced": ["friend"], "sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "He counts his savings and plans his future very carefully.",
+    "targets": [
+      {"word": "counts",  "reduced": ["count"], "sound": "-s"},
+      {"word": "savings", "reduced": ["saving"],"sound": "-z"},
+      {"word": "plans",   "reduced": ["plan"],  "sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "The kids jump in puddles and get their boots all wet.",
+    "targets": [
+      {"word": "kids",    "reduced": ["kid"],    "sound": "-z"},
+      {"word": "puddles", "reduced": ["puddle"], "sound": "-z"},
+      {"word": "boots",   "reduced": ["boot"],   "sound": "-s"}
+    ]
+  },
+  {
+    "sentence": "She bakes fresh cakes and shares them with all her neighbors.",
+    "targets": [
+      {"word": "cakes",     "reduced": ["cake"],     "sound": "-s"},
+      {"word": "shares",    "reduced": ["share"],    "sound": "-z"},
+      {"word": "neighbors", "reduced": ["neighbor"], "sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "He reads maps and plans his routes before every long trip.",
+    "targets": [
+      {"word": "maps",   "reduced": ["map"],   "sound": "-s"},
+      {"word": "plans",  "reduced": ["plan"],  "sound": "-z"},
+      {"word": "routes", "reduced": ["route"], "sound": "-s"}
+    ]
+  },
+  {
+    "sentence": "She walked to the market and bought some bread last night.",
+    "targets": [
+      {"word": "market", "reduced": ["marke"], "sound": "-t"},
+      {"word": "last",   "reduced": ["las"],   "sound": "-t"},
+      {"word": "night",  "reduced": ["nigh"],  "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "He sat at his desk and thought about his next project.",
+    "targets": [
+      {"word": "thought", "reduced": ["though"], "sound": "-t"},
+      {"word": "next",    "reduced": ["nex"],    "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "She needed to rest before the big test the next day.",
+    "targets": [
+      {"word": "rest", "reduced": ["res"], "sound": "-t"},
+      {"word": "test", "reduced": ["tes"], "sound": "-t"},
+      {"word": "next", "reduced": ["nex"], "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "He put the plant near the window to get more light.",
+    "targets": [
+      {"word": "plant", "reduced": ["plan"],  "sound": "-t"},
+      {"word": "light", "reduced": ["ligh"],  "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "She lost her jacket at the airport and could not find it.",
+    "targets": [
+      {"word": "lost",    "reduced": ["los"],    "sound": "-t"},
+      {"word": "jacket",  "reduced": ["jacke"],  "sound": "-t"},
+      {"word": "airport", "reduced": ["airpor"], "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "He went to the market and spent most of his money there.",
+    "targets": [
+      {"word": "went",   "reduced": ["wen"],   "sound": "-t"},
+      {"word": "market", "reduced": ["marke"], "sound": "-t"},
+      {"word": "most",   "reduced": ["mos"],   "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "The guests waited at the port for the next boat to arrive.",
+    "targets": [
+      {"word": "guests", "reduced": ["guess"], "sound": "-t"},
+      {"word": "port",   "reduced": ["por"],   "sound": "-t"},
+      {"word": "next",   "reduced": ["nex"],   "sound": "-t"},
+      {"word": "boat",   "reduced": ["boa"],   "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "She bought a hat and a basket at the local street market.",
+    "targets": [
+      {"word": "hat",    "reduced": ["ha"],     "sound": "-t"},
+      {"word": "basket", "reduced": ["baske"],  "sound": "-t"},
+      {"word": "street", "reduced": ["stree"],  "sound": "-t"},
+      {"word": "market", "reduced": ["marke"],  "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "He just wanted to rest and eat a warm meal after work.",
+    "targets": [
+      {"word": "just", "reduced": ["jus"], "sound": "-t"},
+      {"word": "rest", "reduced": ["res"], "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "The students kept quiet and sat in their correct seats.",
+    "targets": [
+      {"word": "kept",  "reduced": ["kep"],  "sound": "-t"},
+      {"word": "quiet", "reduced": ["quie"], "sound": "-t"},
+      {"word": "seats", "reduced": ["seat"], "sound": "-s"}
+    ]
+  },
+  {
+    "sentence": "She felt cold at night and put on her warmest coat.",
+    "targets": [
+      {"word": "felt",  "reduced": ["fell"], "sound": "-t"},
+      {"word": "night", "reduced": ["nigh"], "sound": "-t"},
+      {"word": "coat",  "reduced": ["coa"],  "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "He must finish the report and submit it before midnight.",
+    "targets": [
+      {"word": "must",     "reduced": ["mus"],    "sound": "-t"},
+      {"word": "report",   "reduced": ["repor"],  "sound": "-t"},
+      {"word": "midnight", "reduced": ["midnigh"],"sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "The pilot landed at the airport just before the first storm.",
+    "targets": [
+      {"word": "airport", "reduced": ["airpor"], "sound": "-t"},
+      {"word": "just",    "reduced": ["jus"],    "sound": "-t"},
+      {"word": "first",   "reduced": ["firs"],   "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "She swept the floor and put the dirty mats outside.",
+    "targets": [
+      {"word": "swept", "reduced": ["swep"], "sound": "-t"},
+      {"word": "mats",  "reduced": ["mat"],  "sound": "-s"}
+    ]
+  },
+  {
+    "sentence": "He went out at night and walked along the quiet street.",
+    "targets": [
+      {"word": "went",   "reduced": ["wen"],   "sound": "-t"},
+      {"word": "night",  "reduced": ["nigh"],  "sound": "-t"},
+      {"word": "quiet",  "reduced": ["quie"],  "sound": "-t"},
+      {"word": "street", "reduced": ["stree"], "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "She bought a ticket and put it in her jacket pocket.",
+    "targets": [
+      {"word": "ticket", "reduced": ["ticke"], "sound": "-t"},
+      {"word": "jacket", "reduced": ["jacke"], "sound": "-t"},
+      {"word": "pocket", "reduced": ["pocke"], "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "He spent the night at the coast and watched the sunset.",
+    "targets": [
+      {"word": "spent",  "reduced": ["spen"],  "sound": "-t"},
+      {"word": "night",  "reduced": ["nigh"],  "sound": "-t"},
+      {"word": "coast",  "reduced": ["coas"],  "sound": "-t"},
+      {"word": "sunset", "reduced": ["sunse"], "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "She tried her best to beat the record at the last event.",
+    "targets": [
+      {"word": "best",  "reduced": ["bes"],  "sound": "-t"},
+      {"word": "beat",  "reduced": ["bea"],  "sound": "-t"},
+      {"word": "last",  "reduced": ["las"],  "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "The nest was built on the roof of the oldest house in town.",
+    "targets": [
+      {"word": "nest",   "reduced": ["nes"],   "sound": "-t"},
+      {"word": "oldest", "reduced": ["oldes"], "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "He gave his best effort but did not finish the test on time.",
+    "targets": [
+      {"word": "best",   "reduced": ["bes"],   "sound": "-t"},
+      {"word": "finish", "reduced": ["finis"], "sound": "-ʃ"},
+      {"word": "test",   "reduced": ["tes"],   "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "The old man found a kind way to help his best friend.",
+    "targets": [
+      {"word": "old",    "reduced": ["ol"],      "sound": "-d"},
+      {"word": "found",  "reduced": ["foun"],    "sound": "-d"},
+      {"word": "kind",   "reduced": ["kin"],     "sound": "-d"},
+      {"word": "friend", "reduced": ["frien"],   "sound": "-d"}
+    ]
+  },
+  {
+    "sentence": "She could not understand the second word in the sentence.",
+    "targets": [
+      {"word": "understand", "reduced": ["understan"], "sound": "-d"},
+      {"word": "second",     "reduced": ["secon"],     "sound": "-d"},
+      {"word": "word",       "reduced": ["wor"],       "sound": "-d"}
+    ]
+  },
+  {
+    "sentence": "He stood behind the crowd and waved his hand in the air.",
+    "targets": [
+      {"word": "behind", "reduced": ["behin"], "sound": "-d"},
+      {"word": "crowd",  "reduced": ["crow"],  "sound": "-d"},
+      {"word": "hand",   "reduced": ["han"],   "sound": "-d"}
+    ]
+  },
+  {
+    "sentence": "The sound of the wind made it very hard to hear clearly.",
+    "targets": [
+      {"word": "sound", "reduced": ["soun"], "sound": "-d"},
+      {"word": "wind",  "reduced": ["win"],  "sound": "-d"},
+      {"word": "hard",  "reduced": ["har"],  "sound": "-d"}
+    ]
+  },
+  {
+    "sentence": "She found her old bag behind the door in the cold room.",
+    "targets": [
+      {"word": "found",  "reduced": ["foun"],  "sound": "-d"},
+      {"word": "old",    "reduced": ["ol"],    "sound": "-d"},
+      {"word": "behind", "reduced": ["behin"], "sound": "-d"},
+      {"word": "cold",   "reduced": ["col"],   "sound": "-d"}
+    ]
+  },
+  {
+    "sentence": "The road was full of mud after the heavy weekend flood.",
+    "targets": [
+      {"word": "road",  "reduced": ["roa"],  "sound": "-d"},
+      {"word": "mud",   "reduced": ["mu"],   "sound": "-d"},
+      {"word": "flood", "reduced": ["floo"], "sound": "-d"}
+    ]
+  },
+  {
+    "sentence": "She stood at the end of the road and looked all around.",
+    "targets": [
+      {"word": "stood",  "reduced": ["stoo"],  "sound": "-d"},
+      {"word": "end",    "reduced": ["en"],    "sound": "-d"},
+      {"word": "road",   "reduced": ["roa"],   "sound": "-d"},
+      {"word": "around", "reduced": ["aroun"], "sound": "-d"}
+    ]
+  },
+  {
+    "sentence": "The bird flew behind the cloud in the cold evening wind.",
+    "targets": [
+      {"word": "bird",   "reduced": ["bir"],   "sound": "-d"},
+      {"word": "behind", "reduced": ["behin"], "sound": "-d"},
+      {"word": "cloud",  "reduced": ["clou"],  "sound": "-d"},
+      {"word": "wind",   "reduced": ["win"],   "sound": "-d"}
+    ]
+  },
+  {
+    "sentence": "She found the card she needed behind the second drawer.",
+    "targets": [
+      {"word": "found",  "reduced": ["foun"],  "sound": "-d"},
+      {"word": "card",   "reduced": ["car"],   "sound": "-d"},
+      {"word": "behind", "reduced": ["behin"], "sound": "-d"},
+      {"word": "second", "reduced": ["secon"], "sound": "-d"}
+    ]
+  },
+  {
+    "sentence": "He had a good plan and worked very hard to make it real.",
+    "targets": [
+      {"word": "good", "reduced": ["goo"], "sound": "-d"},
+      {"word": "hard", "reduced": ["har"], "sound": "-d"}
+    ]
+  },
+  {
+    "sentence": "The sound of thunder was loud around the flooded ground.",
+    "targets": [
+      {"word": "sound",   "reduced": ["soun"],   "sound": "-d"},
+      {"word": "loud",    "reduced": ["lou"],    "sound": "-d"},
+      {"word": "around",  "reduced": ["aroun"],  "sound": "-d"},
+      {"word": "ground",  "reduced": ["groun"],  "sound": "-d"}
+    ]
+  },
+  {
+    "sentence": "He told his friend to build a wooden board for the school.",
+    "targets": [
+      {"word": "told",   "reduced": ["tol", "toll"],  "sound": "-d"},
+      {"word": "friend", "reduced": ["frien"],          "sound": "-d"},
+      {"word": "build",  "reduced": ["buil"],           "sound": "-d"},
+      {"word": "board",  "reduced": ["boar", "bore"],   "sound": "-d"}
+    ]
+  },
+  {
+    "sentence": "The cold wind blew around the old road near the coast.",
+    "targets": [
+      {"word": "cold",   "reduced": ["col"],   "sound": "-d"},
+      {"word": "wind",   "reduced": ["win"],   "sound": "-d"},
+      {"word": "around", "reduced": ["aroun"], "sound": "-d"},
+      {"word": "old",    "reduced": ["ol"],    "sound": "-d"}
+    ]
+  },
+  {
+    "sentence": "He found that the second world record was very hard to break.",
+    "targets": [
+      {"word": "found",  "reduced": ["foun"],  "sound": "-d"},
+      {"word": "second", "reduced": ["secon"], "sound": "-d"},
+      {"word": "hard",   "reduced": ["har"],   "sound": "-d"}
+    ]
+  },
+  {
+    "sentence": "She watched the movie and laughed at every funny scene.",
+    "targets": [
+      {"word": "watched", "reduced": ["watch"], "sound": "-ed"},
+      {"word": "laughed", "reduced": ["laugh"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "He worked hard all day and cooked dinner for his family.",
+    "targets": [
+      {"word": "worked", "reduced": ["work"], "sound": "-ed"},
+      {"word": "cooked", "reduced": ["cook"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "The children played in the park and stayed until sunset.",
+    "targets": [
+      {"word": "played", "reduced": ["play"], "sound": "-ed"},
+      {"word": "stayed", "reduced": ["stay"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "She cleaned her room and organized everything on the shelf.",
+    "targets": [
+      {"word": "cleaned",   "reduced": ["clean"],   "sound": "-ed"},
+      {"word": "organized", "reduced": ["organize"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "He called his mother and talked to her for over an hour.",
+    "targets": [
+      {"word": "called", "reduced": ["call"], "sound": "-ed"},
+      {"word": "talked", "reduced": ["talk"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "She smiled and nodded when her teacher praised her work.",
+    "targets": [
+      {"word": "smiled",  "reduced": ["smile"],  "sound": "-ed"},
+      {"word": "nodded",  "reduced": ["nod"],    "sound": "-ed"},
+      {"word": "praised", "reduced": ["praise"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "He packed his bags and traveled to a new city alone.",
+    "targets": [
+      {"word": "packed",   "reduced": ["pack"],   "sound": "-ed"},
+      {"word": "traveled", "reduced": ["travel"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "She learned three new words and practiced them every day.",
+    "targets": [
+      {"word": "learned",   "reduced": ["learn"],    "sound": "-ed"},
+      {"word": "practiced", "reduced": ["practice"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "He helped his neighbor and fixed the broken fence last weekend.",
+    "targets": [
+      {"word": "helped", "reduced": ["help"], "sound": "-ed"},
+      {"word": "fixed",  "reduced": ["fix"],  "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "She listened carefully and remembered everything she was told.",
+    "targets": [
+      {"word": "listened",   "reduced": ["listen"],   "sound": "-ed"},
+      {"word": "remembered", "reduced": ["remember"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "The dog barked and chased the cat around the garden.",
+    "targets": [
+      {"word": "barked", "reduced": ["bark"],  "sound": "-ed"},
+      {"word": "chased", "reduced": ["chase"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "He started early and finished his work before the deadline.",
+    "targets": [
+      {"word": "started",  "reduced": ["start"],  "sound": "-ed"},
+      {"word": "finished", "reduced": ["finish"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "She jumped over the puddle and landed softly on the grass.",
+    "targets": [
+      {"word": "jumped", "reduced": ["jump"], "sound": "-ed"},
+      {"word": "landed", "reduced": ["land"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "He stopped at the shop and picked up some milk and bread.",
+    "targets": [
+      {"word": "stopped", "reduced": ["stop"], "sound": "-ed"},
+      {"word": "picked",  "reduced": ["pick"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "She cooked a large pot of soup and shared it with everyone.",
+    "targets": [
+      {"word": "cooked", "reduced": ["cook"],  "sound": "-ed"},
+      {"word": "shared", "reduced": ["share"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "He turned off the lights and locked the door before leaving.",
+    "targets": [
+      {"word": "turned", "reduced": ["turn"], "sound": "-ed"},
+      {"word": "locked", "reduced": ["lock"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "She asked a question and waited patiently for the answer.",
+    "targets": [
+      {"word": "asked",  "reduced": ["ask"],  "sound": "-ed"},
+      {"word": "waited", "reduced": ["wait"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "He opened the window and looked out at the sunny garden.",
+    "targets": [
+      {"word": "opened", "reduced": ["open"], "sound": "-ed"},
+      {"word": "looked", "reduced": ["look"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "She joined the team and trained hard every day for months.",
+    "targets": [
+      {"word": "joined",  "reduced": ["join"],  "sound": "-ed"},
+      {"word": "trained", "reduced": ["train"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "He painted the walls and cleaned the floor all afternoon.",
+    "targets": [
+      {"word": "painted", "reduced": ["paint"], "sound": "-ed"},
+      {"word": "cleaned", "reduced": ["clean"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "She waved goodbye and walked toward the bus that had arrived.",
+    "targets": [
+      {"word": "waved",   "reduced": ["wave"],   "sound": "-ed"},
+      {"word": "walked",  "reduced": ["walk"],   "sound": "-ed"},
+      {"word": "arrived", "reduced": ["arrive"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "He finished his homework and watched a film before bed.",
+    "targets": [
+      {"word": "finished", "reduced": ["finish"], "sound": "-ed"},
+      {"word": "watched",  "reduced": ["watch"],  "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "She washed her clothes and dried them on the back porch.",
+    "targets": [
+      {"word": "washed", "reduced": ["wash"], "sound": "-ed"},
+      {"word": "dried",  "reduced": ["dry"],  "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "He prepared the meals and served them to the hungry guests.",
+    "targets": [
+      {"word": "prepared", "reduced": ["prepare"], "sound": "-ed"},
+      {"word": "served",   "reduced": ["serve"],   "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "She thanked everyone who had helped her through the difficult day.",
+    "targets": [
+      {"word": "thanked", "reduced": ["thank"], "sound": "-ed"},
+      {"word": "helped",  "reduced": ["help"],  "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "He rode on the right road and stopped at the river bank.",
+    "targets": [
+      {"word": "rode",  "reduced": ["lode"],   "sound": "R→L"},
+      {"word": "right", "reduced": ["light"],  "sound": "R→L"},
+      {"word": "road",  "reduced": ["load"],   "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "The red car raced down the road at a very fast rate.",
+    "targets": [
+      {"word": "red",   "reduced": ["led"],   "sound": "R→L"},
+      {"word": "raced", "reduced": ["laced"], "sound": "R→L"},
+      {"word": "rate",  "reduced": ["late"],  "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "She read the letter and thought the race rules were unfair.",
+    "targets": [
+      {"word": "read",  "reduced": ["lead"],  "sound": "R→L"},
+      {"word": "race",  "reduced": ["lace"],  "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "The rain soaked the road and made it hard to ride safely.",
+    "targets": [
+      {"word": "rain",  "reduced": ["lane"],  "sound": "R→L"},
+      {"word": "road",  "reduced": ["load"],  "sound": "R→L"},
+      {"word": "ride",  "reduced": ["lied"],  "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "She used a rake to clear leaves near the big rock.",
+    "targets": [
+      {"word": "rake", "reduced": ["lake"], "sound": "R→L"},
+      {"word": "rock", "reduced": ["lock"], "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "She raced up the ramp and saw the raw damage to the building.",
+    "targets": [
+      {"word": "raced", "reduced": ["laced"], "sound": "R→L"},
+      {"word": "ramp",  "reduced": ["lamp"],  "sound": "R→L"},
+      {"word": "raw",   "reduced": ["law"],   "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "He found a rope on the rack near the river path.",
+    "targets": [
+      {"word": "rope",  "reduced": ["lope"],  "sound": "R→L"},
+      {"word": "rack",  "reduced": ["lack"],  "sound": "R→L"},
+      {"word": "river", "reduced": ["liver"], "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "He ripped open the bag and poured some rice into the pot.",
+    "targets": [
+      {"word": "ripped", "reduced": ["lipped"], "sound": "R→L"},
+      {"word": "rice",   "reduced": ["lice"],   "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "He climbed the rung carefully and pulled the root from the soil.",
+    "targets": [
+      {"word": "rung", "reduced": ["lung"], "sound": "R→L"},
+      {"word": "root", "reduced": ["loot"], "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "She had to rush past the ramp to reach the road in time.",
+    "targets": [
+      {"word": "rush", "reduced": ["lush"], "sound": "R→L"},
+      {"word": "ramp", "reduced": ["lamp"], "sound": "R→L"},
+      {"word": "road", "reduced": ["load"], "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "The rook moved across the board and the crowd cheered loudly.",
+    "targets": [
+      {"word": "rook", "reduced": ["look"], "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "A ray of light crossed the room in the quiet morning hours.",
+    "targets": [
+      {"word": "ray",  "reduced": ["lay"],  "sound": "R→L"},
+      {"word": "room", "reduced": ["loom"], "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "She wrapped the right boxes and placed them on the rack.",
+    "targets": [
+      {"word": "right", "reduced": ["light"], "sound": "R→L"},
+      {"word": "rack",  "reduced": ["lack"],  "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "The road was rough and she had to ride with extra care.",
+    "targets": [
+      {"word": "road",  "reduced": ["load"], "sound": "R→L"},
+      {"word": "ride",  "reduced": ["lied"], "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "He tried to rob the store but the guard was already at the door.",
+    "targets": [
+      {"word": "rob", "reduced": ["lob"], "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "She manages two teams and leads every project meeting.",
+    "targets": [
+      {"word": "manages", "reduced": ["manage"], "sound": "-z"},
+      {"word": "teams",   "reduced": ["team"],   "sound": "-z"},
+      {"word": "leads",   "reduced": ["lead"],   "sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "He sends reports and answers emails before lunch.",
+    "targets": [
+      {"word": "sends",   "reduced": ["send"],   "sound": "-z"},
+      {"word": "reports", "reduced": ["report"], "sound": "-s"},
+      {"word": "answers", "reduced": ["answer"], "sound": "-z"},
+      {"word": "emails",  "reduced": ["email"],  "sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "Our clients expect quick replies and clear updates.",
+    "targets": [
+      {"word": "clients", "reduced": ["client"], "sound": "-s"},
+      {"word": "replies", "reduced": ["reply"],  "sound": "-z"},
+      {"word": "updates", "reduced": ["update"], "sound": "-s"}
+    ]
+  },
+  {
+    "sentence": "The manager reviews budgets and approves new plans.",
+    "targets": [
+      {"word": "reviews",  "reduced": ["review"],  "sound": "-z"},
+      {"word": "budgets",  "reduced": ["budget"],  "sound": "-s"},
+      {"word": "approves", "reduced": ["approve"], "sound": "-z"},
+      {"word": "plans",    "reduced": ["plan"],    "sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "She speaks three languages and writes excellent essays.",
+    "targets": [
+      {"word": "speaks",    "reduced": ["speak"],    "sound": "-s"},
+      {"word": "languages", "reduced": ["language"], "sound": "-z"},
+      {"word": "writes",    "reduced": ["write"],    "sound": "-s"},
+      {"word": "essays",    "reduced": ["essay"],    "sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "I sent the draft last night but forgot the attachment.",
+    "targets": [
+      {"word": "sent",       "reduced": ["sen"],        "sound": "-t"},
+      {"word": "draft",      "reduced": ["draf"],       "sound": "-t"},
+      {"word": "last",       "reduced": ["las"],        "sound": "-t"},
+      {"word": "night",      "reduced": ["nigh"],       "sound": "-t"},
+      {"word": "attachment", "reduced": ["attachmen"],  "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "Let us meet at the airport and discuss the contract.",
+    "targets": [
+      {"word": "meet",     "reduced": ["mee"],     "sound": "-t"},
+      {"word": "airport",  "reduced": ["airpor"],  "sound": "-t"},
+      {"word": "contract", "reduced": ["contrac"], "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "He kept quiet about the exact start date.",
+    "targets": [
+      {"word": "kept",  "reduced": ["kep"],  "sound": "-t"},
+      {"word": "quiet", "reduced": ["quie"], "sound": "-t"},
+      {"word": "exact", "reduced": ["exac"], "sound": "-t"},
+      {"word": "start", "reduced": ["star"], "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "The flight was delayed but we caught the next train.",
+    "targets": [
+      {"word": "flight", "reduced": ["fligh"], "sound": "-t"},
+      {"word": "caught", "reduced": ["caugh"], "sound": "-t"},
+      {"word": "next",   "reduced": ["nex"],   "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "Please print the document and put it on my desk.",
+    "targets": [
+      {"word": "print",    "reduced": ["prin"],     "sound": "-t"},
+      {"word": "document", "reduced": ["documen"],  "sound": "-t"},
+      {"word": "put",      "reduced": ["pu"],       "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "I need a refund and a brand new keyboard today.",
+    "targets": [
+      {"word": "need",     "reduced": ["nee"],      "sound": "-d"},
+      {"word": "refund",   "reduced": ["refun"],    "sound": "-d"},
+      {"word": "brand",    "reduced": ["bran"],     "sound": "-d"},
+      {"word": "keyboard", "reduced": ["keyboar"],  "sound": "-d"}
+    ]
+  },
+  {
+    "sentence": "She found the file behind the second drawer.",
+    "targets": [
+      {"word": "found",  "reduced": ["foun"],  "sound": "-d"},
+      {"word": "behind", "reduced": ["behin"], "sound": "-d"},
+      {"word": "second", "reduced": ["secon"], "sound": "-d"}
+    ]
+  },
+  {
+    "sentence": "He told his boss he would attend the board meeting.",
+    "targets": [
+      {"word": "told",   "reduced": ["tol", "toll"],  "sound": "-d"},
+      {"word": "would",  "reduced": ["woul"],          "sound": "-d"},
+      {"word": "attend", "reduced": ["atten"],         "sound": "-d"},
+      {"word": "board",  "reduced": ["boar", "bore"],  "sound": "-d"}
+    ]
+  },
+  {
+    "sentence": "The crowd stood around the food stand all weekend.",
+    "targets": [
+      {"word": "crowd",   "reduced": ["crow"],   "sound": "-d"},
+      {"word": "stood",   "reduced": ["stoo"],   "sound": "-d"},
+      {"word": "around",  "reduced": ["aroun"],  "sound": "-d"},
+      {"word": "food",    "reduced": ["foo"],    "sound": "-d"},
+      {"word": "stand",   "reduced": ["stan"],   "sound": "-d"},
+      {"word": "weekend", "reduced": ["weeken"], "sound": "-d"}
+    ]
+  },
+  {
+    "sentence": "We agreed on the deadline and shared the workload.",
+    "targets": [
+      {"word": "agreed",   "reduced": ["agree"], "sound": "-ed"},
+      {"word": "shared",   "reduced": ["share"], "sound": "-ed"},
+      {"word": "workload", "reduced": ["workloa"], "sound": "-d"}
+    ]
+  },
+  {
+    "sentence": "She finished the presentation and emailed the slides.",
+    "targets": [
+      {"word": "finished", "reduced": ["finish"], "sound": "-ed"},
+      {"word": "emailed",  "reduced": ["email"],  "sound": "-ed"},
+      {"word": "slides",   "reduced": ["slide"],  "sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "They launched the product and reached their target.",
+    "targets": [
+      {"word": "launched", "reduced": ["launch"], "sound": "-ed"},
+      {"word": "reached",  "reduced": ["reach"],  "sound": "-ed"},
+      {"word": "target",   "reduced": ["targe"],  "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "He applied for the job and prepared for the interview.",
+    "targets": [
+      {"word": "applied",  "reduced": ["apply"],   "sound": "-ed"},
+      {"word": "prepared", "reduced": ["prepare"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "We discussed the issue and agreed on a solution.",
+    "targets": [
+      {"word": "discussed", "reduced": ["discuss"], "sound": "-ed"},
+      {"word": "agreed",    "reduced": ["agree"],   "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "She booked the tickets and packed her suitcase.",
+    "targets": [
+      {"word": "booked",  "reduced": ["book"],   "sound": "-ed"},
+      {"word": "packed",  "reduced": ["pack"],   "sound": "-ed"},
+      {"word": "tickets", "reduced": ["ticket"], "sound": "-s"}
+    ]
+  },
+  {
+    "sentence": "The red light turned green right after the heavy rain.",
+    "targets": [
+      {"word": "red",   "reduced": ["led"],   "sound": "R→L"},
+      {"word": "right", "reduced": ["light"], "sound": "R→L"},
+      {"word": "rain",  "reduced": ["lane"],  "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "She read the long report aloud in the large room.",
+    "targets": [
+      {"word": "read", "reduced": ["lead"], "sound": "R→L"},
+      {"word": "room", "reduced": ["loom"], "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "He drove down the rough road with a heavy load.",
+    "targets": [
+      {"word": "road", "reduced": ["load"], "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "The rice was raw so we cooked it at a slow rate.",
+    "targets": [
+      {"word": "rice", "reduced": ["lice"], "sound": "R→L"},
+      {"word": "raw",  "reduced": ["law"],  "sound": "R→L"},
+      {"word": "rate", "reduced": ["late"], "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "He won the race and tied the gift with white lace.",
+    "targets": [
+      {"word": "race", "reduced": ["lace"], "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "Put the rack in the right corner of the room.",
+    "targets": [
+      {"word": "rack",  "reduced": ["lack"],  "sound": "R→L"},
+      {"word": "right", "reduced": ["light"], "sound": "R→L"},
+      {"word": "room",  "reduced": ["loom"],  "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "The ramp was steep so she took the lower row.",
+    "targets": [
+      {"word": "ramp", "reduced": ["lamp"], "sound": "R→L"},
+      {"word": "row",  "reduced": ["low"],  "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "He had to rush before the river rose too high.",
+    "targets": [
+      {"word": "rush",  "reduced": ["lush"],  "sound": "R→L"},
+      {"word": "river", "reduced": ["liver"], "sound": "R→L"}
+    ]
+  },
+  {
+    "sentence": "Can you send me the files and confirm the dates?",
+    "targets": [
+      {"word": "send",  "reduced": ["sen"],  "sound": "-d"},
+      {"word": "files", "reduced": ["file"], "sound": "-z"},
+      {"word": "dates", "reduced": ["date"], "sound": "-s"}
+    ]
+  },
+  {
+    "sentence": "I really enjoyed the trip and learned a lot.",
+    "targets": [
+      {"word": "enjoyed", "reduced": ["enjoy"], "sound": "-ed"},
+      {"word": "learned", "reduced": ["learn"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "She ordered coffee and asked for extra ice.",
+    "targets": [
+      {"word": "ordered", "reduced": ["order"], "sound": "-ed"},
+      {"word": "asked",   "reduced": ["ask"],   "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "We watched the game and cheered for our team.",
+    "targets": [
+      {"word": "watched", "reduced": ["watch"], "sound": "-ed"},
+      {"word": "cheered", "reduced": ["cheer"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "He charges his phone and checks his messages.",
+    "targets": [
+      {"word": "charges",  "reduced": ["charge"],  "sound": "-z"},
+      {"word": "checks",   "reduced": ["check"],   "sound": "-s"},
+      {"word": "messages", "reduced": ["message"], "sound": "-z"}
+    ]
+  },
+  {
+    "sentence": "The students submitted their assignments before midnight.",
+    "targets": [
+      {"word": "students",    "reduced": ["student"],    "sound": "-s"},
+      {"word": "submitted",   "reduced": ["submit"],     "sound": "-ed"},
+      {"word": "assignments", "reduced": ["assignment"], "sound": "-s"},
+      {"word": "midnight",    "reduced": ["midnigh"],    "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "She designed the logo and developed the website.",
+    "targets": [
+      {"word": "designed",  "reduced": ["design"],  "sound": "-ed"},
+      {"word": "developed", "reduced": ["develop"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "They invited many guests and prepared lots of food.",
+    "targets": [
+      {"word": "invited",  "reduced": ["invite"],  "sound": "-ed"},
+      {"word": "guests",   "reduced": ["guest"],   "sound": "-s"},
+      {"word": "prepared", "reduced": ["prepare"], "sound": "-ed"},
+      {"word": "food",     "reduced": ["foo"],     "sound": "-d"}
+    ]
+  },
+  {
+    "sentence": "He fixed the bug and pushed the latest version.",
+    "targets": [
+      {"word": "fixed",  "reduced": ["fix"],   "sound": "-ed"},
+      {"word": "pushed", "reduced": ["push"],  "sound": "-ed"},
+      {"word": "latest", "reduced": ["lates"], "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "Our company hired five engineers last quarter.",
+    "targets": [
+      {"word": "hired",     "reduced": ["hire"],     "sound": "-ed"},
+      {"word": "engineers", "reduced": ["engineer"], "sound": "-z"},
+      {"word": "last",      "reduced": ["las"],      "sound": "-t"}
+    ]
+  },
+  {
+    "sentence": "She politely declined the offer and thanked the team.",
+    "targets": [
+      {"word": "declined", "reduced": ["decline"], "sound": "-ed"},
+      {"word": "thanked",  "reduced": ["thank"],   "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "I forwarded your message and copied the manager.",
+    "targets": [
+      {"word": "forwarded", "reduced": ["forward"], "sound": "-ed"},
+      {"word": "copied",    "reduced": ["copy"],    "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "He parked the car and walked to the office.",
+    "targets": [
+      {"word": "parked", "reduced": ["park"], "sound": "-ed"},
+      {"word": "walked", "reduced": ["walk"], "sound": "-ed"}
+    ]
+  },
+  {
+    "sentence": "The waiter brought the bills and cleared the plates.",
+    "targets": [
+      {"word": "brought", "reduced": ["brough"], "sound": "-t"},
+      {"word": "bills",   "reduced": ["bill"],   "sound": "-z"},
+      {"word": "cleared", "reduced": ["clear"],  "sound": "-ed"},
+      {"word": "plates",  "reduced": ["plate"],  "sound": "-s"}
+    ]
+  }
+]
