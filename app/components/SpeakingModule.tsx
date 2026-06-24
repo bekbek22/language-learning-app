@@ -298,13 +298,19 @@ export default function SpeakingModule() {
       setIsStarting(false);
       const err = e?.error;
       if (err === 'not-allowed' || err === 'service-not-allowed') {
-        setHint('🔒 ไมโครโฟนถูกปิดกั้น — Microphone blocked. Allow mic access, then try again.');
+        setHint('🔒 ไมโครโฟนถูกปิดกั้น — Microphone blocked. Allow mic access in the address bar, then try again.');
       } else if (err === 'audio-capture') {
-        setHint('🎙️ ไม่พบไมโครโฟน — No microphone found. Move on with “New Sentence”.');
+        setHint('🎙️ ไม่พบไมโครโฟน — No microphone found. Check your device, or move on with “New Sentence”.');
       } else if (err === 'no-speech') {
         setHint('🤔 ไม่ได้ยินเสียงพูด ลองพูดให้ชัดขึ้น — No speech detected, try speaking clearly.');
+      } else if (err === 'network') {
+        // Chrome streams audio to Google's speech servers; this fires (usually
+        // within ~1s) when that endpoint is unreachable — common on Brave, on
+        // Firefox/Safari (no real support), or behind a restrictive network/VPN.
+        setHint('📡 เชื่อมต่อบริการเสียงไม่ได้ — Speech service unreachable. Use Chrome or Edge with a normal internet connection, or tap “Skip”.');
       } else if (err !== 'aborted') {
-        setHint('⚠️ การฟังขัดข้อง ลองอีกครั้ง — Recognition hiccup, please try again.');
+        // Surface the raw code so any unhandled case is diagnosable at a glance.
+        setHint(`⚠️ การฟังขัดข้อง (${err ?? 'unknown'}) — Recognition error. Please try again, or tap “Skip”.`);
       }
     };
     recognition.onend = () => {
