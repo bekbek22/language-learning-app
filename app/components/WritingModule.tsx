@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { getProgress, recordAnswer, resetProgress, onProgressChange, type Progress } from '../lib/progress';
-import { getLocale, onLocaleChange, type LocaleCode } from '../lib/locale';
+import { getLocale, onLocaleChange, optionFor, type LocaleCode } from '../lib/locale';
 
 type Check = { pattern: string; message: string };
 type WritingChallenge = {
@@ -80,20 +80,56 @@ function fisherYates<T>(arr: T[]): T[] {
 }
 
 // ── Two-layer evaluation: acceptance + pitfall regex ─────────────────────────
-function normalize(s: string): string {
-  return s.toLowerCase().replace(/[^a-z0-9\s']/g, '').replace(/\s+/g, ' ').trim();
+// Normalization is locale-aware: English collapses to lowercase words, while CJK
+// languages (zh/ja) have no word spacing and must keep their characters intact —
+// stripping non-Latin would erase the whole answer.
+function normalize(s: string, lang: LocaleCode): string {
+  const lower = s.toLowerCase().trim();
+  if (lang === 'en') {
+    return lower.replace(/[^a-z0-9\s']/g, '').replace(/\s+/g, ' ').trim();
+  }
+  // zh/ja: drop whitespace and shared punctuation, keep CJK + latin + digits.
+  return lower.replace(/\s+/g, '').replace(/[。、，．,.!！?？；;：:「」『』（）()·・…—~〜]/g, '');
+}
+
+// Romanized comparison for zh/ja so absolute beginners can answer in pinyin or
+// romaji instead of typing Hanzi/Kanji. Strips tone marks (diacritics), tone
+// digits, spaces and punctuation, so "nǐ hǎo", "ni3 hao3" and "ni hao" all
+// collapse to the same key. Non-Latin (CJK) text → '' and is ignored.
+function normalizeRoman(s: string): string {
+  return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z]/g, '');
+}
+
+// CJK has no word boundaries, so anchors are matched as substrings; English keeps
+// word-boundary matching to avoid partial-word false positives.
+function hasAnchor(norm: string, anchor: string, lang: LocaleCode): boolean {
+  const a = lang === 'en' ? anchor.toLowerCase() : normalize(anchor, lang);
+  if (a === '') return false;
+  if (lang === 'en') {
+    const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return new RegExp(`\\b${escape(a)}\\b`, 'i').test(norm);
+  }
+  return norm.includes(a);
 }
 
 const ANCHOR_THRESHOLD = 0.7;
 const OFF_TOPIC_MSG =
   'คำตอบของคุณดูไม่เกี่ยวข้องกับโจทย์ หรือขาดคำศัพท์สำคัญไป ลองตรวจเช็กอีกครั้ง';
 
-function evaluate(input: string, c: WritingChallenge): Result {
-  const norm = normalize(input);
+function evaluate(input: string, c: WritingChallenge, lang: LocaleCode): Result {
+  const norm = normalize(input, lang);
   if (norm === '') return null;
 
-  const accepted = [c.answer, ...(c.accept ?? [])].map(normalize);
+  const accepted = [c.answer, ...(c.accept ?? [])].map((a) => normalize(a, lang));
   if (accepted.includes(norm)) return { verdict: 'perfect', issues: [] };
+
+  // zh/ja: accept a pinyin / romaji answer that matches any romanized form in
+  // the accept list (CJK entries romanize to '' and are skipped).
+  if (lang !== 'en') {
+    const inputRoman = normalizeRoman(input);
+    const acceptedRoman = [c.answer, ...(c.accept ?? [])].map(normalizeRoman).filter(Boolean);
+    if (inputRoman && acceptedRoman.includes(inputRoman)) return { verdict: 'perfect', issues: [] };
+  }
 
   // Specific pitfalls win: a matched grammar error means the answer is an on-topic
   // attempt, so always surface the targeted hint (even if it omits anchor words —
@@ -106,10 +142,7 @@ function evaluate(input: string, c: WritingChallenge): Result {
   // No recognized pitfall — use anchors to tell a legit paraphrase ('close') apart
   // from nonsense / off-topic input.
   if (c.anchors.length > 0) {
-    const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const hits = c.anchors.filter((a) =>
-      new RegExp(`\\b${escape(a.toLowerCase())}\\b`, 'i').test(norm)
-    ).length;
+    const hits = c.anchors.filter((a) => hasAnchor(norm, a, lang)).length;
     if (hits / c.anchors.length < ANCHOR_THRESHOLD) {
       return { verdict: 'review', issues: [OFF_TOPIC_MSG] };
     }
@@ -226,7 +259,7 @@ export default function WritingModule() {
 
   function check() {
     if (!challenge) return;
-    const r = evaluate(input, challenge);
+    const r = evaluate(input, challenge, lang);
     setResult(r);
     setStatus('checked');
     // perfect & close count as correct; review counts as incorrect
@@ -271,7 +304,7 @@ export default function WritingModule() {
         ) : challenge ? (
           <div>
             <p className="mb-1.5 text-[11px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
-              แปลเป็นภาษาอังกฤษ — Translate to English
+              แปลเป็นภาษา{optionFor(lang).thaiName} — Translate to {optionFor(lang).label}
             </p>
             <p className="text-xl font-semibold leading-snug text-slate-800 dark:text-slate-100">{challenge.thai}</p>
           </div>
@@ -308,7 +341,11 @@ export default function WritingModule() {
           onChange={(e) => setInput(e.target.value)}
           disabled={status === 'checked'}
           rows={2}
-          placeholder="พิมพ์คำแปลที่นี่…"
+          placeholder={
+            lang === 'zh' ? 'พิมพ์อักษรจีนหรือพินอินก็ได้…'
+            : lang === 'ja' ? 'พิมพ์คันจิ โรมาจิ หรือฮิรางานะก็ได้…'
+            : 'พิมพ์คำแปลที่นี่…'
+          }
           className="w-full resize-none rounded-2xl bg-slate-50 px-4 py-3 text-sm text-slate-800 outline-none ring-1 ring-slate-200 transition focus:bg-white focus:ring-2 focus:ring-emerald-300 disabled:text-slate-500 dark:bg-slate-800 dark:text-slate-100 dark:ring-slate-700 dark:placeholder:text-slate-500 dark:focus:bg-slate-900 dark:focus:ring-emerald-500 dark:disabled:text-slate-400"
         />
       )}
@@ -345,7 +382,7 @@ export default function WritingModule() {
           <div className="space-y-2.5">
             <button
               onClick={check}
-              disabled={isLoading || !challenge || normalize(input) === ''}
+              disabled={isLoading || !challenge || normalize(input, lang) === ''}
               className="w-full rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 py-3.5 text-sm font-semibold text-white shadow-lg shadow-emerald-500/25 transition-all hover:shadow-emerald-500/40 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
             >
               ✓ ตรวจคำตอบ — Check

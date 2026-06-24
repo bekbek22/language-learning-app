@@ -2,12 +2,17 @@
 
 import { useEffect, useRef, useState } from 'react';
 import SpeakButton from './SpeakButton';
+import Ruby, { type ReadingSegment } from './Ruby';
 import { getLocale, onLocaleChange, bcp47For, type LocaleCode } from '../lib/locale';
 
 type Status = 'idle' | 'listening' | 'done';
 
 type Target = { word: string; reduced: string[]; sound: string };
-type Phrase = { sentence: string; targets: Target[] };
+// `segments` carries the per-word reading (Pinyin / Furigana) for zh/ja so
+// beginners can read the sentence aloud. `romaji` is a full Latin-alphabet
+// transcription (Japanese) for learners who can't yet read kana. Both are
+// absent for English (plain rendering).
+type Phrase = { sentence: string; targets: Target[]; segments?: ReadingSegment[]; romaji?: string };
 
 // ── Fallback pool (used when Gemini is unavailable) ──────────────────────────
 const FALLBACK: Phrase[] = [
@@ -88,12 +93,21 @@ function fisherYates<T>(arr: T[]): T[] {
 // ── Analysis ─────────────────────────────────────────────────────────────────
 type WordResult = { word: string; sound: string; status: 'correct' | 'dropped' | 'unclear' };
 
-function analyze(transcript: string, targets: Target[]): WordResult[] {
-  const words = transcript.toLowerCase().replace(/[^a-z\s]/g, '').split(/\s+/);
-  return targets.map(({ word, reduced, sound }) => {
-    if (words.includes(word)) return { word, sound, status: 'correct' };
-    if (reduced.some((r) => words.includes(r))) return { word, sound, status: 'dropped' };
-    return { word, sound, status: 'unclear' };
+function analyze(transcript: string, targets: Target[], lang: LocaleCode): WordResult[] {
+  // English: word-level match with reduced-form detection for dropped sounds.
+  if (lang === 'en') {
+    const words = transcript.toLowerCase().replace(/[^a-z\s]/g, '').split(/\s+/);
+    return targets.map(({ word, reduced, sound }) => {
+      if (words.includes(word)) return { word, sound, status: 'correct' };
+      if (reduced.some((r) => words.includes(r))) return { word, sound, status: 'dropped' };
+      return { word, sound, status: 'unclear' };
+    });
+  }
+  // zh/ja: no word spacing, so match each target as a substring of the transcript.
+  const norm = transcript.toLowerCase().replace(/\s+/g, '');
+  return targets.map(({ word, sound }) => {
+    const w = word.toLowerCase().replace(/\s+/g, '');
+    return { word, sound, status: norm.includes(w) ? 'correct' : 'unclear' };
   });
 }
 
@@ -280,7 +294,7 @@ export default function SpeakingModule() {
       const text = transcriptRef.current;
       if (text) {
         setTranscript(text);
-        setResults(analyze(text, currentPhrase.targets));
+        setResults(analyze(text, currentPhrase.targets, langRef.current));
         setStatus('done');
       } else {
         setStatus('idle');
@@ -345,7 +359,18 @@ export default function SpeakingModule() {
               <p className="mb-1.5 text-[11px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
                 Read this aloud
               </p>
-              <p className="text-xl font-semibold leading-snug text-slate-800 dark:text-slate-100">{currentPhrase.sentence}</p>
+              {currentPhrase.segments?.length ? (
+                <Ruby
+                  segments={currentPhrase.segments}
+                  className="text-xl font-semibold leading-loose text-slate-800 dark:text-slate-100"
+                  rtClassName="text-[11px] font-medium text-blue-400 dark:text-blue-300"
+                />
+              ) : (
+                <p className="text-xl font-semibold leading-snug text-slate-800 dark:text-slate-100">{currentPhrase.sentence}</p>
+              )}
+              {currentPhrase.romaji && (
+                <p className="mt-1 text-sm italic text-slate-400 dark:text-slate-500">{currentPhrase.romaji}</p>
+              )}
             </div>
             <SpeakButton text={currentPhrase.sentence} langCode={lang} className="ml-auto" />
           </div>

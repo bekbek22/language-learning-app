@@ -1,15 +1,18 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { LOCALES, getLocale, setLocale, onLocaleChange, type LocaleCode } from '../lib/locale';
+import { useRouter } from 'next/navigation';
+import { LOCALES, getLocale, onLocaleChange, type LocaleCode } from '../lib/locale';
 
-// Sleek target-language picker for the header. Persists the choice via locale.ts,
-// which broadcasts to every module so they refetch from the matching locale API.
+// Sleek target-language picker for the header. Switching navigates to the chosen
+// language's course route (/learn/<code>); that route then syncs the locale store
+// so every module refetches from the matching locale API.
 export default function LanguageSelector() {
   const [code, setCode]     = useState<LocaleCode>('en');
   const [open, setOpen]     = useState(false);
   const [mounted, setMounted] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   // Reflect the persisted choice after mount (avoids hydration mismatch) and
   // stay in sync if another surface changes it.
@@ -40,7 +43,7 @@ export default function LanguageSelector() {
 
   function choose(next: LocaleCode) {
     setOpen(false);
-    if (next !== code) setLocale(next); // broadcast → modules refetch
+    if (next !== code) router.push(`/learn/${next}`); // route syncs the locale
   }
 
   return (

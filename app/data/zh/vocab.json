@@ -1,1 +1,66 @@
-[]
+[
+  {
+    "word": "谢谢",
+    "phonetic": "xièxie",
+    "thai_meaning": "ขอบคุณ",
+    "example": "谢谢你的帮助。",
+    "example_reading": "Xièxie nǐ de bāngzhù.",
+    "choices": ["ขอบคุณ", "ขอโทษ", "สวัสดี", "ลาก่อน"]
+  },
+  {
+    "word": "朋友",
+    "phonetic": "péngyou",
+    "thai_meaning": "เพื่อน",
+    "example": "他是我的好朋友。",
+    "example_reading": "Tā shì wǒ de hǎo péngyou.",
+    "choices": ["เพื่อน", "ครอบครัว", "ครู", "เพื่อนบ้าน"]
+  },
+  {
+    "word": "高兴",
+    "phonetic": "gāoxìng",
+    "thai_meaning": "ดีใจ, มีความสุข",
+    "example": "见到你我很高兴。",
+    "example_reading": "Jiàndào nǐ wǒ hěn gāoxìng.",
+    "choices": ["ดีใจ, มีความสุข", "เศร้า", "โกรธ", "เหนื่อย"]
+  },
+  {
+    "word": "困难",
+    "phonetic": "kùnnan",
+    "thai_meaning": "ยากลำบาก",
+    "example": "这个问题很困难。",
+    "example_reading": "Zhège wèntí hěn kùnnan.",
+    "choices": ["ยากลำบาก", "ง่ายดาย", "สำคัญ", "น่าสนใจ"]
+  },
+  {
+    "word": "重要",
+    "phonetic": "zhòngyào",
+    "thai_meaning": "สำคัญ",
+    "example": "健康非常重要。",
+    "example_reading": "Jiànkāng fēicháng zhòngyào.",
+    "choices": ["สำคัญ", "ธรรมดา", "อันตราย", "สวยงาม"]
+  },
+  {
+    "word": "机会",
+    "phonetic": "jīhuì",
+    "thai_meaning": "โอกาส",
+    "example": "这是一个好机会。",
+    "example_reading": "Zhè shì yīgè hǎo jīhuì.",
+    "choices": ["โอกาส", "ปัญหา", "ความเสี่ยง", "ของขวัญ"]
+  },
+  {
+    "word": "努力",
+    "phonetic": "nǔlì",
+    "thai_meaning": "พยายาม, ขยัน",
+    "example": "你要努力学习。",
+    "example_reading": "Nǐ yào nǔlì xuéxí.",
+    "choices": ["พยายาม, ขยัน", "ยอมแพ้", "พักผ่อน", "เล่น"]
+  },
+  {
+    "word": "习惯",
+    "phonetic": "xíguàn",
+    "thai_meaning": "นิสัย, ความเคยชิน",
+    "example": "早睡是好习惯。",
+    "example_reading": "Zǎoshuì shì hǎo xíguàn.",
+    "choices": ["นิสัย, ความเคยชิน", "ความฝัน", "ความลับ", "ความผิด"]
+  }
+]

@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "thai": "ฉันชื่อสมชาย ยินดีที่ได้รู้จัก",
+    "answer": "我叫宋猜，很高兴认识你。",
+    "accept": ["我叫宋猜很高兴认识你", "wǒ jiào sòngcāi hěn gāoxìng rènshi nǐ"],
+    "anchors": ["我叫", "认识"],
+    "checks": [
+      { "pattern": "我是宋猜", "message": "บอกชื่อใช้ 我叫… ไม่ใช่ 我是…" }
+    ]
+  },
+  {
+    "thai": "วันนี้อากาศดีมาก",
+    "answer": "今天天气很好。",
+    "accept": ["今天天气很好", "jīntiān tiānqì hěn hǎo"],
+    "anchors": ["今天", "天气", "好"],
+    "checks": []
+  },
+  {
+    "thai": "ฉันชอบกินอาหารจีน",
+    "answer": "我喜欢吃中国菜。",
+    "accept": ["我喜欢吃中国菜", "wǒ xǐhuān chī zhōngguó cài"],
+    "anchors": ["喜欢", "中国菜"],
+    "checks": [
+      { "pattern": "我喜欢中国菜", "message": "ต้องมีกริยา 吃 → 我喜欢吃中国菜" }
+    ]
+  },
+  {
+    "thai": "นี่ราคาเท่าไหร่",
+    "answer": "这个多少钱？",
+    "accept": ["这多少钱", "这个多少钱", "zhège duōshǎo qián", "zhè duōshǎo qián"],
+    "anchors": ["多少", "钱"],
+    "checks": []
+  },
+  {
+    "thai": "ฉันมีพี่ชายหนึ่งคน",
+    "answer": "我有一个哥哥。",
+    "accept": ["我有一个哥哥", "wǒ yǒu yīgè gēge"],
+    "anchors": ["有", "哥哥"],
+    "checks": [
+      { "pattern": "一哥哥", "message": "ต้องมีลักษณนาม 个 → 一个哥哥" }
+    ]
+  },
+  {
+    "thai": "เขากำลังเรียนภาษาจีน",
+    "answer": "他在学中文。",
+    "accept": ["他在学中文", "他在学习中文", "tā zài xué zhōngwén", "tā zài xuéxí zhōngwén"],
+    "anchors": ["学", "中文"],
+    "checks": []
+  }
+]

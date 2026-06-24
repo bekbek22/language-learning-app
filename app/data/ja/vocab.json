@@ -1,1 +1,66 @@
-[]
+[
+  {
+    "word": "ありがとう",
+    "phonetic": "arigatō",
+    "thai_meaning": "ขอบคุณ",
+    "example": "手伝ってくれてありがとう。",
+    "example_reading": "Tetsudatte kurete arigatō.",
+    "choices": ["ขอบคุณ", "ขอโทษ", "สวัสดี", "ลาก่อน"]
+  },
+  {
+    "word": "友達",
+    "phonetic": "tomodachi",
+    "thai_meaning": "เพื่อน",
+    "example": "彼は私の友達です。",
+    "example_reading": "Kare wa watashi no tomodachi desu.",
+    "choices": ["เพื่อน", "ครอบครัว", "ครู", "เพื่อนบ้าน"]
+  },
+  {
+    "word": "嬉しい",
+    "phonetic": "ureshii",
+    "thai_meaning": "ดีใจ",
+    "example": "会えて嬉しいです。",
+    "example_reading": "Aete ureshii desu.",
+    "choices": ["ดีใจ", "เศร้า", "โกรธ", "เหนื่อย"]
+  },
+  {
+    "word": "難しい",
+    "phonetic": "muzukashii",
+    "thai_meaning": "ยาก",
+    "example": "この問題は難しいです。",
+    "example_reading": "Kono mondai wa muzukashii desu.",
+    "choices": ["ยาก", "ง่าย", "สำคัญ", "น่าสนใจ"]
+  },
+  {
+    "word": "大切",
+    "phonetic": "taisetsu",
+    "thai_meaning": "สำคัญ",
+    "example": "健康は大切です。",
+    "example_reading": "Kenkō wa taisetsu desu.",
+    "choices": ["สำคัญ", "ธรรมดา", "อันตราย", "สวยงาม"]
+  },
+  {
+    "word": "機会",
+    "phonetic": "kikai",
+    "thai_meaning": "โอกาส",
+    "example": "これはいい機会です。",
+    "example_reading": "Kore wa ii kikai desu.",
+    "choices": ["โอกาส", "ปัญหา", "ความเสี่ยง", "ของขวัญ"]
+  },
+  {
+    "word": "頑張る",
+    "phonetic": "ganbaru",
+    "thai_meaning": "พยายาม",
+    "example": "試験のために頑張ります。",
+    "example_reading": "Shiken no tame ni ganbarimasu.",
+    "choices": ["พยายาม", "ยอมแพ้", "พักผ่อน", "เล่น"]
+  },
+  {
+    "word": "習慣",
+    "phonetic": "shūkan",
+    "thai_meaning": "นิสัย, ความเคยชิน",
+    "example": "早寝はいい習慣です。",
+    "example_reading": "Hayane wa ii shūkan desu.",
+    "choices": ["นิสัย, ความเคยชิน", "ความฝัน", "ความลับ", "ความผิด"]
+  }
+]

@@ -5,6 +5,17 @@ export function isSpeechSupported(): boolean {
   return typeof window !== 'undefined' && 'speechSynthesis' in window;
 }
 
+// Whether a voice that can pronounce `lang` is installed. Used by the UI to
+// warn when, e.g., no Chinese/Japanese voice exists on the device — otherwise
+// playback is silently wrong (the browser reads CJK with a default voice).
+export function hasVoiceFor(lang: string = 'en-US'): boolean {
+  if (!isSpeechSupported()) return false;
+  const base = lang.split('-')[0];
+  return window.speechSynthesis
+    .getVoices()
+    .some((v) => v.lang === lang || v.lang.split('-')[0] === base);
+}
+
 // `lang` is a BCP-47 tag (e.g. 'en-US', 'zh-CN', 'ja-JP') so the synthesizer
 // picks the correct voice/script for the active target language.
 export function speak(text: string, lang: string = 'en-US'): void {

@@ -1,1 +1,118 @@
-[]
+[
+  {
+    "sentence": "你好，很高兴认识你。",
+    "segments": [
+      { "text": "你好", "reading": "nǐ hǎo" },
+      { "text": "，" },
+      { "text": "很", "reading": "hěn" },
+      { "text": "高兴", "reading": "gāoxìng" },
+      { "text": "认识", "reading": "rènshi" },
+      { "text": "你", "reading": "nǐ" },
+      { "text": "。" }
+    ],
+    "targets": [
+      { "word": "你好", "reduced": [], "sound": "nǐ hǎo" },
+      { "word": "认识", "reduced": [], "sound": "rèn shi" }
+    ]
+  },
+  {
+    "sentence": "我想喝一杯咖啡。",
+    "segments": [
+      { "text": "我", "reading": "wǒ" },
+      { "text": "想", "reading": "xiǎng" },
+      { "text": "喝", "reading": "hē" },
+      { "text": "一杯", "reading": "yì bēi" },
+      { "text": "咖啡", "reading": "kāfēi" },
+      { "text": "。" }
+    ],
+    "targets": [
+      { "word": "想", "reduced": [], "sound": "xiǎng" },
+      { "word": "咖啡", "reduced": [], "sound": "kā fēi" }
+    ]
+  },
+  {
+    "sentence": "今天天气很好。",
+    "segments": [
+      { "text": "今天", "reading": "jīntiān" },
+      { "text": "天气", "reading": "tiānqì" },
+      { "text": "很", "reading": "hěn" },
+      { "text": "好", "reading": "hǎo" },
+      { "text": "。" }
+    ],
+    "targets": [
+      { "word": "今天", "reduced": [], "sound": "jīn tiān" },
+      { "word": "天气", "reduced": [], "sound": "tiān qì" }
+    ]
+  },
+  {
+    "sentence": "这个多少钱？",
+    "segments": [
+      { "text": "这个", "reading": "zhège" },
+      { "text": "多少", "reading": "duōshao" },
+      { "text": "钱", "reading": "qián" },
+      { "text": "？" }
+    ],
+    "targets": [
+      { "word": "多少", "reduced": [], "sound": "duō shao" },
+      { "word": "钱", "reduced": [], "sound": "qián" }
+    ]
+  },
+  {
+    "sentence": "我每天早上跑步。",
+    "segments": [
+      { "text": "我", "reading": "wǒ" },
+      { "text": "每天", "reading": "měitiān" },
+      { "text": "早上", "reading": "zǎoshang" },
+      { "text": "跑步", "reading": "pǎobù" },
+      { "text": "。" }
+    ],
+    "targets": [
+      { "word": "每天", "reduced": [], "sound": "měi tiān" },
+      { "word": "跑步", "reduced": [], "sound": "pǎo bù" }
+    ]
+  },
+  {
+    "sentence": "请问厕所在哪里？",
+    "segments": [
+      { "text": "请问", "reading": "qǐngwèn" },
+      { "text": "厕所", "reading": "cèsuǒ" },
+      { "text": "在", "reading": "zài" },
+      { "text": "哪里", "reading": "nǎlǐ" },
+      { "text": "？" }
+    ],
+    "targets": [
+      { "word": "请问", "reduced": [], "sound": "qǐng wèn" },
+      { "word": "哪里", "reduced": [], "sound": "nǎ lǐ" }
+    ]
+  },
+  {
+    "sentence": "我喜欢吃中国菜。",
+    "segments": [
+      { "text": "我", "reading": "wǒ" },
+      { "text": "喜欢", "reading": "xǐhuan" },
+      { "text": "吃", "reading": "chī" },
+      { "text": "中国菜", "reading": "zhōngguó cài" },
+      { "text": "。" }
+    ],
+    "targets": [
+      { "word": "喜欢", "reduced": [], "sound": "xǐ huan" },
+      { "word": "中国菜", "reduced": [], "sound": "zhōng guó cài" }
+    ]
+  },
+  {
+    "sentence": "周末我要去看电影。",
+    "segments": [
+      { "text": "周末", "reading": "zhōumò" },
+      { "text": "我", "reading": "wǒ" },
+      { "text": "要", "reading": "yào" },
+      { "text": "去", "reading": "qù" },
+      { "text": "看", "reading": "kàn" },
+      { "text": "电影", "reading": "diànyǐng" },
+      { "text": "。" }
+    ],
+    "targets": [
+      { "word": "周末", "reduced": [], "sound": "zhōu mò" },
+      { "word": "电影", "reduced": [], "sound": "diàn yǐng" }
+    ]
+  }
+]

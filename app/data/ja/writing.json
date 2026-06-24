@@ -1,1 +1,48 @@
-[]
+[
+  {
+    "thai": "ยินดีที่ได้รู้จัก ฉันชื่อสมชาย",
+    "answer": "はじめまして、私は宋猜です。",
+    "accept": ["はじめまして私は宋猜です", "私は宋猜です", "はじめましてわたしはそうさいです", "hajimemashite watashi wa sousai desu", "watashi wa sousai desu"],
+    "anchors": ["私は", "です"],
+    "checks": []
+  },
+  {
+    "thai": "วันนี้อากาศดีนะ",
+    "answer": "今日はいい天気ですね。",
+    "accept": ["今日はいい天気ですね", "今日はいい天気です", "きょうはいいてんきですね", "kyou wa ii tenki desu ne", "kyou wa ii tenki desu"],
+    "anchors": ["今日", "天気"],
+    "checks": []
+  },
+  {
+    "thai": "ฉันชอบอาหารญี่ปุ่น",
+    "answer": "日本料理が好きです。",
+    "accept": ["日本料理が好きです", "にほんりょうりがすきです", "nihon ryouri ga suki desu"],
+    "anchors": ["日本料理", "好き"],
+    "checks": [
+      { "pattern": "日本料理を好き", "message": "ใช้ が กับ 好き ไม่ใช่ を" }
+    ]
+  },
+  {
+    "thai": "นี่ราคาเท่าไหร่",
+    "answer": "これはいくらですか。",
+    "accept": ["これはいくらですか", "kore wa ikura desu ka"],
+    "anchors": ["いくら", "です"],
+    "checks": []
+  },
+  {
+    "thai": "ฉันมีพี่ชายหนึ่งคน",
+    "answer": "兄が一人います。",
+    "accept": ["兄が一人います", "あにがひとりいます", "ani ga hitori imasu"],
+    "anchors": ["兄", "います"],
+    "checks": [
+      { "pattern": "兄があります", "message": "คนใช้ います ไม่ใช่ あります" }
+    ]
+  },
+  {
+    "thai": "เขากำลังเรียนภาษาญี่ปุ่น",
+    "answer": "彼は日本語を勉強しています。",
+    "accept": ["彼は日本語を勉強しています", "彼は日本語を勉強します", "かれはにほんごをべんきょうしています", "kare wa nihongo wo benkyou shite imasu"],
+    "anchors": ["日本語", "勉強"],
+    "checks": []
+  }
+]

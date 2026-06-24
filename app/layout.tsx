@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Sarabun } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+import FeedbackWidget from "./components/FeedbackWidget";
 
 const sarabun = Sarabun({
   weight: ["400", "500", "600", "700"],
@@ -29,6 +31,8 @@ export default function RootLayout({
       </head>
       <body className="min-h-full bg-slate-50 font-[family-name:var(--font-sarabun)] dark:bg-slate-950">
         {children}
+        <FeedbackWidget />
+        <Analytics />
       </body>
     </html>
   );

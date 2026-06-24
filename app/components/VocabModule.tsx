@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import SpeakButton from './SpeakButton';
+import Ruby from './Ruby';
 import { getProgress, recordAnswer, resetProgress, onProgressChange, type Progress } from '../lib/progress';
 import { getLocale, onLocaleChange, type LocaleCode } from '../lib/locale';
 
@@ -10,6 +11,7 @@ type VocabCard = {
   phonetic: string;
   thai_meaning: string;
   example: string;
+  example_reading?: string; // romaji (ja) / pinyin (zh) of the example sentence
   choices: string[];
 };
 
@@ -238,13 +240,26 @@ export default function VocabModule() {
             <span className="ml-1 text-sm">กำลังโหลด…</span>
           </div>
         ) : card ? (
-          <>
+          lang === 'en' ? (
+            // English: IPA reads below the word, as it did before.
+            <>
+              <div className="flex items-center gap-2.5">
+                <p className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-50">{card.word}</p>
+                <SpeakButton text={card.word} langCode={lang} />
+              </div>
+              <p className="mt-1 text-sm text-violet-400">{card.phonetic}</p>
+            </>
+          ) : (
+            // zh/ja: Pinyin / Romaji sits directly above the characters.
             <div className="flex items-center gap-2.5">
-              <p className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-50">{card.word}</p>
+              <Ruby
+                segments={[{ text: card.word, reading: card.phonetic }]}
+                className="text-3xl font-extrabold tracking-tight leading-loose text-slate-900 dark:text-slate-50"
+                rtClassName="text-sm font-medium text-violet-400"
+              />
               <SpeakButton text={card.word} langCode={lang} />
             </div>
-            <p className="mt-1 text-sm text-violet-400">{card.phonetic}</p>
-          </>
+          )
         ) : (
           <p className="text-sm text-slate-400">ไม่สามารถโหลดคำได้</p>
         )}
@@ -318,6 +333,9 @@ export default function VocabModule() {
             )}
           </div>
           <p className="mt-2 text-xs italic text-slate-500 dark:text-slate-400">&ldquo;{card.example}&rdquo;</p>
+          {card.example_reading && (
+            <p className="mt-0.5 text-[11px] font-medium not-italic text-violet-400">{card.example_reading}</p>
+          )}
         </div>
       )}
 

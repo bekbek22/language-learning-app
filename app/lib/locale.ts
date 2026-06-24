@@ -8,16 +8,17 @@ export type LocaleCode = 'en' | 'zh' | 'ja';
 export type LocaleOption = {
   code: LocaleCode;
   flag: string;
-  label: string;  // English name
-  native: string; // endonym shown in the dropdown
+  label: string;    // English name
+  native: string;   // endonym shown in the dropdown
+  thaiName: string; // Thai name, for the Thai-facing hero ("เรียนภาษา…")
   /** BCP-47 tag for SpeechSynthesis / SpeechRecognition. */
   bcp47: string;
 };
 
 export const LOCALES: readonly LocaleOption[] = [
-  { code: 'en', flag: '🇬🇧', label: 'English',  native: 'English', bcp47: 'en-US' },
-  { code: 'zh', flag: '🇨🇳', label: 'Chinese',  native: '中文',     bcp47: 'zh-CN' },
-  { code: 'ja', flag: '🇯🇵', label: 'Japanese', native: '日本語',   bcp47: 'ja-JP' },
+  { code: 'en', flag: '🇬🇧', label: 'English',  native: 'English', thaiName: 'อังกฤษ', bcp47: 'en-US' },
+  { code: 'zh', flag: '🇨🇳', label: 'Chinese',  native: '中文',     thaiName: 'จีน',    bcp47: 'zh-CN' },
+  { code: 'ja', flag: '🇯🇵', label: 'Japanese', native: '日本語',   thaiName: 'ญี่ปุ่น', bcp47: 'ja-JP' },
 ];
 
 export const DEFAULT_LOCALE: LocaleCode = 'en';
@@ -25,7 +26,7 @@ export const DEFAULT_LOCALE: LocaleCode = 'en';
 const KEY = 'elp_lang';
 const EVENT = 'elp_lang_change';
 
-function isLocaleCode(value: string | null): value is LocaleCode {
+export function isLocaleCode(value: string | null | undefined): value is LocaleCode {
   return value === 'en' || value === 'zh' || value === 'ja';
 }
 
@@ -65,4 +66,9 @@ export function onLocaleChange(cb: () => void): () => void {
 /** BCP-47 tag for a locale code, for speech APIs. */
 export function bcp47For(code: LocaleCode): string {
   return LOCALES.find((l) => l.code === code)?.bcp47 ?? 'en-US';
+}
+
+/** Full option record for a locale code (falls back to the default locale). */
+export function optionFor(code: LocaleCode): LocaleOption {
+  return LOCALES.find((l) => l.code === code) ?? LOCALES[0];
 }

@@ -1,1 +1,106 @@
-[]
+[
+  {
+    "sentence": "はじめまして、よろしくお願いします。",
+    "romaji": "Hajimemashite, yoroshiku onegaishimasu.",
+    "segments": [
+      { "text": "はじめまして、よろしくお" },
+      { "text": "願", "reading": "ねが" },
+      { "text": "いします。" }
+    ],
+    "targets": [
+      { "word": "はじめまして", "reduced": [], "sound": "hajimemashite" },
+      { "word": "お願いします", "reduced": [], "sound": "onegaishimasu" }
+    ]
+  },
+  {
+    "sentence": "コーヒーを一杯ください。",
+    "romaji": "Kōhī o ippai kudasai.",
+    "segments": [
+      { "text": "コーヒーを" },
+      { "text": "一杯", "reading": "いっぱい" },
+      { "text": "ください。" }
+    ],
+    "targets": [
+      { "word": "コーヒー", "reduced": [], "sound": "kōhī" },
+      { "word": "ください", "reduced": [], "sound": "kudasai" }
+    ]
+  },
+  {
+    "sentence": "今日はいい天気ですね。",
+    "romaji": "Kyō wa ii tenki desu ne.",
+    "segments": [
+      { "text": "今日", "reading": "きょう" },
+      { "text": "はいい" },
+      { "text": "天気", "reading": "てんき" },
+      { "text": "ですね。" }
+    ],
+    "targets": [
+      { "word": "今日", "reduced": [], "sound": "kyō" },
+      { "word": "天気", "reduced": [], "sound": "tenki" }
+    ]
+  },
+  {
+    "sentence": "これはいくらですか。",
+    "romaji": "Kore wa ikura desu ka.",
+    "segments": [
+      { "text": "これはいくらですか。" }
+    ],
+    "targets": [
+      { "word": "いくら", "reduced": [], "sound": "ikura" }
+    ]
+  },
+  {
+    "sentence": "毎朝走っています。",
+    "romaji": "Maiasa hashitte imasu.",
+    "segments": [
+      { "text": "毎朝", "reading": "まいあさ" },
+      { "text": "走", "reading": "はし" },
+      { "text": "っています。" }
+    ],
+    "targets": [
+      { "word": "毎朝", "reduced": [], "sound": "maiasa" },
+      { "word": "走って", "reduced": [], "sound": "hashitte" }
+    ]
+  },
+  {
+    "sentence": "トイレはどこですか。",
+    "romaji": "Toire wa doko desu ka.",
+    "segments": [
+      { "text": "トイレはどこですか。" }
+    ],
+    "targets": [
+      { "word": "トイレ", "reduced": [], "sound": "toire" },
+      { "word": "どこ", "reduced": [], "sound": "doko" }
+    ]
+  },
+  {
+    "sentence": "日本料理が好きです。",
+    "romaji": "Nihon ryōri ga suki desu.",
+    "segments": [
+      { "text": "日本料理", "reading": "にほんりょうり" },
+      { "text": "が" },
+      { "text": "好", "reading": "す" },
+      { "text": "きです。" }
+    ],
+    "targets": [
+      { "word": "日本料理", "reduced": [], "sound": "nihon ryōri" },
+      { "word": "好き", "reduced": [], "sound": "suki" }
+    ]
+  },
+  {
+    "sentence": "週末に映画を見ます。",
+    "romaji": "Shūmatsu ni eiga o mimasu.",
+    "segments": [
+      { "text": "週末", "reading": "しゅうまつ" },
+      { "text": "に" },
+      { "text": "映画", "reading": "えいが" },
+      { "text": "を" },
+      { "text": "見", "reading": "み" },
+      { "text": "ます。" }
+    ],
+    "targets": [
+      { "word": "週末", "reduced": [], "sound": "shūmatsu" },
+      { "word": "映画", "reduced": [], "sound": "eiga" }
+    ]
+  }
+]

@@ -3,7 +3,17 @@
     "allow": [
       "Bash(curl -s http://localhost:*)",
       "Bash(curl -s https://generativelanguage.googleapis.com/*)",
-      "Bash(npx tsc --noEmit)"
+      "Bash(npx tsc --noEmit)",
+      "mcp__Roblox_Studio__screen_capture",
+      "mcp__Claude_Preview__preview_screenshot",
+      "mcp__Roblox_Studio__get_console_output",
+      "mcp__Roblox_Studio__search_game_tree",
+      "mcp__Claude_Preview__preview_console_logs",
+      "mcp__Claude_Preview__preview_resize",
+      "mcp__computer-use__screenshot",
+      "mcp__Roblox_Studio__list_roblox_studios",
+      "mcp__Roblox_Studio__inspect_instance",
+      "mcp__Roblox_Studio__get_studio_state"
     ]
   }
 }
