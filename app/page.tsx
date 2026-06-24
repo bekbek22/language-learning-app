@@ -17,7 +17,7 @@ export default function Home() {
         <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-1.5 text-xs font-medium text-slate-500 shadow-sm ring-1 ring-slate-200 dark:bg-slate-800 dark:text-slate-400 dark:ring-slate-700">
           🌏 สำหรับคนไทย — for Thai speakers
         </span>
-        <h1 className="mt-5 bg-gradient-to-r from-blue-600 via-violet-600 to-emerald-600 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent sm:text-5xl dark:from-blue-400 dark:via-violet-400 dark:to-emerald-400">
+        <h1 className="mt-5 bg-gradient-to-r from-blue-600 via-violet-600 to-emerald-600 bg-clip-text text-2xl font-extrabold tracking-tight text-transparent sm:text-4xl md:text-5xl dark:from-blue-400 dark:via-violet-400 dark:to-emerald-400">
           อยากเรียนภาษาอะไร?
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-lg text-slate-500 dark:text-slate-400">

@@ -3,6 +3,14 @@
 /* Class-based dark mode — the toggle adds `.dark` to <html>. */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Mobile-first helpers ─────────────────────────────────────────────────────── */
+/* Pads the bottom of the sticky mobile action bars by the device's safe-area
+   inset so controls clear the iOS/Android home indicator. Composes with Tailwind
+   variants (e.g. `max-sm:pb-safe`). */
+@utility pb-safe {
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.75rem);
+}
+
 html {
   color-scheme: light;
 }

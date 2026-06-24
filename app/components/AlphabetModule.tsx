@@ -233,7 +233,7 @@ export default function AlphabetModule({ lang }: { lang: LocaleCode }) {
   const [mode, setMode] = useState<'practice' | 'match'>('practice');
 
   return (
-    <div className="relative rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-900 dark:ring-slate-800">
+    <div className="relative rounded-3xl bg-white p-4 shadow-sm ring-1 ring-slate-200/70 sm:p-6 dark:bg-slate-900 dark:ring-slate-800">
       {/* Header */}
       <div className="mb-5 flex flex-wrap items-center gap-3">
         <div className={`flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br ${theme.grad} text-white shadow-md`}>
@@ -318,7 +318,7 @@ export default function AlphabetModule({ lang }: { lang: LocaleCode }) {
           {lang === 'zh' && zhTab === 'tones' ? (
             <ToneBoard onPlay={play} stateFor={stateFor} theme={theme} />
           ) : (
-            <div className="grid grid-cols-3 gap-2.5 sm:grid-cols-4 md:grid-cols-6">
+            <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6">
               {tiles.map((t) => (
                 <GlyphTile key={t.key} tile={t} state={stateFor(t.key)} onPlay={play} theme={theme} mastered={mastered.has(t.key)} />
               ))}
@@ -366,7 +366,7 @@ function SegToggle({
           key={o.k}
           type="button"
           onClick={() => onChange(o.k)}
-          className={`rounded-full px-3 py-1.5 text-xs font-semibold transition ${
+          className={`min-h-[40px] rounded-full px-3 py-2 text-xs font-semibold transition ${
             value === o.k
               ? `${chip} text-white shadow`
               : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'
@@ -398,7 +398,7 @@ function GlyphTile({
       type="button"
       onClick={() => onPlay(tile)}
       title="ฟังเสียง — Listen"
-      className={`group relative flex flex-col items-center justify-center gap-0.5 rounded-2xl bg-gradient-to-br ${theme.soft} px-2 py-4 ring-1 ${theme.ring} transition-all hover:-translate-y-0.5 hover:shadow-md active:scale-[0.97] ${
+      className={`group relative flex min-h-[72px] flex-col items-center justify-center gap-0.5 rounded-2xl bg-gradient-to-br ${theme.soft} px-2 py-4 ring-1 ${theme.ring} transition-all hover:-translate-y-0.5 hover:shadow-md active:scale-[0.97] ${
         state !== 'idle' ? 'ring-2 ring-offset-1 ring-offset-white dark:ring-offset-slate-900' : ''
       } ${state === 'playing' ? 'animate-pop' : ''}`}
     >
@@ -611,7 +611,7 @@ function MemoryMatch({
             </div>
           )}
 
-          <div className="grid grid-cols-4 gap-2.5">
+          <div className="grid grid-cols-4 gap-3">
             {cards.map((c) => (
               <MemTile
                 key={c.id}
@@ -817,7 +817,7 @@ function Quiz({
             <span className="text-xs text-slate-400">แตะเพื่อฟังเสียง แล้วเลือกคำตอบ — Tap to hear, then choose</span>
           </div>
 
-          <div className="grid grid-cols-4 gap-2">
+          <div className="grid grid-cols-4 gap-2.5">
             {options.map((o) => {
               const isTarget = o.key === target.key;
               const isPicked = o.key === picked;
@@ -833,7 +833,7 @@ function Quiz({
                   type="button"
                   onClick={() => choose(o)}
                   disabled={!!picked}
-                  className={`relative flex items-center justify-center rounded-2xl py-4 text-2xl font-extrabold ring-1 transition-all ${style} ${!picked ? 'active:scale-95' : ''}`}
+                  className={`relative flex min-h-[60px] items-center justify-center rounded-2xl py-4 text-2xl font-extrabold ring-1 transition-all ${style} ${!picked ? 'active:scale-95' : ''}`}
                 >
                   {o.glyph}
                   {picked && isTarget && <Check className="absolute right-1.5 top-1.5 h-4 w-4 text-emerald-500" />}
@@ -844,13 +844,18 @@ function Quiz({
           </div>
 
           {picked && (
-            <button
-              type="button"
-              onClick={newRound}
-              className="mt-3 flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-50 py-2.5 text-sm font-medium text-slate-600 ring-1 ring-slate-200 transition hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-700"
-            >
-              <RefreshCw className="h-4 w-4" /> ข้อต่อไป — Next
-            </button>
+            // On phones the "Next" advance control sticks to the bottom of the
+            // viewport so the learner can keep tapping through rounds without
+            // scrolling back down. Reverts to inline flow from `sm` up.
+            <div className="mt-3 max-sm:sticky max-sm:bottom-0 max-sm:z-20 max-sm:-mx-4 max-sm:border-t max-sm:border-slate-200/70 max-sm:bg-white/90 max-sm:px-4 max-sm:pt-3 max-sm:pb-safe max-sm:backdrop-blur dark:max-sm:border-slate-800 dark:max-sm:bg-slate-900/90">
+              <button
+                type="button"
+                onClick={newRound}
+                className="flex min-h-[48px] w-full items-center justify-center gap-2 rounded-2xl bg-slate-50 py-2.5 text-sm font-medium text-slate-600 ring-1 ring-slate-200 transition hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-700"
+              >
+                <RefreshCw className="h-4 w-4" /> ข้อต่อไป — Next
+              </button>
+            </div>
           )}
         </>
       )}

@@ -9,18 +9,24 @@ type Props = {
   text: string;
   /** Active target-language code; selects the matching clip / TTS voice. */
   langCode?: LocaleCode;
+  /**
+   * Optional explicit clip URL. When set (e.g. a hand-picked premium .mp3 in the
+   * content JSON), it overrides the auto-generated clip for any language — the
+   * escape hatch for swapping out flawed/unnatural generated audio.
+   */
+  audioUrl?: string;
   className?: string;
 };
 
 // Circular speaker button.
 //
-// For zh/ja it plays a pre-rendered native recording
-// (public/audio/<lang>/tts/<hash>.mp3) so pronunciation is correct even on
-// devices that have no Chinese/Japanese TTS voice installed — that missing-voice
-// case is why Vocab/Conversation audio silently failed in production. English
-// uses the browser's (universally available) voice directly. Any clip that is
-// missing or fails to load falls back to browser speech synthesis.
-export default function SpeakButton({ text, langCode = 'en', className = '' }: Props) {
+// Playback order: an explicit `audioUrl` override always wins. Otherwise zh/ja
+// play a pre-rendered native recording (public/audio/<lang>/tts/<hash>.mp3) so
+// pronunciation is correct even on devices with no Chinese/Japanese TTS voice —
+// that missing-voice case is why Vocab/Conversation audio failed in production.
+// English uses the browser's (universally available) voice directly. Any clip
+// that is missing or fails to load falls back to browser speech synthesis.
+export default function SpeakButton({ text, langCode = 'en', audioUrl, className = '' }: Props) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
 
@@ -28,17 +34,17 @@ export default function SpeakButton({ text, langCode = 'en', className = '' }: P
   useEffect(() => () => { audioRef.current?.pause(); }, []);
 
   function play() {
-    // English: the browser voice is always present and accurate — skip the file
-    // round-trip entirely.
-    if (langCode === 'en') {
-      speak(text, bcp47For(langCode));
+    // Pick the clip source: explicit override → generated zh/ja clip → none (en).
+    const src = audioUrl ?? (langCode === 'en' ? null : speechFileUrl(langCode, text));
+    if (!src) {
+      speak(text, bcp47For(langCode)); // English: browser voice is always present.
       return;
     }
 
     const a = audioRef.current ?? new Audio();
     audioRef.current = a;
     a.pause();
-    a.src = speechFileUrl(langCode, text);
+    a.src = src;
 
     let settled = false;
     const fallback = () => {
