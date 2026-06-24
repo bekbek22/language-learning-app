@@ -218,7 +218,7 @@ export default function VocabModule() {
   }
 
   return (
-    <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/60 dark:bg-slate-900 dark:ring-slate-800 dark:hover:shadow-black/40">
+    <div className="rounded-3xl bg-white p-4 shadow-sm ring-1 ring-slate-200/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/60 sm:p-6 dark:bg-slate-900 dark:ring-slate-800 dark:hover:shadow-black/40">
       {/* Header */}
       <div className="mb-5 flex items-center gap-3">
         <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-purple-500 text-xl shadow-md shadow-violet-500/30">
@@ -306,7 +306,7 @@ export default function VocabModule() {
                 key={choice}
                 onClick={() => handleChoice(choice)}
                 disabled={!!selected}
-                className={`flex w-full items-center justify-between rounded-2xl px-4 py-3 text-left text-sm font-medium ring-1 transition-all ${style} disabled:cursor-default ${!selected ? 'active:scale-[0.99]' : ''}`}
+                className={`flex min-h-[52px] w-full items-center justify-between rounded-2xl px-4 py-3 text-left text-sm font-medium ring-1 transition-all ${style} disabled:cursor-default ${!selected ? 'active:scale-[0.99]' : ''}`}
               >
                 <span>{choice}</span>
                 {selected && isCorrect  && <span className="text-emerald-600 dark:text-emerald-400">✓</span>}
@@ -343,7 +343,7 @@ export default function VocabModule() {
       <button
         onClick={nextWord}
         disabled={isLoading}
-        className="w-full rounded-2xl bg-slate-50 py-3 text-sm font-medium text-slate-500 ring-1 ring-slate-200 transition hover:bg-slate-100 hover:text-slate-700 disabled:cursor-not-allowed disabled:opacity-40 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-700 dark:hover:text-slate-100"
+        className="min-h-[48px] w-full rounded-2xl bg-slate-50 py-3 text-sm font-medium text-slate-500 ring-1 ring-slate-200 transition hover:bg-slate-100 hover:text-slate-700 disabled:cursor-not-allowed disabled:opacity-40 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-700 dark:hover:text-slate-100"
       >
         ✨ คำใหม่ — New Word
       </button>

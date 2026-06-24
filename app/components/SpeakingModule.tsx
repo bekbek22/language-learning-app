@@ -367,7 +367,7 @@ export default function SpeakingModule() {
   }
 
   return (
-    <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/60 dark:bg-slate-900 dark:ring-slate-800 dark:hover:shadow-black/40">
+    <div className="rounded-3xl bg-white p-4 shadow-sm ring-1 ring-slate-200/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/60 sm:p-6 dark:bg-slate-900 dark:ring-slate-800 dark:hover:shadow-black/40">
       {/* Header */}
       <div className="mb-5 flex items-center gap-3">
         <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-500 text-xl shadow-md shadow-blue-500/30">
@@ -414,73 +414,8 @@ export default function SpeakingModule() {
         )}
       </div>
 
-      {/* Live mic feedback so the learner always knows whether they were heard. */}
-      {hint && (status === 'idle' || status === 'listening' || status === 'processing') && (
-        <p className="mb-2.5 rounded-2xl bg-slate-50 px-4 py-2.5 text-center text-xs font-medium text-slate-600 ring-1 ring-slate-100 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700">
-          {hint}
-        </p>
-      )}
-
-      {/* idle */}
-      {status === 'idle' && (
-        <div className="space-y-2.5">
-          <button
-            onClick={startListening}
-            disabled={isLoading || !currentPhrase || isStarting}
-            className="w-full rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 transition-all hover:shadow-blue-500/40 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
-          >
-            {isStarting ? '⏳ กำลังเปิดไมค์…' : '🎙️ กดเพื่อพูด — Tap to Speak'}
-          </button>
-          <button
-            onClick={nextPhrase}
-            disabled={isLoading}
-            className="w-full rounded-2xl bg-slate-50 py-3 text-sm font-medium text-slate-500 ring-1 ring-slate-200 transition hover:bg-slate-100 hover:text-slate-700 disabled:cursor-not-allowed disabled:opacity-40 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-700 dark:hover:text-slate-100"
-          >
-            ✨ ประโยคใหม่ — New Sentence
-          </button>
-        </div>
-      )}
-
-      {/* listening — tap again to explicitly stop and commit */}
-      {status === 'listening' && (
-        <div className="space-y-2.5">
-          <button
-            onClick={stopListening}
-            className="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-red-500 to-rose-500 py-3.5 text-sm font-semibold text-white shadow-lg shadow-red-500/25 transition-all hover:shadow-red-500/40 active:scale-[0.98]"
-          >
-            <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-white" />
-            ⏹ กำลังฟัง… กดเพื่อหยุด — Listening… Tap to Stop
-          </button>
-          {/* Bypass: if the mic stalls or won't pick up this learner's voice, let
-              them move on instead of being stuck on the Stop button. */}
-          <button
-            onClick={nextPhrase}
-            className="w-full rounded-2xl py-2 text-xs font-medium text-slate-400 transition hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300"
-          >
-            ข้ามประโยคนี้ — Skip / Tap to bypass
-          </button>
-        </div>
-      )}
-
-      {/* processing — brief beat while the engine flushes the final audio */}
-      {status === 'processing' && (
-        <div className="space-y-2.5">
-          <div className="flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-100 py-3.5 text-sm font-semibold text-slate-500 dark:bg-slate-800 dark:text-slate-300">
-            <span className="h-2 w-2 animate-bounce rounded-full bg-slate-400 [animation-delay:-0.3s]" />
-            <span className="h-2 w-2 animate-bounce rounded-full bg-slate-400 [animation-delay:-0.15s]" />
-            <span className="h-2 w-2 animate-bounce rounded-full bg-slate-400" />
-            <span className="ml-1">⏳ กำลังประมวลผล… — Processing…</span>
-          </div>
-          <button
-            onClick={nextPhrase}
-            className="w-full rounded-2xl py-2 text-xs font-medium text-slate-400 transition hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300"
-          >
-            ข้ามประโยคนี้ — Skip / Tap to bypass
-          </button>
-        </div>
-      )}
-
-      {/* done */}
+      {/* Result content (transcript + per-word scoring) stays in normal flow,
+          above the action bar, so it can scroll on small screens. */}
       {status === 'done' && (
         <div className="space-y-4">
           <div>
@@ -521,22 +456,98 @@ export default function SpeakingModule() {
               ))}
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Action bar. On phones it sticks to the bottom of the viewport (with a
+          translucent backdrop + safe-area padding) so the mic trigger, status
+          hint, skip, and advance controls stay within thumb reach without
+          scrolling. Reverts to normal inline flow from `sm` up. */}
+      <div className="mt-4 max-sm:sticky max-sm:bottom-0 max-sm:z-20 max-sm:-mx-4 max-sm:border-t max-sm:border-slate-200/70 max-sm:bg-white/90 max-sm:px-4 max-sm:pt-3 max-sm:pb-safe max-sm:backdrop-blur dark:max-sm:border-slate-800 dark:max-sm:bg-slate-900/90">
+        {/* Live mic feedback so the learner always knows whether they were heard. */}
+        {hint && (status === 'idle' || status === 'listening' || status === 'processing') && (
+          <p className="mb-2.5 rounded-2xl bg-slate-50 px-4 py-2.5 text-center text-xs font-medium text-slate-600 ring-1 ring-slate-100 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700">
+            {hint}
+          </p>
+        )}
+
+        {/* idle */}
+        {status === 'idle' && (
+          <div className="space-y-2.5">
+            <button
+              onClick={startListening}
+              disabled={isLoading || !currentPhrase || isStarting}
+              className="min-h-[52px] w-full rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 transition-all hover:shadow-blue-500/40 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
+            >
+              {isStarting ? '⏳ กำลังเปิดไมค์…' : '🎙️ กดเพื่อพูด — Tap to Speak'}
+            </button>
+            <button
+              onClick={nextPhrase}
+              disabled={isLoading}
+              className="min-h-[48px] w-full rounded-2xl bg-slate-50 py-3 text-sm font-medium text-slate-500 ring-1 ring-slate-200 transition hover:bg-slate-100 hover:text-slate-700 disabled:cursor-not-allowed disabled:opacity-40 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-700 dark:hover:text-slate-100"
+            >
+              ✨ ประโยคใหม่ — New Sentence
+            </button>
+          </div>
+        )}
+
+        {/* listening — tap again to explicitly stop and commit */}
+        {status === 'listening' && (
+          <div className="space-y-2.5">
+            <button
+              onClick={stopListening}
+              className="flex min-h-[52px] w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-red-500 to-rose-500 py-3.5 text-sm font-semibold text-white shadow-lg shadow-red-500/25 transition-all hover:shadow-red-500/40 active:scale-[0.98]"
+            >
+              <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-white" />
+              ⏹ กำลังฟัง… กดเพื่อหยุด — Listening… Tap to Stop
+            </button>
+            {/* Bypass: if the mic stalls or won't pick up this learner's voice, let
+                them move on instead of being stuck on the Stop button. */}
+            <button
+              onClick={nextPhrase}
+              className="min-h-[44px] w-full rounded-2xl py-2 text-xs font-medium text-slate-400 transition hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300"
+            >
+              ข้ามประโยคนี้ — Skip / Tap to bypass
+            </button>
+          </div>
+        )}
+
+        {/* processing — brief beat while the engine flushes the final audio */}
+        {status === 'processing' && (
+          <div className="space-y-2.5">
+            <div className="flex min-h-[52px] w-full items-center justify-center gap-2 rounded-2xl bg-slate-100 py-3.5 text-sm font-semibold text-slate-500 dark:bg-slate-800 dark:text-slate-300">
+              <span className="h-2 w-2 animate-bounce rounded-full bg-slate-400 [animation-delay:-0.3s]" />
+              <span className="h-2 w-2 animate-bounce rounded-full bg-slate-400 [animation-delay:-0.15s]" />
+              <span className="h-2 w-2 animate-bounce rounded-full bg-slate-400" />
+              <span className="ml-1">⏳ กำลังประมวลผล… — Processing…</span>
+            </div>
+            <button
+              onClick={nextPhrase}
+              className="min-h-[44px] w-full rounded-2xl py-2 text-xs font-medium text-slate-400 transition hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300"
+            >
+              ข้ามประโยคนี้ — Skip / Tap to bypass
+            </button>
+          </div>
+        )}
+
+        {/* done — advance controls */}
+        {status === 'done' && (
           <div className="flex gap-2">
             <button
               onClick={retry}
-              className="flex-1 rounded-2xl bg-blue-50 py-3 text-sm font-semibold text-blue-600 ring-1 ring-blue-200 transition hover:bg-blue-100 dark:bg-blue-950/40 dark:text-blue-300 dark:ring-blue-900/50 dark:hover:bg-blue-950/60"
+              className="min-h-[48px] flex-1 rounded-2xl bg-blue-50 py-3 text-sm font-semibold text-blue-600 ring-1 ring-blue-200 transition hover:bg-blue-100 dark:bg-blue-950/40 dark:text-blue-300 dark:ring-blue-900/50 dark:hover:bg-blue-950/60"
             >
               ลองอีกครั้ง — Try Again
             </button>
             <button
               onClick={nextPhrase}
-              className="flex-1 rounded-2xl bg-slate-50 py-3 text-sm font-medium text-slate-500 ring-1 ring-slate-200 transition hover:bg-slate-100 hover:text-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-700 dark:hover:text-slate-100"
+              className="min-h-[48px] flex-1 rounded-2xl bg-slate-50 py-3 text-sm font-medium text-slate-500 ring-1 ring-slate-200 transition hover:bg-slate-100 hover:text-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-700 dark:hover:text-slate-100"
             >
               ✨ ประโยคใหม่ — New
             </button>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }

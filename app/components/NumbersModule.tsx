@@ -135,7 +135,7 @@ export default function NumbersModule({ lang }: { lang: LocaleCode }) {
   const [level, setLevel] = useState<'basics' | 'big'>('basics');
 
   return (
-    <div className="relative rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-900 dark:ring-slate-800">
+    <div className="relative rounded-3xl bg-white p-4 shadow-sm ring-1 ring-slate-200/70 sm:p-6 dark:bg-slate-900 dark:ring-slate-800">
       {/* Header */}
       <div className="mb-5 flex flex-wrap items-center gap-3">
         <div className={`flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br ${theme.grad} text-white shadow-md`}>
@@ -198,7 +198,7 @@ function SegTabs({
           key={o.k}
           type="button"
           onClick={() => onChange(o.k)}
-          className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition ${
+          className={`min-h-[40px] rounded-full px-3.5 py-2 text-xs font-semibold transition ${
             value === o.k ? `${chip} text-white shadow` : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'
           }`}
         >
@@ -229,7 +229,7 @@ function BasicsView({ lang, theme, play, stateFor }: AudioProps) {
       </div>
 
       {/* Numbers 1–20 */}
-      <div className="grid grid-cols-4 gap-2.5 sm:grid-cols-5 md:grid-cols-7">
+      <div className="grid grid-cols-3 gap-3 sm:grid-cols-5 md:grid-cols-7">
         {numbers.map((num) => {
           const key = num.read;
           const state = stateFor(key);
@@ -238,7 +238,7 @@ function BasicsView({ lang, theme, play, stateFor }: AudioProps) {
               key={num.n}
               type="button"
               onClick={() => play({ key, audioUrl: audioSrc(lang, key) })}
-              className={`group relative flex flex-col items-center justify-center gap-0.5 rounded-2xl bg-gradient-to-br ${theme.soft} px-1 py-3 ring-1 ${theme.ring} transition-all hover:-translate-y-0.5 hover:shadow-md active:scale-[0.97] ${
+              className={`group relative flex min-h-[68px] flex-col items-center justify-center gap-0.5 rounded-2xl bg-gradient-to-br ${theme.soft} px-1 py-3 ring-1 ${theme.ring} transition-all hover:-translate-y-0.5 hover:shadow-md active:scale-[0.97] ${
                 state !== 'idle' ? 'ring-2' : ''
               }`}
             >
@@ -330,7 +330,7 @@ function StepBtn({ children, onClick }: { children: React.ReactNode; onClick: ()
     <button
       type="button"
       onClick={onClick}
-      className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-slate-600 shadow-sm ring-1 ring-slate-200 transition hover:scale-110 active:scale-95 dark:bg-slate-800 dark:text-slate-200 dark:ring-slate-700"
+      className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-slate-600 shadow-sm ring-1 ring-slate-200 transition hover:scale-110 active:scale-95 dark:bg-slate-800 dark:text-slate-200 dark:ring-slate-700"
     >
       {children}
     </button>
@@ -351,7 +351,7 @@ function JaCounters({ theme, play, stateFor }: AudioProps) {
               <span className="text-sm font-bold text-slate-700 dark:text-slate-200">{counter.label}</span>
             </div>
             <p className="mb-2 text-[11px] text-slate-400">{counter.note}</p>
-            <div className="grid grid-cols-4 gap-2 sm:grid-cols-5">
+            <div className="grid grid-cols-3 gap-3 sm:grid-cols-5">
               {counter.items.map((item) => {
                 const key = item.read;
                 const state = stateFor(key);
@@ -360,7 +360,7 @@ function JaCounters({ theme, play, stateFor }: AudioProps) {
                     key={item.n}
                     type="button"
                     onClick={() => play({ key, audioUrl: audioSrc('ja', key) })}
-                    className={`group relative flex flex-col items-center gap-0.5 rounded-2xl bg-gradient-to-br ${theme.soft} px-1 py-2.5 ring-1 ${theme.ring} transition-all hover:-translate-y-0.5 hover:shadow-md active:scale-[0.97] ${state !== 'idle' ? 'ring-2' : ''}`}
+                    className={`group relative flex min-h-[64px] flex-col items-center justify-center gap-0.5 rounded-2xl bg-gradient-to-br ${theme.soft} px-1 py-2.5 ring-1 ${theme.ring} transition-all hover:-translate-y-0.5 hover:shadow-md active:scale-[0.97] ${state !== 'idle' ? 'ring-2' : ''}`}
                   >
                     <span className="text-[10px] font-bold text-slate-400">{item.n}</span>
                     <span className="text-base font-bold leading-tight text-slate-800 dark:text-slate-100">{item.kana}</span>
@@ -386,7 +386,7 @@ function ZhGestures({ theme, play, stateFor }: AudioProps) {
       <SectionTitle theme={theme} icon={<Layers className="h-4 w-4" />}>
         ท่ามือนับเลขจีน — Hand Gestures (1–10)
       </SectionTitle>
-      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {ZH_GESTURES.map((g) => {
           const key = g.read;
           const state = stateFor(key);
@@ -395,7 +395,7 @@ function ZhGestures({ theme, play, stateFor }: AudioProps) {
               key={g.n}
               type="button"
               onClick={() => play({ key, audioUrl: audioSrc('zh', key) })}
-              className={`group flex items-center gap-3 rounded-2xl bg-gradient-to-br ${theme.soft} px-3 py-2.5 text-left ring-1 ${theme.ring} transition-all hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98] ${state !== 'idle' ? 'ring-2' : ''}`}
+              className={`group flex min-h-[56px] items-center gap-3 rounded-2xl bg-gradient-to-br ${theme.soft} px-3 py-2.5 text-left ring-1 ${theme.ring} transition-all hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98] ${state !== 'idle' ? 'ring-2' : ''}`}
             >
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/70 text-xl dark:bg-slate-800/70">{g.emoji}</span>
               <span className="flex items-baseline gap-2">
@@ -424,7 +424,7 @@ function ZhMeasures({ theme, play, stateFor }: AudioProps) {
       <div className={`mb-3 rounded-2xl bg-gradient-to-r ${theme.soft} px-4 py-2.5 text-xs font-medium text-slate-600 ring-1 ${theme.ring} dark:text-slate-300`}>
         💡 นับของให้ใช้ <b className="font-bold">两 (liǎng)</b> ไม่ใช่ <b className="font-bold">二 (èr)</b> — say 两, not 二, when counting things.
       </div>
-      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
         {ZH_MEASURES.map((m) => {
           const key = m.read;
           const state = stateFor(key);
@@ -433,7 +433,7 @@ function ZhMeasures({ theme, play, stateFor }: AudioProps) {
               key={m.hanzi}
               type="button"
               onClick={() => play({ key, audioUrl: audioSrc('zh', key) })}
-              className={`group relative flex flex-col items-start gap-0.5 rounded-2xl bg-gradient-to-br ${theme.soft} px-3 py-2.5 text-left ring-1 ${theme.ring} transition-all hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98] ${state !== 'idle' ? 'ring-2' : ''}`}
+              className={`group relative flex min-h-[60px] flex-col items-start justify-center gap-0.5 rounded-2xl bg-gradient-to-br ${theme.soft} px-3 py-2.5 text-left ring-1 ${theme.ring} transition-all hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98] ${state !== 'idle' ? 'ring-2' : ''}`}
             >
               <span className="flex items-baseline gap-1.5">
                 <span className="text-xl font-extrabold text-slate-800 dark:text-slate-100">{m.hanzi}</span>
@@ -494,7 +494,7 @@ function CountMatch({ theme }: { theme: Theme }) {
         {Array.from({ length: round.count }, (_, i) => <span key={i}>{round.emoji}</span>)}
       </div>
 
-      <div className="grid grid-cols-4 gap-2">
+      <div className="grid grid-cols-4 gap-2.5">
         {round.options.map((o) => {
           const isCount = o === round.count;
           let style = 'bg-white text-slate-700 ring-slate-200 hover:ring-slate-300 dark:bg-slate-800 dark:text-slate-100 dark:ring-slate-700';
@@ -509,7 +509,7 @@ function CountMatch({ theme }: { theme: Theme }) {
               type="button"
               onClick={() => choose(o)}
               disabled={picked != null}
-              className={`relative flex items-center justify-center rounded-2xl py-3 text-xl font-extrabold ring-1 transition-all ${style} ${picked == null ? 'active:scale-95' : ''}`}
+              className={`relative flex min-h-[52px] items-center justify-center rounded-2xl py-3 text-xl font-extrabold ring-1 transition-all ${style} ${picked == null ? 'active:scale-95' : ''}`}
             >
               {o}
               {picked != null && isCount && <Check className="absolute right-1 top-1 h-4 w-4 text-emerald-500" />}
@@ -541,7 +541,7 @@ function BigView({ lang, theme, play, stateFor }: AudioProps) {
   return (
     <div className="space-y-6">
       {/* Milestone tiles */}
-      <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
         {BIG_NUMBERS.map((b) => {
           const form = bigFormFor(b, lang);
           const key = form.read;
@@ -605,7 +605,9 @@ function PlaceValueBreakdown({ value, lang, theme }: { value: BigNumber; lang: L
       <div className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200 dark:bg-slate-800/50 dark:ring-slate-700">
         <p className="mb-3 text-center text-2xl font-extrabold text-slate-800 dark:text-slate-100">{groupWestern(value.value)}</p>
 
-        <div className="grid gap-3 sm:grid-cols-2">
+        {/* Stacked on phones/tablets so each grouping stays full-width and
+            readable; side-by-side only once there's real horizontal room (lg). */}
+        <div className="grid gap-3 lg:grid-cols-2">
           {/* Western grouping */}
           <DigitGroups
             title="ตะวันตก — Western"
@@ -648,11 +650,11 @@ function DigitGroups({
     <div className="rounded-xl bg-white p-3 ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-700">
       <p className="text-xs font-bold text-slate-700 dark:text-slate-200">{title}</p>
       <p className="mb-2 text-[10px] text-slate-400">{subtitle}</p>
-      <div className="mb-2 flex flex-wrap items-center gap-1">
+      <div className="mb-2 flex flex-wrap items-center justify-center gap-1">
         {chunks.map((c, i) => (
           <span key={i} className="flex items-center gap-1">
             {i > 0 && <span className="text-slate-400">{sep}</span>}
-            <span className={`rounded-md px-1.5 py-1 font-mono text-sm font-bold ${
+            <span className={`rounded-md px-2 py-1.5 font-mono text-sm font-bold ${
               highlightLast && i === chunks.length - 1 ? 'bg-amber-200 text-amber-900 dark:bg-amber-800/60 dark:text-amber-200' : accent
             }`}>{c}</span>
           </span>
@@ -733,7 +735,7 @@ function PriceTagMatcher({ lang, theme, play, stateFor }: AudioProps) {
         <span className="text-xs text-slate-400">แตะเพื่อฟังราคาอีกครั้ง — tap to hear the price</span>
       </div>
 
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-2 gap-3">
         {round.options.map((o) => {
           const isTarget = o === round.value;
           let style = 'bg-white text-slate-700 ring-slate-200 hover:ring-slate-300 dark:bg-slate-800 dark:text-slate-100 dark:ring-slate-700';
@@ -748,7 +750,7 @@ function PriceTagMatcher({ lang, theme, play, stateFor }: AudioProps) {
               type="button"
               onClick={() => choose(o)}
               disabled={picked != null}
-              className={`relative flex items-center justify-center rounded-2xl py-3 text-base font-extrabold ring-1 transition-all ${style} ${picked == null ? 'active:scale-95' : ''}`}
+              className={`relative flex min-h-[52px] items-center justify-center rounded-2xl py-3 text-base font-extrabold ring-1 transition-all ${style} ${picked == null ? 'active:scale-95' : ''}`}
             >
               {formatPrice(o, lang)}
               {picked != null && isTarget && <Check className="absolute right-1.5 top-1.5 h-4 w-4 text-emerald-500" />}
