@@ -18,7 +18,7 @@
  * Requires Node 18+ (uses global fetch). No dependencies.
  */
 
-import { mkdir, writeFile, access } from 'node:fs/promises';
+import { mkdir, writeFile, access, readFile } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -150,6 +150,43 @@ function slug(s) {
     .replace(/^-+|-+$/g, '');
 }
 
+// ── Vocab & Conversation speech clips ────────────────────────────────────────
+// Unlike letters/numbers, these modules speak whole words and sentences via
+// SpeakButton. On a device with no zh/ja TTS voice the browser stays silent, so
+// we pre-render native clips keyed by a hash of the EXACT text the client will
+// request. English keeps using the (universal) browser voice, so we only render
+// zh/ja here. Files: public/audio/<lang>/tts/<hash>.mp3.
+const SPEECH_LANGS = ['zh', 'ja'];
+
+// cyrb53 — MUST stay byte-for-byte identical to ttsHash() in app/lib/audioFile.ts
+// so the file the browser requests matches the one written here.
+function ttsHash(text) {
+  let h1 = 0xdeadbeef, h2 = 0x41c6ce57;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text.charCodeAt(i);
+    h1 = Math.imul(h1 ^ ch, 2654435761);
+    h2 = Math.imul(h2 ^ ch, 1597334677);
+  }
+  h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+  h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+  return (4294967296 * (2097151 & h2) + (h1 >>> 0)).toString(36);
+}
+
+async function loadJson(relPath) {
+  return JSON.parse(await readFile(join(ROOT, relPath), 'utf8'));
+}
+
+// The exact strings SpeakButton speaks: vocab `word` + conversation `sentence`.
+// De-duped (identical text → identical hash → one file).
+async function speechItems(lang) {
+  const vocab = await loadJson(`app/data/${lang}/vocab.json`);
+  const phrases = await loadJson(`app/data/${lang}/phrases.json`);
+  const texts = [...vocab.map((v) => v.word), ...phrases.map((p) => p.sentence)]
+    .filter((t) => typeof t === 'string' && t.trim())
+    .map((t) => t.trim());
+  return [...new Set(texts)].map((text) => ({ hash: ttsHash(text), text }));
+}
+
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const exists = (p) => access(p).then(() => true).catch(() => false);
 
@@ -225,6 +262,33 @@ async function main() {
       } catch (err) {
         failed++;
         process.stdout.write(`  ✗ n/${slug(key)}.mp3 — ${err.message}\n`);
+      }
+      await sleep(DELAY_MS);
+    }
+  }
+
+  // Vocab & Conversation speech → public/audio/<lang>/tts/<hash>.mp3
+  for (const lang of targets) {
+    if (!SPEECH_LANGS.includes(lang)) continue;
+    const items = await speechItems(lang);
+    const sdir = join(OUT_DIR, lang, 'tts');
+    await mkdir(sdir, { recursive: true });
+    console.log(`\n▶ ${lang} speech — ${items.length} files → public/audio/${lang}/tts/`);
+
+    for (const { hash, text } of items) {
+      const file = join(sdir, `${hash}.mp3`);
+      if (!force && (await exists(file))) {
+        skipped++;
+        continue;
+      }
+      try {
+        const buf = await fetchTts(text, lang);
+        await writeFile(file, buf);
+        done++;
+        process.stdout.write(`  ✓ tts/${hash}.mp3 (${text})\n`);
+      } catch (err) {
+        failed++;
+        process.stdout.write(`  ✗ tts/${hash}.mp3 — ${err.message}\n`);
       }
       await sleep(DELAY_MS);
     }

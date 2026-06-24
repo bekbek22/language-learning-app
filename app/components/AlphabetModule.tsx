@@ -88,35 +88,27 @@ function fisherYates<T>(arr: T[]): T[] {
   return a;
 }
 
-export default function AlphabetModule({ lang }: { lang: LocaleCode }) {
-  const theme = THEME[lang];
-
-  // ── Audio playback (mp3 only) ────────────────────────────────────────────────
-  // One reused <audio> element. `current` tracks which tile is loading/playing so
-  // the UI can swap the speaker icon for a spinner. `warning` is a transient,
-  // auto-dismissing message shown when a recording is missing or fails to load.
+// ── Shared audio player ──────────────────────────────────────────────────────
+// One reused <audio> element. `current` tracks which target is loading/playing
+// so a button can swap its speaker icon for a spinner. A missing/slow recording
+// must never leave a spinner stuck: on top of onerror/onplaying, a per-call
+// watchdog forces the loading state to resolve (and warns) if playback hasn't
+// begun within WATCHDOG_MS — covers stalled requests and silent timeouts that
+// never fire an error event. `warn` surfaces failures via the parent's toast.
+//
+// Each call site that must NOT share playback highlighting gets its own instance
+// — notably the quiz, so playing the prompt never pops the matching glyph in the
+// always-visible practice grid (that visual cue was spoiling the answer).
+function useAudioPlayer(warn: (msg: string) => void) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const warnTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const watchdog = useRef<ReturnType<typeof setTimeout> | null>(null); // cancels the previous load
   const [current, setCurrent] = useState<{ key: string; status: PlayState } | null>(null);
-  const [warning, setWarning] = useState<string | null>(null);
 
   useEffect(() => () => {
     audioRef.current?.pause();
-    if (warnTimer.current) clearTimeout(warnTimer.current);
     if (watchdog.current) clearTimeout(watchdog.current);
   }, []);
 
-  function warn(msg: string) {
-    setWarning(msg);
-    if (warnTimer.current) clearTimeout(warnTimer.current);
-    warnTimer.current = setTimeout(() => setWarning(null), 3500);
-  }
-
-  // A missing/slow recording must never leave the spinner spinning. On top of
-  // onerror/onplaying, a per-call watchdog forces the loading state to resolve
-  // (and warns) if playback hasn't begun within WATCHDOG_MS — covers stalled
-  // requests and silent network timeouts that never fire an error event.
   const WATCHDOG_MS = 6000;
   function play(t: PlayTarget) {
     audioRef.current?.pause();
@@ -142,7 +134,7 @@ export default function AlphabetModule({ lang }: { lang: LocaleCode }) {
     }, WATCHDOG_MS);
     watchdog.current = myTimer;
 
-    // Clear state only if this tile is still the active one (guards races when
+    // Clear state only if this target is still the active one (guards races when
     // the user taps another tile mid-load).
     const settle = (status: PlayState | null) => {
       clearTimeout(myTimer);
@@ -158,6 +150,27 @@ export default function AlphabetModule({ lang }: { lang: LocaleCode }) {
   function stateFor(key: string): PlayState {
     return current?.key === key ? current.status : 'idle';
   }
+
+  return { play, stateFor };
+}
+
+export default function AlphabetModule({ lang }: { lang: LocaleCode }) {
+  const theme = THEME[lang];
+
+  // Transient, auto-dismissing toast shown when a recording is missing or fails.
+  const warnTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [warning, setWarning] = useState<string | null>(null);
+  useEffect(() => () => { if (warnTimer.current) clearTimeout(warnTimer.current); }, []);
+  function warn(msg: string) {
+    setWarning(msg);
+    if (warnTimer.current) clearTimeout(warnTimer.current);
+    warnTimer.current = setTimeout(() => setWarning(null), 3500);
+  }
+
+  // Audio for the practice grid / tone board / memory match. The quiz uses its
+  // OWN player instance (see <Quiz>), so playing the quiz prompt never lights up
+  // (pops) the matching glyph tile in the always-visible grid.
+  const { play, stateFor } = useAudioPlayer(warn);
 
   // Per-language view toggles.
   const [enMode, setEnMode] = useState<'names' | 'phonics'>('names');
@@ -313,7 +326,7 @@ export default function AlphabetModule({ lang }: { lang: LocaleCode }) {
           )}
 
           {/* Mini-quiz (only meaningful once recordings are wired up) */}
-          {hasAudio && <Quiz pool={tiles} lang={lang} onPlay={play} stateFor={stateFor} theme={theme} />}
+          {hasAudio && <Quiz pool={tiles} lang={lang} warn={warn} theme={theme} />}
         </>
       )}
 
@@ -718,16 +731,17 @@ function Confetti() {
 function Quiz({
   pool,
   lang,
-  onPlay,
-  stateFor,
+  warn,
   theme,
 }: {
   pool: Tile[];
   lang: LocaleCode;
-  onPlay: (t: PlayTarget) => void;
-  stateFor: (key: string) => PlayState;
+  warn: (msg: string) => void;
   theme: Theme;
 }) {
+  // Dedicated player: keeps quiz playback state separate from the practice grid,
+  // so hearing the prompt never highlights/pops the answer tile in the grid.
+  const { play, stateFor } = useAudioPlayer(warn);
   const [target, setTarget] = useState<Tile | null>(null);
   const [options, setOptions] = useState<Tile[]>([]);
   const [picked, setPicked] = useState<string | null>(null);
@@ -747,7 +761,9 @@ function Quiz({
     setOptions(fisherYates([t, ...distractors]));
     setTarget(t);
     setPicked(null);
-    onPlay(t);
+    // Do NOT auto-play here. Auto-playing on every new round (or any state change)
+    // spoils the answer before the learner chooses — audio is played only when
+    // they tap the dedicated "Listen to Question" button below.
   }
 
   function choose(opt: Tile) {
@@ -788,16 +804,17 @@ function Quiz({
         </button>
       ) : (
         <>
-          <div className="mb-3 flex items-center justify-center gap-3">
+          <div className="mb-3 flex flex-col items-center justify-center gap-1.5">
             <button
               type="button"
-              onClick={() => onPlay(target)}
-              className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-600 shadow-sm ring-1 ring-slate-200 transition hover:scale-110 hover:shadow-md dark:bg-slate-800 dark:text-slate-200 dark:ring-slate-700"
-              aria-label="เล่นเสียงอีกครั้ง — Play again"
+              onClick={() => play(target)}
+              className={`inline-flex items-center gap-2 rounded-full bg-gradient-to-r ${theme.quiz} px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:scale-105 hover:shadow-lg active:scale-95`}
+              aria-label="ฟังคำถาม — Listen to the question"
             >
               <AudioIcon state={stateFor(target.key)} className="h-5 w-5" />
+              ฟังคำถาม — Listen to Question
             </button>
-            <span className="text-xs text-slate-400">แตะเพื่อฟังอีกครั้ง</span>
+            <span className="text-xs text-slate-400">แตะเพื่อฟังเสียง แล้วเลือกคำตอบ — Tap to hear, then choose</span>
           </div>
 
           <div className="grid grid-cols-4 gap-2">

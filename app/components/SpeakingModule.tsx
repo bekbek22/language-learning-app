@@ -5,7 +5,7 @@ import SpeakButton from './SpeakButton';
 import Ruby, { type ReadingSegment } from './Ruby';
 import { getLocale, onLocaleChange, bcp47For, type LocaleCode } from '../lib/locale';
 
-type Status = 'idle' | 'listening' | 'done';
+type Status = 'idle' | 'listening' | 'processing' | 'done';
 
 type Target = { word: string; reduced: string[]; sound: string };
 // `segments` carries the per-word reading (Pinyin / Furigana) for zh/ja so
@@ -119,6 +119,7 @@ export default function SpeakingModule() {
   const [transcript, setTranscript]       = useState('');
   const [results, setResults]             = useState<WordResult[]>([]);
   const [isStarting, setIsStarting]       = useState(false); // true between tap and mic going live
+  const [hint, setHint]                   = useState<string | null>(null); // transient mic feedback / errors
   const [lang, setLang]                   = useState<LocaleCode>('en');
   const langRef       = useRef<LocaleCode>('en'); // current locale for background refills + mic
 
@@ -203,6 +204,7 @@ export default function SpeakingModule() {
     teardownRecognition();
     setIsStarting(false);
     setStatus('idle');
+    setHint(null);
     setTranscript('');
     setResults([]);
     setIsLoading(true);
@@ -237,6 +239,7 @@ export default function SpeakingModule() {
     setIsStarting(false);
     setCurrentPhrase(popNext());
     setStatus('idle');
+    setHint(null);
     setTranscript('');
     setResults([]);
   }
@@ -257,20 +260,28 @@ export default function SpeakingModule() {
     }
 
     setIsStarting(true);
+    setHint(null);
     isStopping.current = false;
     transcriptRef.current = '';
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const recognition = new SR() as any;
     recognitionRef.current = recognition;
+    // Strictly bind the recognizer to the active module's sub-tag (en-US / ja-JP /
+    // zh-CN) so it never falls back to the OS default language and mis-hears.
     recognition.lang = bcp47For(langRef.current);
     // Manual toggle: keep capturing through pauses and hesitations. The browser
     // will not auto-stop on silence — only an explicit stopListening() ends it.
     recognition.continuous = true;
     recognition.interimResults = false;
+    recognition.maxAlternatives = 1; // we only score the top transcript
 
     recognition.onstart = () => {
       setIsStarting(false);
       setStatus('listening');
+      setHint('🎧 กำลังฟัง… พูดได้เลย — Listening… speak now');
+    };
+    recognition.onspeechstart = () => {
+      setHint('🗣️ ได้ยินแล้ว… — Got it, keep going');
     };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     recognition.onresult = (e: any) => {
@@ -280,14 +291,26 @@ export default function SpeakingModule() {
       for (let i = 0; i < e.results.length; i++) full += e.results[i][0].transcript;
       transcriptRef.current = full.trim();
     };
-    recognition.onerror = () => {
-      // onend always follows and is the single commit point — just clear the
-      // transitional flag here.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    recognition.onerror = (e: any) => {
+      // onend always follows and is the single commit point. Capture a friendly,
+      // specific reason here so the learner knows whether the mic even heard them.
       setIsStarting(false);
+      const err = e?.error;
+      if (err === 'not-allowed' || err === 'service-not-allowed') {
+        setHint('🔒 ไมโครโฟนถูกปิดกั้น — Microphone blocked. Allow mic access, then try again.');
+      } else if (err === 'audio-capture') {
+        setHint('🎙️ ไม่พบไมโครโฟน — No microphone found. Move on with “New Sentence”.');
+      } else if (err === 'no-speech') {
+        setHint('🤔 ไม่ได้ยินเสียงพูด ลองพูดให้ชัดขึ้น — No speech detected, try speaking clearly.');
+      } else if (err !== 'aborted') {
+        setHint('⚠️ การฟังขัดข้อง ลองอีกครั้ง — Recognition hiccup, please try again.');
+      }
     };
     recognition.onend = () => {
       // Single commit point: fires after the explicit stop() (or if the engine
-      // ends for any reason). Score the aggregated transcript, else fall back to idle.
+      // ends for any reason). Score the aggregated transcript, else return to idle
+      // and keep any hint set above so the learner gets clear next-step guidance.
       recognitionRef.current = null;
       isStopping.current = false;
       setIsStarting(false);
@@ -296,8 +319,10 @@ export default function SpeakingModule() {
         setTranscript(text);
         setResults(analyze(text, currentPhrase.targets, langRef.current));
         setStatus('done');
+        setHint(null);
       } else {
         setStatus('idle');
+        setHint((h) => h ?? '🤔 ไม่ได้ยินเสียงพูด — Didn’t catch that. Tap to speak again, or pick a new sentence.');
       }
     };
 
@@ -316,11 +341,14 @@ export default function SpeakingModule() {
     // stopping before the session is actually live.
     if (isStopping.current || !recognitionRef.current || status !== 'listening') return;
     isStopping.current = true;
+    setStatus('processing'); // brief beat while the engine flushes final audio
+    setHint('⏳ กำลังประมวลผล… — Processing…');
     try {
       recognitionRef.current.stop(); // flush final audio → onresult → onend commits
     } catch {
       teardownRecognition();
       setStatus('idle');
+      setHint(null);
     }
   }
 
@@ -329,6 +357,7 @@ export default function SpeakingModule() {
     setTranscript('');
     setResults([]);
     setStatus('idle');
+    setHint(null);
   }
 
   return (
@@ -379,6 +408,13 @@ export default function SpeakingModule() {
         )}
       </div>
 
+      {/* Live mic feedback so the learner always knows whether they were heard. */}
+      {hint && (status === 'idle' || status === 'listening' || status === 'processing') && (
+        <p className="mb-2.5 rounded-2xl bg-slate-50 px-4 py-2.5 text-center text-xs font-medium text-slate-600 ring-1 ring-slate-100 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700">
+          {hint}
+        </p>
+      )}
+
       {/* idle */}
       {status === 'idle' && (
         <div className="space-y-2.5">
@@ -401,13 +437,41 @@ export default function SpeakingModule() {
 
       {/* listening — tap again to explicitly stop and commit */}
       {status === 'listening' && (
-        <button
-          onClick={stopListening}
-          className="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-red-500 to-rose-500 py-3.5 text-sm font-semibold text-white shadow-lg shadow-red-500/25 transition-all hover:shadow-red-500/40 active:scale-[0.98]"
-        >
-          <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-white" />
-          ⏹ กำลังฟัง… กดเพื่อหยุด — Listening… Tap to Stop
-        </button>
+        <div className="space-y-2.5">
+          <button
+            onClick={stopListening}
+            className="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-red-500 to-rose-500 py-3.5 text-sm font-semibold text-white shadow-lg shadow-red-500/25 transition-all hover:shadow-red-500/40 active:scale-[0.98]"
+          >
+            <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-white" />
+            ⏹ กำลังฟัง… กดเพื่อหยุด — Listening… Tap to Stop
+          </button>
+          {/* Bypass: if the mic stalls or won't pick up this learner's voice, let
+              them move on instead of being stuck on the Stop button. */}
+          <button
+            onClick={nextPhrase}
+            className="w-full rounded-2xl py-2 text-xs font-medium text-slate-400 transition hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300"
+          >
+            ข้ามประโยคนี้ — Skip / Tap to bypass
+          </button>
+        </div>
+      )}
+
+      {/* processing — brief beat while the engine flushes the final audio */}
+      {status === 'processing' && (
+        <div className="space-y-2.5">
+          <div className="flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-100 py-3.5 text-sm font-semibold text-slate-500 dark:bg-slate-800 dark:text-slate-300">
+            <span className="h-2 w-2 animate-bounce rounded-full bg-slate-400 [animation-delay:-0.3s]" />
+            <span className="h-2 w-2 animate-bounce rounded-full bg-slate-400 [animation-delay:-0.15s]" />
+            <span className="h-2 w-2 animate-bounce rounded-full bg-slate-400" />
+            <span className="ml-1">⏳ กำลังประมวลผล… — Processing…</span>
+          </div>
+          <button
+            onClick={nextPhrase}
+            className="w-full rounded-2xl py-2 text-xs font-medium text-slate-400 transition hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300"
+          >
+            ข้ามประโยคนี้ — Skip / Tap to bypass
+          </button>
+        </div>
       )}
 
       {/* done */}
