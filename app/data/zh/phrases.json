@@ -114,5 +114,222 @@
       { "word": "周末", "reduced": [], "sound": "zhōu mò" },
       { "word": "电影", "reduced": [], "sound": "diàn yǐng" }
     ]
+  },
+  {
+    "sentence": "我叫李明。",
+    "segments": [
+      { "text": "我", "reading": "wǒ" },
+      { "text": "叫", "reading": "jiào" },
+      { "text": "李明", "reading": "Lǐ Míng" },
+      { "text": "。" }
+    ],
+    "targets": [
+      { "word": "叫", "reduced": [], "sound": "jiào" },
+      { "word": "李明", "reduced": [], "sound": "Lǐ Míng" }
+    ]
+  },
+  {
+    "sentence": "你叫什么名字？",
+    "segments": [
+      { "text": "你", "reading": "nǐ" },
+      { "text": "叫", "reading": "jiào" },
+      { "text": "什么", "reading": "shénme" },
+      { "text": "名字", "reading": "míngzi" },
+      { "text": "？" }
+    ],
+    "targets": [
+      { "word": "什么", "reduced": [], "sound": "shén me" },
+      { "word": "名字", "reduced": [], "sound": "míng zi" }
+    ]
+  },
+  {
+    "sentence": "我是泰国人。",
+    "segments": [
+      { "text": "我", "reading": "wǒ" },
+      { "text": "是", "reading": "shì" },
+      { "text": "泰国", "reading": "Tàiguó" },
+      { "text": "人", "reading": "rén" },
+      { "text": "。" }
+    ],
+    "targets": [
+      { "word": "是", "reduced": [], "sound": "shì" },
+      { "word": "泰国", "reduced": [], "sound": "Tài guó" }
+    ]
+  },
+  {
+    "sentence": "我听不懂。",
+    "segments": [
+      { "text": "我", "reading": "wǒ" },
+      { "text": "听", "reading": "tīng" },
+      { "text": "不懂", "reading": "bù dǒng" },
+      { "text": "。" }
+    ],
+    "targets": [
+      { "word": "听", "reduced": [], "sound": "tīng" },
+      { "word": "懂", "reduced": [], "sound": "dǒng" }
+    ]
+  },
+  {
+    "sentence": "请再说一遍。",
+    "segments": [
+      { "text": "请", "reading": "qǐng" },
+      { "text": "再", "reading": "zài" },
+      { "text": "说", "reading": "shuō" },
+      { "text": "一遍", "reading": "yí biàn" },
+      { "text": "。" }
+    ],
+    "targets": [
+      { "word": "再", "reduced": [], "sound": "zài" },
+      { "word": "说", "reduced": [], "sound": "shuō" }
+    ]
+  },
+  {
+    "sentence": "请慢一点。",
+    "segments": [
+      { "text": "请", "reading": "qǐng" },
+      { "text": "慢", "reading": "màn" },
+      { "text": "一点", "reading": "yìdiǎn" },
+      { "text": "。" }
+    ],
+    "targets": [
+      { "word": "慢", "reduced": [], "sound": "màn" },
+      { "word": "一点", "reduced": [], "sound": "yì diǎn" }
+    ]
+  },
+  {
+    "sentence": "太贵了，便宜一点吧。",
+    "segments": [
+      { "text": "太", "reading": "tài" },
+      { "text": "贵", "reading": "guì" },
+      { "text": "了", "reading": "le" },
+      { "text": "，" },
+      { "text": "便宜", "reading": "piányi" },
+      { "text": "一点", "reading": "yìdiǎn" },
+      { "text": "吧", "reading": "ba" },
+      { "text": "。" }
+    ],
+    "targets": [
+      { "word": "贵", "reduced": [], "sound": "guì" },
+      { "word": "便宜", "reduced": [], "sound": "pián yi" }
+    ]
+  },
+  {
+    "sentence": "我要这个。",
+    "segments": [
+      { "text": "我", "reading": "wǒ" },
+      { "text": "要", "reading": "yào" },
+      { "text": "这个", "reading": "zhège" },
+      { "text": "。" }
+    ],
+    "targets": [
+      { "word": "要", "reduced": [], "sound": "yào" },
+      { "word": "这个", "reduced": [], "sound": "zhè ge" }
+    ]
+  },
+  {
+    "sentence": "现在几点？",
+    "segments": [
+      { "text": "现在", "reading": "xiànzài" },
+      { "text": "几点", "reading": "jǐ diǎn" },
+      { "text": "？" }
+    ],
+    "targets": [
+      { "word": "现在", "reduced": [], "sound": "xiàn zài" },
+      { "word": "几点", "reduced": [], "sound": "jǐ diǎn" }
+    ]
+  },
+  {
+    "sentence": "我饿了。",
+    "segments": [
+      { "text": "我", "reading": "wǒ" },
+      { "text": "饿", "reading": "è" },
+      { "text": "了", "reading": "le" },
+      { "text": "。" }
+    ],
+    "targets": [
+      { "word": "饿", "reduced": [], "sound": "è" }
+    ]
+  },
+  {
+    "sentence": "我想去机场。",
+    "segments": [
+      { "text": "我", "reading": "wǒ" },
+      { "text": "想", "reading": "xiǎng" },
+      { "text": "去", "reading": "qù" },
+      { "text": "机场", "reading": "jīchǎng" },
+      { "text": "。" }
+    ],
+    "targets": [
+      { "word": "去", "reduced": [], "sound": "qù" },
+      { "word": "机场", "reduced": [], "sound": "jī chǎng" }
+    ]
+  },
+  {
+    "sentence": "这附近有医院吗？",
+    "segments": [
+      { "text": "这", "reading": "zhè" },
+      { "text": "附近", "reading": "fùjìn" },
+      { "text": "有", "reading": "yǒu" },
+      { "text": "医院", "reading": "yīyuàn" },
+      { "text": "吗", "reading": "ma" },
+      { "text": "？" }
+    ],
+    "targets": [
+      { "word": "附近", "reduced": [], "sound": "fù jìn" },
+      { "word": "医院", "reduced": [], "sound": "yī yuàn" }
+    ]
+  },
+  {
+    "sentence": "我不舒服。",
+    "segments": [
+      { "text": "我", "reading": "wǒ" },
+      { "text": "不", "reading": "bù" },
+      { "text": "舒服", "reading": "shūfu" },
+      { "text": "。" }
+    ],
+    "targets": [
+      { "word": "舒服", "reduced": [], "sound": "shū fu" }
+    ]
+  },
+  {
+    "sentence": "祝你生日快乐！",
+    "segments": [
+      { "text": "祝", "reading": "zhù" },
+      { "text": "你", "reading": "nǐ" },
+      { "text": "生日", "reading": "shēngrì" },
+      { "text": "快乐", "reading": "kuàilè" },
+      { "text": "！" }
+    ],
+    "targets": [
+      { "word": "生日", "reduced": [], "sound": "shēng rì" },
+      { "word": "快乐", "reduced": [], "sound": "kuài lè" }
+    ]
+  },
+  {
+    "sentence": "慢走，再见！",
+    "segments": [
+      { "text": "慢走", "reading": "màn zǒu" },
+      { "text": "，" },
+      { "text": "再见", "reading": "zàijiàn" },
+      { "text": "！" }
+    ],
+    "targets": [
+      { "word": "再见", "reduced": [], "sound": "zài jiàn" }
+    ]
+  },
+  {
+    "sentence": "我会说一点中文。",
+    "segments": [
+      { "text": "我", "reading": "wǒ" },
+      { "text": "会", "reading": "huì" },
+      { "text": "说", "reading": "shuō" },
+      { "text": "一点", "reading": "yìdiǎn" },
+      { "text": "中文", "reading": "Zhōngwén" },
+      { "text": "。" }
+    ],
+    "targets": [
+      { "word": "会", "reduced": [], "sound": "huì" },
+      { "word": "中文", "reduced": [], "sound": "Zhōng wén" }
+    ]
   }
 ]

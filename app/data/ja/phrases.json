@@ -102,5 +102,215 @@
       { "word": "週末", "reduced": [], "sound": "shūmatsu" },
       { "word": "映画", "reduced": [], "sound": "eiga" }
     ]
+  },
+  {
+    "sentence": "私はタイ人です。",
+    "romaji": "Watashi wa Tai-jin desu.",
+    "segments": [
+      { "text": "私", "reading": "わたし" },
+      { "text": "はタイ" },
+      { "text": "人", "reading": "じん" },
+      { "text": "です。" }
+    ],
+    "targets": [
+      { "word": "私", "reduced": [], "sound": "watashi" },
+      { "word": "タイ人", "reduced": [], "sound": "tai-jin" }
+    ]
+  },
+  {
+    "sentence": "お名前は何ですか。",
+    "romaji": "Onamae wa nan desu ka.",
+    "segments": [
+      { "text": "お" },
+      { "text": "名前", "reading": "なまえ" },
+      { "text": "は" },
+      { "text": "何", "reading": "なん" },
+      { "text": "ですか。" }
+    ],
+    "targets": [
+      { "word": "名前", "reduced": [], "sound": "namae" },
+      { "word": "何", "reduced": [], "sound": "nan" }
+    ]
+  },
+  {
+    "sentence": "すみません。",
+    "romaji": "Sumimasen.",
+    "segments": [
+      { "text": "すみません。" }
+    ],
+    "targets": [
+      { "word": "すみません", "reduced": [], "sound": "sumimasen" }
+    ]
+  },
+  {
+    "sentence": "もう一度お願いします。",
+    "romaji": "Mō ichido onegaishimasu.",
+    "segments": [
+      { "text": "もう" },
+      { "text": "一度", "reading": "いちど" },
+      { "text": "お" },
+      { "text": "願", "reading": "ねが" },
+      { "text": "いします。" }
+    ],
+    "targets": [
+      { "word": "一度", "reduced": [], "sound": "ichido" },
+      { "word": "お願いします", "reduced": [], "sound": "onegaishimasu" }
+    ]
+  },
+  {
+    "sentence": "ゆっくり話してください。",
+    "romaji": "Yukkuri hanashite kudasai.",
+    "segments": [
+      { "text": "ゆっくり" },
+      { "text": "話", "reading": "はな" },
+      { "text": "してください。" }
+    ],
+    "targets": [
+      { "word": "ゆっくり", "reduced": [], "sound": "yukkuri" },
+      { "word": "話して", "reduced": [], "sound": "hanashite" }
+    ]
+  },
+  {
+    "sentence": "わかりません。",
+    "romaji": "Wakarimasen.",
+    "segments": [
+      { "text": "わかりません。" }
+    ],
+    "targets": [
+      { "word": "わかりません", "reduced": [], "sound": "wakarimasen" }
+    ]
+  },
+  {
+    "sentence": "これをください。",
+    "romaji": "Kore o kudasai.",
+    "segments": [
+      { "text": "これをください。" }
+    ],
+    "targets": [
+      { "word": "これ", "reduced": [], "sound": "kore" },
+      { "word": "ください", "reduced": [], "sound": "kudasai" }
+    ]
+  },
+  {
+    "sentence": "今何時ですか。",
+    "romaji": "Ima nanji desu ka.",
+    "segments": [
+      { "text": "今", "reading": "いま" },
+      { "text": "何時", "reading": "なんじ" },
+      { "text": "ですか。" }
+    ],
+    "targets": [
+      { "word": "今", "reduced": [], "sound": "ima" },
+      { "word": "何時", "reduced": [], "sound": "nanji" }
+    ]
+  },
+  {
+    "sentence": "お腹がすきました。",
+    "romaji": "Onaka ga sukimashita.",
+    "segments": [
+      { "text": "お" },
+      { "text": "腹", "reading": "なか" },
+      { "text": "がすきました。" }
+    ],
+    "targets": [
+      { "word": "お腹", "reduced": [], "sound": "onaka" },
+      { "word": "すきました", "reduced": [], "sound": "sukimashita" }
+    ]
+  },
+  {
+    "sentence": "空港へ行きたいです。",
+    "romaji": "Kūkō e ikitai desu.",
+    "segments": [
+      { "text": "空港", "reading": "くうこう" },
+      { "text": "へ" },
+      { "text": "行", "reading": "い" },
+      { "text": "きたいです。" }
+    ],
+    "targets": [
+      { "word": "空港", "reduced": [], "sound": "kūkō" },
+      { "word": "行きたい", "reduced": [], "sound": "ikitai" }
+    ]
+  },
+  {
+    "sentence": "この近くに病院はありますか。",
+    "romaji": "Kono chikaku ni byōin wa arimasu ka.",
+    "segments": [
+      { "text": "この" },
+      { "text": "近", "reading": "ちか" },
+      { "text": "くに" },
+      { "text": "病院", "reading": "びょういん" },
+      { "text": "はありますか。" }
+    ],
+    "targets": [
+      { "word": "近く", "reduced": [], "sound": "chikaku" },
+      { "word": "病院", "reduced": [], "sound": "byōin" }
+    ]
+  },
+  {
+    "sentence": "気分が悪いです。",
+    "romaji": "Kibun ga warui desu.",
+    "segments": [
+      { "text": "気分", "reading": "きぶん" },
+      { "text": "が" },
+      { "text": "悪", "reading": "わる" },
+      { "text": "いです。" }
+    ],
+    "targets": [
+      { "word": "気分", "reduced": [], "sound": "kibun" },
+      { "word": "悪い", "reduced": [], "sound": "warui" }
+    ]
+  },
+  {
+    "sentence": "お誕生日おめでとう！",
+    "romaji": "Otanjōbi omedetō!",
+    "segments": [
+      { "text": "お" },
+      { "text": "誕生日", "reading": "たんじょうび" },
+      { "text": "おめでとう！" }
+    ],
+    "targets": [
+      { "word": "誕生日", "reduced": [], "sound": "tanjōbi" },
+      { "word": "おめでとう", "reduced": [], "sound": "omedetō" }
+    ]
+  },
+  {
+    "sentence": "日本語が少し話せます。",
+    "romaji": "Nihongo ga sukoshi hanasemasu.",
+    "segments": [
+      { "text": "日本語", "reading": "にほんご" },
+      { "text": "が" },
+      { "text": "少", "reading": "すこ" },
+      { "text": "し" },
+      { "text": "話", "reading": "はな" },
+      { "text": "せます。" }
+    ],
+    "targets": [
+      { "word": "少し", "reduced": [], "sound": "sukoshi" },
+      { "word": "話せます", "reduced": [], "sound": "hanasemasu" }
+    ]
+  },
+  {
+    "sentence": "いってきます。",
+    "romaji": "Ittekimasu.",
+    "segments": [
+      { "text": "いってきます。" }
+    ],
+    "targets": [
+      { "word": "いってきます", "reduced": [], "sound": "ittekimasu" }
+    ]
+  },
+  {
+    "sentence": "お疲れ様でした。",
+    "romaji": "Otsukaresama deshita.",
+    "segments": [
+      { "text": "お" },
+      { "text": "疲", "reading": "つか" },
+      { "text": "れ" },
+      { "text": "様", "reading": "さま" },
+      { "text": "でした。" }
+    ],
+    "targets": [
+      { "word": "お疲れ様", "reduced": [], "sound": "otsukaresama" }
+    ]
   }
 ]

@@ -13,6 +13,7 @@ type VocabCard = {
   example: string;
   example_reading?: string; // romaji (ja) / pinyin (zh) of the example sentence
   choices: string[];
+  audioUrl?: string; // optional premium-clip override for the word's pronunciation
 };
 
 type Result = 'correct' | 'wrong' | null;
@@ -245,7 +246,7 @@ export default function VocabModule() {
             <>
               <div className="flex items-center gap-2.5">
                 <p className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-50">{card.word}</p>
-                <SpeakButton text={card.word} langCode={lang} />
+                <SpeakButton text={card.word} langCode={lang} audioUrl={card.audioUrl} />
               </div>
               <p className="mt-1 text-sm text-violet-400">{card.phonetic}</p>
             </>
@@ -257,7 +258,7 @@ export default function VocabModule() {
                 className="text-3xl font-extrabold tracking-tight leading-loose text-slate-900 dark:text-slate-50"
                 rtClassName="text-sm font-medium text-violet-400"
               />
-              <SpeakButton text={card.word} langCode={lang} />
+              <SpeakButton text={card.word} langCode={lang} audioUrl={card.audioUrl} />
             </div>
           )
         ) : (

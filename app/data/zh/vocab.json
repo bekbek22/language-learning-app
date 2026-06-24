@@ -62,5 +62,133 @@
     "example": "早睡是好习惯。",
     "example_reading": "Zǎoshuì shì hǎo xíguàn.",
     "choices": ["นิสัย, ความเคยชิน", "ความฝัน", "ความลับ", "ความผิด"]
+  },
+  {
+    "word": "学习",
+    "phonetic": "xuéxí",
+    "thai_meaning": "เรียน, ศึกษา",
+    "example": "我每天学习中文。",
+    "example_reading": "Wǒ měitiān xuéxí Zhōngwén.",
+    "choices": ["เรียน, ศึกษา", "เล่น", "นอน", "ทำงาน"]
+  },
+  {
+    "word": "工作",
+    "phonetic": "gōngzuò",
+    "thai_meaning": "งาน, ทำงาน",
+    "example": "他在医院工作。",
+    "example_reading": "Tā zài yīyuàn gōngzuò.",
+    "choices": ["งาน, ทำงาน", "พักผ่อน", "เรียน", "เที่ยว"]
+  },
+  {
+    "word": "时间",
+    "phonetic": "shíjiān",
+    "thai_meaning": "เวลา",
+    "example": "我没有时间。",
+    "example_reading": "Wǒ méiyǒu shíjiān.",
+    "choices": ["เวลา", "เงิน", "สถานที่", "โอกาส"]
+  },
+  {
+    "word": "学校",
+    "phonetic": "xuéxiào",
+    "thai_meaning": "โรงเรียน",
+    "example": "学校离我家很近。",
+    "example_reading": "Xuéxiào lí wǒ jiā hěn jìn.",
+    "choices": ["โรงเรียน", "โรงพยาบาล", "ร้านอาหาร", "บริษัท"]
+  },
+  {
+    "word": "老师",
+    "phonetic": "lǎoshī",
+    "thai_meaning": "ครู, อาจารย์",
+    "example": "我的老师很好。",
+    "example_reading": "Wǒ de lǎoshī hěn hǎo.",
+    "choices": ["ครู, อาจารย์", "นักเรียน", "หมอ", "เพื่อน"]
+  },
+  {
+    "word": "便宜",
+    "phonetic": "piányi",
+    "thai_meaning": "ถูก (ราคา)",
+    "example": "这件衣服很便宜。",
+    "example_reading": "Zhè jiàn yīfu hěn piányi.",
+    "choices": ["ถูก (ราคา)", "แพง", "ใหม่", "สวย"]
+  },
+  {
+    "word": "贵",
+    "phonetic": "guì",
+    "thai_meaning": "แพง",
+    "example": "这个手机太贵了。",
+    "example_reading": "Zhège shǒujī tài guì le.",
+    "choices": ["แพง", "ถูก", "เก่า", "เล็ก"]
+  },
+  {
+    "word": "漂亮",
+    "phonetic": "piàoliang",
+    "thai_meaning": "สวย",
+    "example": "这里的风景很漂亮。",
+    "example_reading": "Zhèlǐ de fēngjǐng hěn piàoliang.",
+    "choices": ["สวย", "น่าเกลียด", "ใหญ่", "แพง"]
+  },
+  {
+    "word": "累",
+    "phonetic": "lèi",
+    "thai_meaning": "เหนื่อย",
+    "example": "今天工作很累。",
+    "example_reading": "Jīntiān gōngzuò hěn lèi.",
+    "choices": ["เหนื่อย", "สนุก", "ง่วงนอน", "หิว"]
+  },
+  {
+    "word": "忙",
+    "phonetic": "máng",
+    "thai_meaning": "ยุ่ง",
+    "example": "我最近很忙。",
+    "example_reading": "Wǒ zuìjìn hěn máng.",
+    "choices": ["ยุ่ง", "ว่าง", "เหนื่อย", "เบื่อ"]
+  },
+  {
+    "word": "健康",
+    "phonetic": "jiànkāng",
+    "thai_meaning": "สุขภาพ, แข็งแรง",
+    "example": "运动让我更健康。",
+    "example_reading": "Yùndòng ràng wǒ gèng jiànkāng.",
+    "choices": ["สุขภาพ, แข็งแรง", "ป่วย", "เหนื่อย", "อ้วน"]
+  },
+  {
+    "word": "旅行",
+    "phonetic": "lǚxíng",
+    "thai_meaning": "ท่องเที่ยว",
+    "example": "我喜欢去日本旅行。",
+    "example_reading": "Wǒ xǐhuan qù Rìběn lǚxíng.",
+    "choices": ["ท่องเที่ยว", "ทำงาน", "เรียน", "พักผ่อน"]
+  },
+  {
+    "word": "帮助",
+    "phonetic": "bāngzhù",
+    "thai_meaning": "ช่วยเหลือ",
+    "example": "他常常帮助别人。",
+    "example_reading": "Tā chángcháng bāngzhù biérén.",
+    "choices": ["ช่วยเหลือ", "รบกวน", "ปฏิเสธ", "ขอบคุณ"]
+  },
+  {
+    "word": "米饭",
+    "phonetic": "mǐfàn",
+    "thai_meaning": "ข้าวสวย",
+    "example": "我想吃米饭。",
+    "example_reading": "Wǒ xiǎng chī mǐfàn.",
+    "choices": ["ข้าวสวย", "น้ำ", "ก๋วยเตี๋ยว", "ขนมปัง"]
+  },
+  {
+    "word": "天气",
+    "phonetic": "tiānqì",
+    "thai_meaning": "อากาศ",
+    "example": "今天的天气很好。",
+    "example_reading": "Jīntiān de tiānqì hěn hǎo.",
+    "choices": ["อากาศ", "ฤดูกาล", "อุณหภูมิ", "ฝน"]
+  },
+  {
+    "word": "颜色",
+    "phonetic": "yánsè",
+    "thai_meaning": "สี",
+    "example": "你喜欢什么颜色？",
+    "example_reading": "Nǐ xǐhuan shénme yánsè?",
+    "choices": ["สี", "ขนาด", "รูปร่าง", "ราคา"]
   }
 ]

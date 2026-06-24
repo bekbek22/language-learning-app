@@ -62,5 +62,133 @@
     "example": "早寝はいい習慣です。",
     "example_reading": "Hayane wa ii shūkan desu.",
     "choices": ["นิสัย, ความเคยชิน", "ความฝัน", "ความลับ", "ความผิด"]
+  },
+  {
+    "word": "勉強",
+    "phonetic": "benkyō",
+    "thai_meaning": "เรียน, ศึกษา",
+    "example": "毎日日本語を勉強します。",
+    "example_reading": "Mainichi nihongo o benkyō shimasu.",
+    "choices": ["เรียน, ศึกษา", "เล่น", "นอน", "ทำงาน"]
+  },
+  {
+    "word": "仕事",
+    "phonetic": "shigoto",
+    "thai_meaning": "งาน",
+    "example": "仕事が忙しいです。",
+    "example_reading": "Shigoto ga isogashii desu.",
+    "choices": ["งาน", "พักผ่อน", "เรียน", "เที่ยว"]
+  },
+  {
+    "word": "時間",
+    "phonetic": "jikan",
+    "thai_meaning": "เวลา",
+    "example": "時間がありません。",
+    "example_reading": "Jikan ga arimasen.",
+    "choices": ["เวลา", "เงิน", "สถานที่", "โอกาส"]
+  },
+  {
+    "word": "学校",
+    "phonetic": "gakkō",
+    "thai_meaning": "โรงเรียน",
+    "example": "学校は家から近いです。",
+    "example_reading": "Gakkō wa ie kara chikai desu.",
+    "choices": ["โรงเรียน", "โรงพยาบาล", "ร้านอาหาร", "บริษัท"]
+  },
+  {
+    "word": "先生",
+    "phonetic": "sensei",
+    "thai_meaning": "ครู, อาจารย์",
+    "example": "私の先生は優しいです。",
+    "example_reading": "Watashi no sensei wa yasashii desu.",
+    "choices": ["ครู, อาจารย์", "นักเรียน", "หมอ", "เพื่อน"]
+  },
+  {
+    "word": "安い",
+    "phonetic": "yasui",
+    "thai_meaning": "ถูก (ราคา)",
+    "example": "この服は安いです。",
+    "example_reading": "Kono fuku wa yasui desu.",
+    "choices": ["ถูก (ราคา)", "แพง", "ใหม่", "สวย"]
+  },
+  {
+    "word": "高い",
+    "phonetic": "takai",
+    "thai_meaning": "แพง, สูง",
+    "example": "このカメラは高いです。",
+    "example_reading": "Kono kamera wa takai desu.",
+    "choices": ["แพง, สูง", "ถูก", "เตี้ย", "เล็ก"]
+  },
+  {
+    "word": "きれい",
+    "phonetic": "kirei",
+    "thai_meaning": "สวย, สะอาด",
+    "example": "部屋がきれいです。",
+    "example_reading": "Heya ga kirei desu.",
+    "choices": ["สวย, สะอาด", "สกปรก", "ใหญ่", "แพง"]
+  },
+  {
+    "word": "疲れる",
+    "phonetic": "tsukareru",
+    "thai_meaning": "เหนื่อย",
+    "example": "仕事で疲れました。",
+    "example_reading": "Shigoto de tsukaremashita.",
+    "choices": ["เหนื่อย", "สนุก", "หิว", "ง่วง"]
+  },
+  {
+    "word": "忙しい",
+    "phonetic": "isogashii",
+    "thai_meaning": "ยุ่ง",
+    "example": "最近とても忙しいです。",
+    "example_reading": "Saikin totemo isogashii desu.",
+    "choices": ["ยุ่ง", "ว่าง", "เหนื่อย", "เบื่อ"]
+  },
+  {
+    "word": "健康",
+    "phonetic": "kenkō",
+    "thai_meaning": "สุขภาพ",
+    "example": "健康が一番大切です。",
+    "example_reading": "Kenkō ga ichiban taisetsu desu.",
+    "choices": ["สุขภาพ", "ป่วย", "เหนื่อย", "อ้วน"]
+  },
+  {
+    "word": "旅行",
+    "phonetic": "ryokō",
+    "thai_meaning": "ท่องเที่ยว",
+    "example": "来月旅行に行きます。",
+    "example_reading": "Raigetsu ryokō ni ikimasu.",
+    "choices": ["ท่องเที่ยว", "ทำงาน", "เรียน", "พักผ่อน"]
+  },
+  {
+    "word": "手伝う",
+    "phonetic": "tetsudau",
+    "thai_meaning": "ช่วยเหลือ",
+    "example": "母を手伝います。",
+    "example_reading": "Haha o tetsudaimasu.",
+    "choices": ["ช่วยเหลือ", "รบกวน", "ปฏิเสธ", "ขอบคุณ"]
+  },
+  {
+    "word": "ご飯",
+    "phonetic": "gohan",
+    "thai_meaning": "ข้าว, อาหาร",
+    "example": "一緒にご飯を食べましょう。",
+    "example_reading": "Issho ni gohan o tabemashō.",
+    "choices": ["ข้าว, อาหาร", "น้ำ", "ขนม", "ผลไม้"]
+  },
+  {
+    "word": "水",
+    "phonetic": "mizu",
+    "thai_meaning": "น้ำ",
+    "example": "水を一杯ください。",
+    "example_reading": "Mizu o ippai kudasai.",
+    "choices": ["น้ำ", "ชา", "กาแฟ", "นม"]
+  },
+  {
+    "word": "天気",
+    "phonetic": "tenki",
+    "thai_meaning": "อากาศ",
+    "example": "今日は天気がいいです。",
+    "example_reading": "Kyō wa tenki ga ii desu.",
+    "choices": ["อากาศ", "ฤดูกาล", "อุณหภูมิ", "ฝน"]
   }
 ]

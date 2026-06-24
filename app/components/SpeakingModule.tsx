@@ -12,7 +12,13 @@ type Target = { word: string; reduced: string[]; sound: string };
 // beginners can read the sentence aloud. `romaji` is a full Latin-alphabet
 // transcription (Japanese) for learners who can't yet read kana. Both are
 // absent for English (plain rendering).
-type Phrase = { sentence: string; targets: Target[]; segments?: ReadingSegment[]; romaji?: string };
+type Phrase = {
+  sentence: string;
+  targets: Target[];
+  segments?: ReadingSegment[];
+  romaji?: string;
+  audioUrl?: string; // optional premium-clip override for the sentence playback
+};
 
 // ── Fallback pool (used when Gemini is unavailable) ──────────────────────────
 const FALLBACK: Phrase[] = [
@@ -120,6 +126,7 @@ export default function SpeakingModule() {
   const [results, setResults]             = useState<WordResult[]>([]);
   const [isStarting, setIsStarting]       = useState(false); // true between tap and mic going live
   const [hint, setHint]                   = useState<string | null>(null); // transient mic feedback / errors
+  const [typeFallback, setTypeFallback]   = useState(false); // mic unavailable → "type what you hear" UI
   const [lang, setLang]                   = useState<LocaleCode>('en');
   const langRef       = useRef<LocaleCode>('en'); // current locale for background refills + mic
 
@@ -205,6 +212,7 @@ export default function SpeakingModule() {
     setIsStarting(false);
     setStatus('idle');
     setHint(null);
+    setTypeFallback(false);
     setTranscript('');
     setResults([]);
     setIsLoading(true);
@@ -240,6 +248,7 @@ export default function SpeakingModule() {
     setCurrentPhrase(popNext());
     setStatus('idle');
     setHint(null);
+    setTypeFallback(false);
     setTranscript('');
     setResults([]);
   }
@@ -261,6 +270,7 @@ export default function SpeakingModule() {
 
     setIsStarting(true);
     setHint(null);
+    setTypeFallback(false);
     isStopping.current = false;
     transcriptRef.current = '';
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -298,16 +308,20 @@ export default function SpeakingModule() {
       setIsStarting(false);
       const err = e?.error;
       if (err === 'not-allowed' || err === 'service-not-allowed') {
-        setHint('🔒 ไมโครโฟนถูกปิดกั้น — Microphone blocked. Allow mic access in the address bar, then try again.');
+        setHint('🔒 ไมโครโฟนถูกปิดกั้น — Microphone blocked. Allow mic access, or type what you hear below.');
+        setTypeFallback(true); // offer the type-in alternative immediately
       } else if (err === 'audio-capture') {
-        setHint('🎙️ ไม่พบไมโครโฟน — No microphone found. Check your device, or move on with “New Sentence”.');
+        setHint('🎙️ ไม่พบไมโครโฟน — No microphone found. Type what you hear below instead.');
+        setTypeFallback(true);
       } else if (err === 'no-speech') {
         setHint('🤔 ไม่ได้ยินเสียงพูด ลองพูดให้ชัดขึ้น — No speech detected, try speaking clearly.');
       } else if (err === 'network') {
         // Chrome streams audio to Google's speech servers; this fires (usually
         // within ~1s) when that endpoint is unreachable — common on Brave, on
         // Firefox/Safari (no real support), or behind a restrictive network/VPN.
-        setHint('📡 เชื่อมต่อบริการเสียงไม่ได้ — Speech service unreachable. Use Chrome or Edge with a normal internet connection, or tap “Skip”.');
+        // The on-device mic can't be fixed here, so offer the type-in fallback.
+        setHint('📡 เชื่อมต่อบริการเสียงไม่ได้ — Speech service unreachable. Type what you hear below, or open in Chrome/Edge.');
+        setTypeFallback(true);
       } else if (err !== 'aborted') {
         // Surface the raw code so any unhandled case is diagnosable at a glance.
         setHint(`⚠️ การฟังขัดข้อง (${err ?? 'unknown'}) — Recognition error. Please try again, or tap “Skip”.`);
@@ -364,6 +378,7 @@ export default function SpeakingModule() {
     setResults([]);
     setStatus('idle');
     setHint(null);
+    setTypeFallback(false);
   }
 
   return (
@@ -407,7 +422,7 @@ export default function SpeakingModule() {
                 <p className="mt-1 text-sm italic text-slate-400 dark:text-slate-500">{currentPhrase.romaji}</p>
               )}
             </div>
-            <SpeakButton text={currentPhrase.sentence} langCode={lang} className="ml-auto" />
+            <SpeakButton text={currentPhrase.sentence} langCode={lang} audioUrl={currentPhrase.audioUrl} className="ml-auto" />
           </div>
         ) : (
           <p className="text-sm text-slate-400">ไม่สามารถโหลดประโยคได้</p>
@@ -471,24 +486,39 @@ export default function SpeakingModule() {
           </p>
         )}
 
-        {/* idle */}
+        {/* idle — normal mic controls, or the type-in fallback when the mic is
+            unavailable (network / permission / no-device errors). */}
         {status === 'idle' && (
-          <div className="space-y-2.5">
-            <button
-              onClick={startListening}
-              disabled={isLoading || !currentPhrase || isStarting}
-              className="min-h-[52px] w-full rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 transition-all hover:shadow-blue-500/40 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
-            >
-              {isStarting ? '⏳ กำลังเปิดไมค์…' : '🎙️ กดเพื่อพูด — Tap to Speak'}
-            </button>
-            <button
-              onClick={nextPhrase}
-              disabled={isLoading}
-              className="min-h-[48px] w-full rounded-2xl bg-slate-50 py-3 text-sm font-medium text-slate-500 ring-1 ring-slate-200 transition hover:bg-slate-100 hover:text-slate-700 disabled:cursor-not-allowed disabled:opacity-40 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-700 dark:hover:text-slate-100"
-            >
-              ✨ ประโยคใหม่ — New Sentence
-            </button>
-          </div>
+          typeFallback ? (
+            <TypeFallback
+              onSubmit={(typed) => {
+                setTranscript(typed);
+                setResults(analyze(typed, currentPhrase?.targets ?? [], langRef.current));
+                setStatus('done');
+                setTypeFallback(false);
+                setHint(null);
+              }}
+              onTryMic={() => { setTypeFallback(false); setHint(null); }}
+              onSkip={nextPhrase}
+            />
+          ) : (
+            <div className="space-y-2.5">
+              <button
+                onClick={startListening}
+                disabled={isLoading || !currentPhrase || isStarting}
+                className="min-h-[52px] w-full rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 transition-all hover:shadow-blue-500/40 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
+              >
+                {isStarting ? '⏳ กำลังเปิดไมค์…' : '🎙️ กดเพื่อพูด — Tap to Speak'}
+              </button>
+              <button
+                onClick={nextPhrase}
+                disabled={isLoading}
+                className="min-h-[48px] w-full rounded-2xl bg-slate-50 py-3 text-sm font-medium text-slate-500 ring-1 ring-slate-200 transition hover:bg-slate-100 hover:text-slate-700 disabled:cursor-not-allowed disabled:opacity-40 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-700 dark:hover:text-slate-100"
+              >
+                ✨ ประโยคใหม่ — New Sentence
+              </button>
+            </div>
+          )
         )}
 
         {/* listening — tap again to explicitly stop and commit */}
@@ -547,6 +577,67 @@ export default function SpeakingModule() {
             </button>
           </div>
         )}
+      </div>
+    </div>
+  );
+}
+
+// ── "Type what you hear" fallback ────────────────────────────────────────────
+// Shown when the Web Speech API can't run (network / permission / no-mic errors)
+// — a common case on Safari and non-Chrome mobile browsers. The learner types
+// the sentence instead; it's scored through the exact same analyze() path as a
+// spoken take, so the results UI is identical. A graceful bridge until the
+// planned server-side recognition (e.g. OpenAI Whisper) lands.
+function TypeFallback({
+  onSubmit,
+  onTryMic,
+  onSkip,
+}: {
+  onSubmit: (text: string) => void;
+  onTryMic: () => void;
+  onSkip: () => void;
+}) {
+  const [text, setText] = useState('');
+  const submit = () => { const t = text.trim(); if (t) onSubmit(t); };
+
+  return (
+    <div className="space-y-3 rounded-2xl bg-amber-50 p-4 ring-1 ring-amber-200 dark:bg-amber-950/30 dark:ring-amber-900/50">
+      <div className="flex items-center gap-2">
+        <span className="text-base">⌨️</span>
+        <p className="text-sm font-bold text-amber-800 dark:text-amber-200">พิมพ์สิ่งที่คุณได้ยิน — Type what you hear</p>
+      </div>
+      <p className="text-[11px] leading-relaxed text-amber-700/90 dark:text-amber-300/80">
+        ไมโครโฟนใช้ไม่ได้บนเบราว์เซอร์นี้ — พิมพ์ประโยคเพื่อตรวจคำตอบ หรือเปิดด้วย Chrome / Edge เพื่อใช้เสียง.
+        <br />Mic isn’t available on this browser. Type the sentence to check it, or open in Chrome / Edge for voice input.
+      </p>
+      <textarea
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); submit(); } }}
+        rows={2}
+        placeholder="พิมพ์ที่นี่… — type here…"
+        className="w-full resize-none rounded-xl bg-white px-3 py-2.5 text-sm text-slate-700 ring-1 ring-amber-200 outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-amber-400 dark:bg-slate-900 dark:text-slate-100 dark:ring-amber-900/60"
+      />
+      <button
+        onClick={submit}
+        disabled={!text.trim()}
+        className="flex min-h-[48px] w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 py-3 text-sm font-semibold text-white shadow-md transition-all hover:shadow-lg active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none"
+      >
+        ✓ ตรวจคำตอบ — Check answer
+      </button>
+      <div className="flex gap-2">
+        <button
+          onClick={onTryMic}
+          className="min-h-[44px] flex-1 rounded-2xl bg-white py-2 text-xs font-medium text-slate-500 ring-1 ring-slate-200 transition hover:bg-slate-50 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-700"
+        >
+          🎙️ ลองไมค์อีกครั้ง — Try mic
+        </button>
+        <button
+          onClick={onSkip}
+          className="min-h-[44px] flex-1 rounded-2xl bg-white py-2 text-xs font-medium text-slate-500 ring-1 ring-slate-200 transition hover:bg-slate-50 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700 dark:hover:bg-slate-700"
+        >
+          ✨ ประโยคใหม่ — New
+        </button>
       </div>
     </div>
   );
